@@ -37,9 +37,6 @@
       rebase = false
   '';
 
-  programs.git.userEmail = "tristan@tic.sh";
-  programs.git.userName = "0b11stan";
-
   programs.neovim = {
   	enable = true;
     withPython3 = true;
