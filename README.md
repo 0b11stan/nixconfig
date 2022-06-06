@@ -12,8 +12,10 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 ## Todo's
 
 * [x] init the flake/git project
-* [ ] install and configure swaywm
-* [ ] merge my neovim configuration
-* [ ] Format nix code on save
+* [ ] setup the password store
+* [ ] setup swaywm
+* [ ] setup neovim
+* [ ] setup tutanota
+* [ ] format nix code on save
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)
