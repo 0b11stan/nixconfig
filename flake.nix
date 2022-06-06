@@ -19,6 +19,20 @@
     lib = nixpkgs.lib;
 
   in {
+    homeManagerConfigurations = {
+      tristan = home-manager.lib.homeManagerConfiguration {
+        inherit system pkgs;
+        stateVersion = "22.05";
+        username = "tristan";
+        homeDirectory = "/home/tristan";
+        configuration = {
+          imports = [
+            ./users/tristan/home.nix
+          ];
+        };
+      };
+    };
+
     nixosConfigurations = {
       master = lib.nixosSystem {
         inherit system;
