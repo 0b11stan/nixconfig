@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     git
+    nixpkgs-fmt
   ];
 
   home.sessionVariables = {
@@ -38,7 +39,7 @@
   '';
 
   programs.neovim = {
-  	enable = true;
+    enable = true;
     withPython3 = true;
     plugins = with pkgs.vimPlugins; [ vim-nix nerdtree ];
     extraConfig = ''

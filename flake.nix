@@ -8,38 +8,39 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-    };
+      pkgs = import nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
 
-    lib = nixpkgs.lib;
+      lib = nixpkgs.lib;
+    in
+    {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      homeManagerConfigurations = {
+        tristan = home-manager.lib.homeManagerConfiguration {
+          inherit system pkgs;
+          stateVersion = "22.05";
+          username = "tristan";
+          homeDirectory = "/home/tristan";
+          configuration = {
+            imports = [
+              ./users/tristan/home.nix
+            ];
+          };
+        };
+      };
 
-  in {
-    homeManagerConfigurations = {
-      tristan = home-manager.lib.homeManagerConfiguration {
-        inherit system pkgs;
-        stateVersion = "22.05";
-        username = "tristan";
-        homeDirectory = "/home/tristan";
-        configuration = {
-          imports = [
-            ./users/tristan/home.nix
+      nixosConfigurations = {
+        master = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./system/configuration.nix
           ];
         };
       };
     };
-
-    nixosConfigurations = {
-      master = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./system/configuration.nix
-        ];
-      };
-    };
-  };
 }
