@@ -1,5 +1,4 @@
 #!/bin/sh
 pushd ~/.dotfiles
-nix build .#homeManagerConfigurations.tristan.activationPackage
-./result/activate
+home-manager switch -f ./users/tristan/home.nix
 popd

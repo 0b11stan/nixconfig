@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./sway.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
