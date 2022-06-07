@@ -12,7 +12,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 ## Todo's
 
 * [x] init the flake/git project
-* [ ] setup swaywm
+* [ ] [setup swaywm](https://nixos.wiki/wiki/Sway)
 * [ ] setup the password store
 * [ ] setup qutebrowser
 * [ ] setup neovim
