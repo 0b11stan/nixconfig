@@ -12,10 +12,15 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 ## Todo's
 
 * [x] init the flake/git project
-* [ ] setup the password store
 * [ ] setup swaywm
+* [ ] setup the password store
+* [ ] setup qutebrowser
 * [ ] setup neovim
+* [ ] setup sound
 * [ ] setup tutanota
-* [ ] format nix code on save
+* [ ] setup nix fmt on nvim save
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)
+* [ ] setup rust
+* [ ] setup python
+* [ ] setup podman
