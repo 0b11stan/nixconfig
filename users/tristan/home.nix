@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, lib, ... }:
+let
+  mod = config.wayland.windowManager.sway.config.modifier;
+in
 {
   home.username = "tristan";
   home.homeDirectory = "/home/tristan";
@@ -9,9 +11,42 @@
   home.packages = with pkgs; [
     git
     nixpkgs-fmt
+    hack-font
   ];
 
-  home.sessionVariables.EDITOR = "nvim";
+  home.keyboard.layout = "fr";
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    WLR_NO_HARDWARE_CURSORS = 1;
+  };
+
+  fonts.fontconfig.enable = true;
+
+  programs.alacritty.enable = true;
+
+  wayland.windowManager.sway = {
+    enable = true;
+    config = {
+
+#      left = "j";
+#      down = "k";
+#      up = "l";
+#      right = "semicolon";
+
+#      terminal = "alacritty";
+
+      keybindings = lib.mkOptionDefault {
+        "${mod}+j" = "focus left";
+        "${mod}+k" = "focus down";
+        "${mod}+l" = "focus up";
+        "${mod}+semicolon" = "focus right";
+      };
+    };
+  };
+
+
+  programs.bash.enable = true;
 
   home.file.".gitconfig".text = ''
     [user]

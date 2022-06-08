@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./sway.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -30,8 +29,10 @@
 
   users.users.tristan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
   };
+
+  console.keyMap = "fr";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
