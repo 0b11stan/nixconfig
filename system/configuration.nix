@@ -24,6 +24,7 @@
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
+  hardware.opengl.enable = true;
 
   services.openssh.enable = true;
 

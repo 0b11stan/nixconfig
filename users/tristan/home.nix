@@ -25,22 +25,41 @@ in
 
   programs.alacritty.enable = true;
 
+  programs.qutebrowser = {
+    enable = true;
+    keyBindings = {
+      normal = {
+        "J" = "back";
+        "K" = "tab-prev";
+        "L" = "tab-next";
+        "M" = "forward";
+        "j" = "scroll left";
+        "k" = "scroll down";
+        "l" = "scroll up";
+        "m" = "scroll right";
+      };
+    };
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     config = {
 
-#      left = "j";
-#      down = "k";
-#      up = "l";
-#      right = "semicolon";
+      input = {
+        "type:keyboard" = {
+          xkb_layout = "fr";
+        };
+      };
 
-#      terminal = "alacritty";
+      left = "j";
+      down = "k";
+      up = "l";
+      right = "m";
+
+      terminal = "alacritty";
 
       keybindings = lib.mkOptionDefault {
-        "${mod}+j" = "focus left";
-        "${mod}+k" = "focus down";
-        "${mod}+l" = "focus up";
-        "${mod}+semicolon" = "focus right";
+        "${mod}+x" = "exec swaylock -c '#000100'";
       };
     };
   };
