@@ -12,6 +12,7 @@ in
     git
     nixpkgs-fmt
     hack-font
+    file
   ];
 
   home.keyboard.layout = "fr";
@@ -25,6 +26,7 @@ in
 
   programs.alacritty.enable = true;
 
+  # add binding for spawn mpv (voir man home-config)
   programs.qutebrowser = {
     enable = true;
     keyBindings = {
@@ -37,6 +39,52 @@ in
         "k" = "scroll down";
         "l" = "scroll up";
         "m" = "scroll right";
+      };
+    };
+  };
+
+  programs.i3status = {
+    enable = true;
+    general = {
+      colors = true;
+      interval = 1;
+    };
+    modules = {
+      "wireless _first_".enable = false;
+      "battery all".enable = false;
+      "ipv6".enable = false;
+      "ethernet _first_" = {
+        position = 0;
+        settings = {
+          format_up = "ETH: %ip (%speed)";
+          format_down = "ETH: dawn";
+        };
+      };
+      "disk /" = {
+        position = 1;
+        settings = {
+          format = "DISK: %avail";
+        };
+      };
+      "memory" = {
+        position = 2;
+        settings = {
+          format = "MEM: %used / %available";
+          threshold_degraded = "1G";
+          format_degraded = "MEM: MEMORY < %available";
+        };
+      };
+      "load" = {
+        position = 3;
+        settings = {
+          format = "CPU: %1min";
+        };
+      };
+      "tztime local" = {
+        position = 4;
+        settings = {
+          format = "%Y-%m-%d %H:%M:%S";
+        };
       };
     };
   };
@@ -60,7 +108,70 @@ in
 
       keybindings = lib.mkOptionDefault {
         "${mod}+x" = "exec swaylock -c '#000100'";
+        "${mod}+ampersand" = "workspace 1";
+        "${mod}+eacute" = "workspace 2";
+        "${mod}+quotedbl" = "workspace 3";
+        "${mod}+apostrophe" = "workspace 4";
+        "${mod}+parenleft" = "workspace 5";
+        "${mod}+minus" = "workspace 6";
+        "${mod}+egrave" = "workspace 7";
+        "${mod}+underscore" = "workspace 8";
+        "${mod}+ccedilla" = "workspace 9";
+        "${mod}+agrave" = "workspace 10";
       };
+
+      bars = [ 
+        {
+          colors = {
+            activeWorkspace = {
+              background = "#5f676a";
+              border = "#333333";
+              text = "#ffffff";
+            };
+            background = "#000000";
+            bindingMode = {
+              background = "#900000";
+              border = "#2f343a";
+              text = "#ffffff";
+            };
+            focusedBackground = null;
+            focusedSeparator = null;
+            focusedStatusline = null;
+            focusedWorkspace = {
+              background = "#285577";
+              border = "#4c7899";
+              text = "#ffffff";
+            };
+            inactiveWorkspace = {
+              background = "#222222";
+              border = "#333333";
+              text = "#888888";
+            };
+            separator = "#666666";
+            statusline = "#ffffff";
+            urgentWorkspace = {
+              background = "#900000";
+              border = "#2f343a";
+              text = "#ffffff";
+            };
+          };
+          command = "${pkgs.sway}/bin/swaybar";
+          extraConfig = "";
+          fonts = {
+            names = [ "monospace" ];
+            size = 8.0;
+            style = "";
+          };
+          hiddenState = "hide";
+          id = "bar-0";
+          mode = "dock";
+          position = "top";
+          statusCommand = "i3status";
+          trayOutput = "primary";
+          workspaceButtons = true;
+          workspaceNumbers = true;
+        }
+      ];
     };
   };
 
