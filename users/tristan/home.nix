@@ -13,6 +13,8 @@ in
     nixpkgs-fmt
     hack-font
     file
+    tutanota-desktop
+    pass
   ];
 
   home.keyboard.layout = "fr";
