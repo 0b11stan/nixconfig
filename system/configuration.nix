@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -27,7 +29,7 @@
 
   users.users.tristan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" ];
+    extraGroups = ["wheel" "audio"];
   };
 
   console.keyMap = "fr";
@@ -45,5 +47,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
-
 }

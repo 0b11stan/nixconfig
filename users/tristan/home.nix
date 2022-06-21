@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./cli/secrets.nix
     ./cli/neovim.nix
@@ -20,13 +19,16 @@
   };
 
   home.packages = with pkgs; [
+    # cli
     git
-    nixpkgs-fmt
-    hack-font
     file
-    tutanota-desktop
     htop
+    alejandra
+
+    # gui
+    hack-font
     bemenu
+    tutanota-desktop
     pavucontrol
   ];
 

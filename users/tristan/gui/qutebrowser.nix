@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   # TODO : add binding for spawn mpv (voir man home-config)
   programs.qutebrowser = {
     enable = true;

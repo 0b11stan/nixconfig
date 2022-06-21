@@ -1,8 +1,11 @@
-{ config, pkgs, lib, ... }:
-let
-  mod = config.wayland.windowManager.sway.config.modifier;
-in
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  mod = config.wayland.windowManager.sway.config.modifier;
+in {
   fonts.fontconfig.enable = true;
 
   wayland.windowManager.sway = {
@@ -58,7 +61,7 @@ in
         "${mod}+0" = "move to workspace 10";
       };
 
-      bars = [ 
+      bars = [
         {
           colors = {
             activeWorkspace = {
@@ -96,7 +99,7 @@ in
           command = "${pkgs.sway}/bin/swaybar";
           extraConfig = "";
           fonts = {
-            names = [ "monospace" ];
+            names = ["monospace"];
             size = 8.0;
             style = "";
           };

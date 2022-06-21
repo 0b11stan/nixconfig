@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.gpg = {
     enable = true;
     publicKeys = [
