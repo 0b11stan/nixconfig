@@ -13,7 +13,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 
 * [x] init the project
 * [x] [swaywm](https://nixos.wiki/wiki/Sway)
-* [ ] [password store](https://www.passwordstore.org/)
+* [x] [password store](https://www.passwordstore.org/)
 * [ ] [qutebrowser](https://www.qutebrowser.org)
 * [ ] [neovim](http://neovim.io/)
 * [ ] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
