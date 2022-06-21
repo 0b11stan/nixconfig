@@ -51,3 +51,6 @@ hi CursorColumn cterm=NONE ctermbg=238
 
 " Nixos syntax highlight
 au BufRead,BufNewFile *.nix set filetype=nix
+
+" FMTs
+autocmd BufWritePost *.nix call system('alejandra -q .') | bufdo edit
