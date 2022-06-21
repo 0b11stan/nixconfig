@@ -15,6 +15,7 @@ in
     file
     tutanota-desktop
     pass
+    htop
   ];
 
   home.keyboard.layout = "fr";
@@ -110,6 +111,7 @@ in
 
       keybindings = lib.mkOptionDefault {
         "${mod}+x" = "exec swaylock -c '#000100'";
+
         "${mod}+ampersand" = "workspace 1";
         "${mod}+eacute" = "workspace 2";
         "${mod}+quotedbl" = "workspace 3";
@@ -120,6 +122,17 @@ in
         "${mod}+underscore" = "workspace 8";
         "${mod}+ccedilla" = "workspace 9";
         "${mod}+agrave" = "workspace 10";
+
+        "${mod}+1" = "move to workspace 1";
+        "${mod}+2" = "move to workspace 2";
+        "${mod}+3" = "move to workspace 3";
+        "${mod}+4" = "move to workspace 4";
+        "${mod}+5" = "move to workspace 5";
+        "${mod}+6" = "move to workspace 6";
+        "${mod}+7" = "move to workspace 7";
+        "${mod}+8" = "move to workspace 8";
+        "${mod}+9" = "move to workspace 9";
+        "${mod}+0" = "move to workspace 10";
       };
 
       bars = [ 
