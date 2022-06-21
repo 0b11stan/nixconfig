@@ -1,10 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./cli/secrets.nix
     ./cli/neovim.nix
-    ./gui/sway.nix
     ./gui/i3status.nix
+    ./gui/sway.nix
     ./gui/qutebrowser.nix
   ];
 
