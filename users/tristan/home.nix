@@ -6,6 +6,7 @@
     ./gui/i3status.nix
     ./gui/sway.nix
     ./gui/qutebrowser.nix
+    ./gui/alacritty.nix
   ];
 
   programs.home-manager.enable = true;
@@ -28,8 +29,6 @@
     bemenu
     pavucontrol
   ];
-
-  programs.alacritty.enable = true;
 
   programs.bash.enable = true;
 

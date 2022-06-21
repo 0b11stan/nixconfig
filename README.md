@@ -11,13 +11,13 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 
 ## Todo's
 
-* [x] init the project
+* [x] [neovim](http://neovim.io/)
 * [x] [swaywm](https://nixos.wiki/wiki/Sway)
 * [x] [password store](https://www.passwordstore.org/)
 * [x] [qutebrowser](https://www.qutebrowser.org)
-* [x] [neovim](http://neovim.io/)
+* [x] [alacritty](https://github.com/alacritty/alacritty)
 * [x] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
-* [ ] [tutanota](https://tutanota.com/)
+* [x] [tutanota](https://tutanota.com/)
 * [ ] [nix fmt on nvim save](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-fmt.html)
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)

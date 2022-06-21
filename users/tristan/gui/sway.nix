@@ -25,6 +25,8 @@ in
       terminal = "alacritty";
       menu = "bemenu";
 
+      gaps.smartBorders = "on";
+
       keybindings = lib.mkOptionDefault {
         "${mod}+space" = "floating toggle";
 
