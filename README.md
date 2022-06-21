@@ -18,9 +18,8 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 * [x] [alacritty](https://github.com/alacritty/alacritty)
 * [x] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
 * [x] [tutanota](https://tutanota.com/)
-* [x] [format nix files on save](https://github.com/kamadorueda/alejandra)
+* [x] podman
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)
-* [ ] setup rust
-* [ ] setup python
-* [ ] setup podman
+* [ ] format python files on save
+* [ ] format rust files on save
