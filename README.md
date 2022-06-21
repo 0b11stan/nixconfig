@@ -21,5 +21,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 * [x] podman
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)
+* [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
+* [ ] format markdown files on save
 * [ ] format python files on save
 * [ ] format rust files on save
