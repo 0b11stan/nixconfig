@@ -16,6 +16,7 @@ in
     tutanota-desktop
     pass
     htop
+    bemenu
   ];
 
   home.keyboard.layout = "fr";
@@ -95,6 +96,8 @@ in
   wayland.windowManager.sway = {
     enable = true;
     config = {
+      # pour voir la config exacte appliquée
+      # $ home-manager option wayland.windowManager.sway.config | less
 
       input = {
         "type:keyboard" = {
@@ -108,9 +111,15 @@ in
       right = "m";
 
       terminal = "alacritty";
+      menu = "bemenu";
 
       keybindings = lib.mkOptionDefault {
-        "${mod}+x" = "exec swaylock -c '#000100'";
+        "${mod}+space" = "floating toggle";
+
+        "${mod}+h" = "splith";
+        "${mod}+v" = "splitv";
+
+        "${mod}+d" = "exec bemenu-run -m 1 -p '>' --fn 'monospace 10' -H 18";
 
         "${mod}+ampersand" = "workspace 1";
         "${mod}+eacute" = "workspace 2";

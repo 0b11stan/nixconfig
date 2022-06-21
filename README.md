@@ -12,7 +12,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 ## Todo's
 
 * [x] init the project
-* [ ] [swaywm](https://nixos.wiki/wiki/Sway)
+* [x] [swaywm](https://nixos.wiki/wiki/Sway)
 * [ ] [password store](https://www.passwordstore.org/)
 * [ ] [qutebrowser](https://www.qutebrowser.org)
 * [ ] [neovim](http://neovim.io/)
