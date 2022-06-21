@@ -16,7 +16,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 * [x] [password store](https://www.passwordstore.org/)
 * [x] [qutebrowser](https://www.qutebrowser.org)
 * [x] [neovim](http://neovim.io/)
-* [ ] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
+* [x] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
 * [ ] [tutanota](https://tutanota.com/)
 * [ ] [nix fmt on nvim save](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-fmt.html)
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)

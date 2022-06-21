@@ -26,6 +26,7 @@
     tutanota-desktop
     htop
     bemenu
+    pavucontrol
   ];
 
   programs.alacritty.enable = true;

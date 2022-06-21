@@ -21,16 +21,13 @@
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
 
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = true;
   hardware.opengl.enable = true;
-
   services.openssh.enable = true;
 
   users.users.tristan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "audio" ];
   };
 
   console.keyMap = "fr";
