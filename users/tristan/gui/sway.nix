@@ -30,6 +30,32 @@ in {
 
       gaps.smartBorders = "on";
 
+      workspaceOutputAssign = [
+        {
+          output = "DP-1";
+          workspace = "1";
+        }
+        {
+          output = "DP-2";
+          workspace = "5";
+        }
+        {
+          output = "HDMI-A-1";
+          workspace = "10";
+        }
+      ];
+
+      assigns = {
+        "1" = [{window_role = "browser-window";}];
+        "10" = [{app_id = "org.qutebrowser.qutebrowser";}];
+      };
+
+      startup = [
+        {command = "tutanota-desktop";}
+        {command = "signal-desktop";}
+        {command = "qutebrowser";}
+      ];
+
       keybindings = lib.mkOptionDefault {
         "${mod}+space" = "floating toggle";
 
@@ -38,7 +64,7 @@ in {
 
         "${mod}+d" = "exec bemenu-run -m 1 -p '>' --fn 'monospace 10' -H 18";
 
-        "${mod}+ampersand" = "workspace 1";
+        "${mod}+ampersand" = "workspace 1; layout stacking";
         "${mod}+eacute" = "workspace 2";
         "${mod}+quotedbl" = "workspace 3";
         "${mod}+apostrophe" = "workspace 4";

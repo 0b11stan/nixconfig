@@ -23,12 +23,14 @@
     git
     file
     htop
+    jq
     alejandra
 
     # gui
     hack-font
     bemenu
     tutanota-desktop
+    signal-desktop
     pavucontrol
   ];
 
