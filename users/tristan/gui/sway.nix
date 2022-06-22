@@ -95,12 +95,15 @@ in {
               border = "#333333";
               text = "#ffffff";
             };
+
             background = "#000000";
+
             bindingMode = {
               background = "#900000";
               border = "#2f343a";
               text = "#ffffff";
             };
+
             focusedBackground = null;
             focusedSeparator = null;
             focusedStatusline = null;
@@ -109,26 +112,32 @@ in {
               border = "#4c7899";
               text = "#ffffff";
             };
+
             inactiveWorkspace = {
               background = "#222222";
               border = "#333333";
               text = "#888888";
             };
+
             separator = "#666666";
             statusline = "#ffffff";
+
             urgentWorkspace = {
               background = "#900000";
               border = "#2f343a";
               text = "#ffffff";
             };
           };
+
           command = "${pkgs.sway}/bin/swaybar";
+
           extraConfig = "";
           fonts = {
             names = ["monospace"];
-            size = 8.0;
+            size = 9.0;
             style = "";
           };
+
           hiddenState = "hide";
           id = "bar-0";
           mode = "dock";
