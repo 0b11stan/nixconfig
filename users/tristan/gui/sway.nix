@@ -5,15 +5,19 @@
   ...
 }: let
   mod = config.wayland.windowManager.sway.config.modifier;
+  cRed = "#d09a9a";
+  cFocused = "#c41658";
+  cWhite = "#ffffff";
+  cGreyLight = "#777777";
+  cGrey = "#555555";
+  cGreyDark = "#333333";
+  cBlack = "#111111";
 in {
   fonts.fontconfig.enable = true;
 
   wayland.windowManager.sway = {
     enable = true;
     config = {
-      # pour voir la config exacte appliquée
-      # $ home-manager option wayland.windowManager.sway.config | less
-
       input = {
         "type:keyboard" = {
           xkb_layout = "fr";
@@ -28,6 +32,7 @@ in {
       terminal = "alacritty";
       menu = "bemenu";
 
+      window.hideEdgeBorders = "both";
       gaps.smartBorders = "on";
 
       workspaceOutputAssign = [
@@ -87,46 +92,69 @@ in {
         "${mod}+0" = "move to workspace 10";
       };
 
+      colors.focused = {
+        background = "${cFocused}";
+        border = "${cFocused}";
+        childBorder = "${cFocused}";
+        indicator = "${cFocused}";
+        text = "${cWhite}";
+      };
+
+      colors.focusedInactive = {
+        background = "${cGreyDark}";
+        border = "${cGreyDark}";
+        childBorder = "${cGreyDark}";
+        indicator = "${cGreyDark}";
+        text = "${cGreyLight}";
+      };
+
+      colors.unfocused = {
+        background = "${cGreyDark}";
+        border = "${cGreyDark}";
+        childBorder = "${cGreyDark}";
+        indicator = "${cGreyDark}";
+        text = "${cGreyLight}";
+      };
+
       bars = [
         {
           colors = {
             activeWorkspace = {
-              background = "#5f676a";
-              border = "#333333";
-              text = "#ffffff";
-            };
-
-            background = "#000000";
-
-            bindingMode = {
-              background = "#900000";
-              border = "#2f343a";
-              text = "#ffffff";
-            };
-
-            focusedBackground = null;
-            focusedSeparator = null;
-            focusedStatusline = null;
-            focusedWorkspace = {
-              background = "#285577";
-              border = "#4c7899";
-              text = "#ffffff";
+              background = "${cGreyLight}";
+              border = "${cGreyLight}";
+              text = "${cWhite}";
             };
 
             inactiveWorkspace = {
-              background = "#222222";
-              border = "#333333";
-              text = "#888888";
+              background = "${cGreyDark}";
+              border = "${cGreyDark}";
+              text = "${cGreyLight}";
             };
 
-            separator = "#666666";
-            statusline = "#ffffff";
+            focusedWorkspace = {
+              background = "${cFocused}";
+              border = "${cFocused}";
+              text = "${cWhite}";
+            };
+
+            bindingMode = {
+              background = "${cRed}";
+              border = "${cGrey}";
+              text = "${cWhite}";
+            };
 
             urgentWorkspace = {
-              background = "#900000";
-              border = "#2f343a";
-              text = "#ffffff";
+              background = "${cRed}";
+              border = "${cGrey}";
+              text = "${cWhite}";
             };
+
+            background = "${cBlack}";
+            focusedBackground = null;
+            focusedSeparator = null;
+            focusedStatusline = null;
+            separator = "${cGreyLight}";
+            statusline = "${cWhite}";
           };
 
           command = "${pkgs.sway}/bin/swaybar";
