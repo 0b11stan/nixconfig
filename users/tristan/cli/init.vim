@@ -1,3 +1,4 @@
+set syntax
 set number
 set expandtab
 set tabstop=2
@@ -53,4 +54,9 @@ hi CursorColumn cterm=NONE ctermbg=238
 au BufRead,BufNewFile *.nix set filetype=nix
 
 " FMTs
-autocmd BufWritePost *.nix call system('alejandra -q .') | bufdo edit
+function Fmt(cmd)
+  normal Mt
+  execute a:cmd
+  normal `t
+endfunction
+autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
