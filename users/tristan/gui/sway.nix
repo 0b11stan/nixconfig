@@ -86,28 +86,32 @@ in {
         "${mod}+0" = "move to workspace 10";
       };
 
-      colors.focused = {
-        background = "${colors.magenta}";
-        border = "${colors.magenta}";
-        childBorder = "${colors.magenta}";
-        indicator = "${colors.magenta}";
-        text = "${colors.white}";
-      };
+      colors = {
+        background = "${colors.greyLight}";
 
-      colors.focusedInactive = {
-        background = "${colors.greyDark}";
-        border = "${colors.greyDark}";
-        childBorder = "${colors.greyDark}";
-        indicator = "${colors.greyDark}";
-        text = "${colors.greyLight}";
-      };
+        focused = {
+          background = "${colors.magenta}";
+          border = "${colors.magenta}";
+          childBorder = "${colors.magenta}";
+          indicator = "${colors.magenta}";
+          text = "${colors.greyDark}";
+        };
 
-      colors.unfocused = {
-        background = "${colors.greyDark}";
-        border = "${colors.greyDark}";
-        childBorder = "${colors.greyDark}";
-        indicator = "${colors.greyDark}";
-        text = "${colors.greyLight}";
+        focusedInactive = {
+          background = "${colors.greyLight}";
+          border = "${colors.greyLight}";
+          childBorder = "${colors.greyLight}";
+          indicator = "${colors.greyLight}";
+          text = "${colors.white}";
+        };
+
+        unfocused = {
+          background = "${colors.greyDark}";
+          border = "${colors.greyDark}";
+          childBorder = "${colors.greyDark}";
+          indicator = "${colors.greyDark}";
+          text = "${colors.greyLight}";
+        };
       };
 
       bars = [
