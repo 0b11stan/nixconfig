@@ -5,13 +5,7 @@
   ...
 }: let
   mod = config.wayland.windowManager.sway.config.modifier;
-  cRed = "#d09a9a";
-  cFocused = "#c41658";
-  cWhite = "#ffffff";
-  cGreyLight = "#777777";
-  cGrey = "#555555";
-  cGreyDark = "#333333";
-  cBlack = "#111111";
+  colors = import ./colors.nix;
 in {
   fonts.fontconfig.enable = true;
 
@@ -93,68 +87,68 @@ in {
       };
 
       colors.focused = {
-        background = "${cFocused}";
-        border = "${cFocused}";
-        childBorder = "${cFocused}";
-        indicator = "${cFocused}";
-        text = "${cWhite}";
+        background = "${colors.magenta}";
+        border = "${colors.magenta}";
+        childBorder = "${colors.magenta}";
+        indicator = "${colors.magenta}";
+        text = "${colors.white}";
       };
 
       colors.focusedInactive = {
-        background = "${cGreyDark}";
-        border = "${cGreyDark}";
-        childBorder = "${cGreyDark}";
-        indicator = "${cGreyDark}";
-        text = "${cGreyLight}";
+        background = "${colors.greyDark}";
+        border = "${colors.greyDark}";
+        childBorder = "${colors.greyDark}";
+        indicator = "${colors.greyDark}";
+        text = "${colors.greyLight}";
       };
 
       colors.unfocused = {
-        background = "${cGreyDark}";
-        border = "${cGreyDark}";
-        childBorder = "${cGreyDark}";
-        indicator = "${cGreyDark}";
-        text = "${cGreyLight}";
+        background = "${colors.greyDark}";
+        border = "${colors.greyDark}";
+        childBorder = "${colors.greyDark}";
+        indicator = "${colors.greyDark}";
+        text = "${colors.greyLight}";
       };
 
       bars = [
         {
           colors = {
             activeWorkspace = {
-              background = "${cGreyLight}";
-              border = "${cGreyLight}";
-              text = "${cWhite}";
+              background = "${colors.greyLight}";
+              border = "${colors.greyLight}";
+              text = "${colors.white}";
             };
 
             inactiveWorkspace = {
-              background = "${cGreyDark}";
-              border = "${cGreyDark}";
-              text = "${cGreyLight}";
+              background = "${colors.greyDark}";
+              border = "${colors.greyDark}";
+              text = "${colors.greyLight}";
             };
 
             focusedWorkspace = {
-              background = "${cFocused}";
-              border = "${cFocused}";
-              text = "${cWhite}";
+              background = "${colors.magenta}";
+              border = "${colors.magenta}";
+              text = "${colors.greyDark}";
             };
 
             bindingMode = {
-              background = "${cRed}";
-              border = "${cGrey}";
-              text = "${cWhite}";
+              background = "${colors.red}";
+              border = "${colors.grey}";
+              text = "${colors.white}";
             };
 
             urgentWorkspace = {
-              background = "${cRed}";
-              border = "${cGrey}";
-              text = "${cWhite}";
+              background = "${colors.red}";
+              border = "${colors.grey}";
+              text = "${colors.white}";
             };
 
-            background = "${cBlack}";
+            background = "${colors.black}";
             focusedBackground = null;
             focusedSeparator = null;
             focusedStatusline = null;
-            separator = "${cGreyLight}";
-            statusline = "${cWhite}";
+            separator = "${colors.greyLight}";
+            statusline = "${colors.white}";
           };
 
           command = "${pkgs.sway}/bin/swaybar";

@@ -1,7 +1,22 @@
-{...}: {
+{...}: let
+  colors = import ./colors.nix;
+in {
   programs.alacritty = {
     enable = true;
     settings = {
+      colors = {
+        primary.background = "${colors.black}";
+        normal = {
+          black = "${colors.black}";
+          white = "${colors.white}";
+          red = "${colors.red}";
+          green = "${colors.green}";
+          yellow = "${colors.yellow}";
+          blue = "${colors.blue}";
+          magenta = "${colors.magenta}";
+          cyan = "${colors.cyan}";
+        };
+      };
       live_config_reload = true;
       key_bindings = [
         {

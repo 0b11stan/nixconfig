@@ -1,9 +1,14 @@
-{...}: {
+{...}: let
+  colors = import ./colors.nix;
+in {
   programs.i3status = {
     enable = true;
     general = {
       colors = true;
       interval = 1;
+      color_good = "${colors.green}";
+      color_degraded = "${colors.yellow}";
+      color_bad = "${colors.red}";
     };
     modules = {
       "wireless _first_".enable = false;
