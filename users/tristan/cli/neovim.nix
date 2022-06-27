@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    rnix-lsp
+    python39
     python39Packages.python-lsp-server
     python39Packages.autopep8
   ];
@@ -12,7 +14,10 @@
       nerdtree
       {
         plugin = nvim-lspconfig;
-        config = "lua require 'lspconfig'.pylsp.setup{}";
+        config = ''
+          lua require 'lspconfig'.pylsp.setup{}
+          lua require 'lspconfig'.rnix.setup{}
+        '';
       }
     ];
     extraConfig = builtins.readFile ./init.vim;
