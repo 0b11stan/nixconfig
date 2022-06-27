@@ -60,3 +60,4 @@ function Fmt(cmd)
   normal `t
 endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
+autocmd BufWritePre *.py call Fmt('%!autopep8 -')

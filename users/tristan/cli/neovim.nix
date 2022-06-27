@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     python39Packages.python-lsp-server
+    python39Packages.autopep8
   ];
 
   programs.neovim = {
