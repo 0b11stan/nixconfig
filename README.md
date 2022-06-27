@@ -1,7 +1,5 @@
 # My nixos configuration files
 
-This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylor) and [his videos](https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-).
-
 ## Useful links
 
 * [NixOS Wiki](https://nixos.wiki/wiki/Main_Page)
