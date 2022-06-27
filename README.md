@@ -18,7 +18,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 * [x] [alacritty](https://github.com/alacritty/alacritty)
 * [x] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
 * [x] [tutanota](https://tutanota.com/)
-* [x] podman
+* [x] [podman](https://podman.io/)
 * [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)

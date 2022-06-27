@@ -112,6 +112,14 @@ in {
           indicator = "${colors.greyDark}";
           text = "${colors.greyLight}";
         };
+
+        urgent = {
+          background = "${colors.red}";
+          border = "${colors.red}";
+          childBorder = "${colors.red}";
+          indicator = "${colors.red}";
+          text = "${colors.greyDark}";
+        };
       };
 
       bars = [
@@ -143,8 +151,8 @@ in {
 
             urgentWorkspace = {
               background = "${colors.red}";
-              border = "${colors.grey}";
-              text = "${colors.white}";
+              border = "${colors.red}";
+              text = "${colors.greyDark}";
             };
 
             background = "${colors.black}";
