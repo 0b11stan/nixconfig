@@ -19,7 +19,7 @@ This is heavily inspired by the work of [Wil Taylor](https://github.com/wiltaylo
 * [x] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
 * [x] [tutanota](https://tutanota.com/)
 * [x] [podman](https://podman.io/)
-* [ ] [setup an lsp client for neovim](https://github.com/autozimu/LanguageClient-neovim)
+* [x] [setup an lsp client for neovim](https://neovim.io/doc/user/lsp.html)
 * [ ] [setup nix's lsp](https://github.com/nix-community/rnix-lsp)
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save

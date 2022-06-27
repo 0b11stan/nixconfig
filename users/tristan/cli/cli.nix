@@ -10,5 +10,6 @@
     htop
     jq
     alejandra
+    python39
   ];
 }
