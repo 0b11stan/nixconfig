@@ -10,17 +10,13 @@
 
 ## Todo's
 
-* [x] [neovim](http://neovim.io/)
-* [x] [swaywm](https://nixos.wiki/wiki/Sway)
-* [x] [password store](https://www.passwordstore.org/)
-* [x] [qutebrowser](https://www.qutebrowser.org)
-* [x] [alacritty](https://github.com/alacritty/alacritty)
-* [x] [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
-* [x] [tutanota](https://tutanota.com/)
-* [x] [podman](https://podman.io/)
-* [x] [setup lsp for neovim](https://neovim.io/doc/user/lsp.html)
-* [x] format python files on save
-* [x] format nix files on save
-* [x] format rust files on save
+* [x] editor: [neovim](http://neovim.io/) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/cli/neovim.nix))
+* [x] window manager: [swaywm](https://nixos.wiki/wiki/Sway) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/sway.nix))
+* [x] password manager: [password store](https://www.passwordstore.org/) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/cli/secrets.nix))
+* [x] browser: [qutebrowser](https://www.qutebrowser.org) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/qutebrowser.nix))
+* [x] terminal: [alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/alacritty.nix))
+* [x] communication: [tutanota](https://tutanota.com/) and [signal](https://www.signal.org/)
+* [x] containerization: [podman](https://podman.io/)
+* [x] format python, nix and rust files on save ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/cli/init.vim))
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save
