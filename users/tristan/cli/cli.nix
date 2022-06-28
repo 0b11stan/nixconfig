@@ -12,4 +12,6 @@
     alejandra
     python39
   ];
+
+  programs.bash.enable = true;
 }
