@@ -19,8 +19,8 @@
 * [x] [tutanota](https://tutanota.com/)
 * [x] [podman](https://podman.io/)
 * [x] [setup lsp for neovim](https://neovim.io/doc/user/lsp.html)
-* [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [x] format python files on save
 * [x] format nix files on save
+* [x] format rust files on save
+* [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save
-* [ ] format rust files on save

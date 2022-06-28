@@ -61,3 +61,4 @@ function Fmt(cmd)
 endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
 autocmd BufWritePre *.py call Fmt('%!autopep8 -')
+autocmd BufWritePre *.py call Fmt('%!rustfmt')

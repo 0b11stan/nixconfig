@@ -1,6 +1,15 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    # nix
     rnix-lsp
+
+    # rust
+    cargo
+    rustc
+    rustfmt
+    rust-analyzer
+
+    # python
     python39
     python39Packages.python-lsp-server
     python39Packages.autopep8
@@ -17,6 +26,7 @@
         config = ''
           lua require 'lspconfig'.pylsp.setup{}
           lua require 'lspconfig'.rnix.setup{}
+          lua require 'lspconfig'.rust_analyzer.setup{}
         '';
       }
     ];
