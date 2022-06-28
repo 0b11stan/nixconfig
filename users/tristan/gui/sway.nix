@@ -63,7 +63,7 @@ in {
 
         "${mod}+d" = "exec bemenu-run -m 1 -p '>' --fn 'monospace 10' -H 18";
 
-        "${mod}+ampersand" = "workspace 1; layout stacking";
+        "${mod}+ampersand" = "workspace 1; layout tabbed";
         "${mod}+eacute" = "workspace 2";
         "${mod}+quotedbl" = "workspace 3";
         "${mod}+apostrophe" = "workspace 4";

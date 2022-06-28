@@ -17,6 +17,5 @@
 * [x] terminal: [alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/alacritty.nix))
 * [x] communication: [tutanota](https://tutanota.com/) and [signal](https://www.signal.org/)
 * [x] containerization: [podman](https://podman.io/)
-* [x] format python, nix and rust files on save ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/cli/init.vim))
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save
