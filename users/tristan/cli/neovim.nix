@@ -21,6 +21,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       nerdtree
+      supertab
       {
         plugin = nvim-lspconfig;
         config = ''

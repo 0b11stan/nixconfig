@@ -62,3 +62,6 @@ endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
 autocmd BufWritePre *.py call Fmt('%!autopep8 -')
 autocmd BufWritePre *.py call Fmt('%!rustfmt')
+
+" Enable lsp's autocomplete
+set omnifunc=v:lua.vim.lsp.omnifunc
