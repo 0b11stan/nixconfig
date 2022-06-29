@@ -11,6 +11,7 @@
     jq
     alejandra
     python39
+    gource
   ];
 
   programs.bash.enable = true;
