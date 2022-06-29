@@ -63,8 +63,10 @@ in {
 
         "${mod}+d" = ''
           exec bemenu-run -m 1 -p '>' --fn 'monospace 10' -H 21 \
-            --tb '#1d1f21' --fb '#1d1f21' --nb '#1d1f21' --hb '#1d1f21' \
-            --tf '#b294bb' --hf '#b294bb' --nf '#c5c8c6'
+            --tb '${colors.black}' --fb '${colors.black}' \
+            --nb '${colors.black}' --hb '${colors.black}' \
+            --tf '${colors.magenta}' --hf '${colors.magenta}' \
+            --nf '${colors.white}'
         '';
 
         "${mod}+ampersand" = "workspace 1; layout tabbed";
