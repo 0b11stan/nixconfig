@@ -33,7 +33,7 @@
 
   users.users.tristan = {
     isNormalUser = true;
-    extraGroups = ["wheel" "audio"];
+    extraGroups = ["wheel" "audio" "wireshark"];
   };
 
   console.keyMap = "fr";

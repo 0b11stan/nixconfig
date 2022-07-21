@@ -3,6 +3,7 @@
     ./secrets.nix
     ./neovim.nix
     ./git.nix
+    ./offsec.nix
   ];
 
   home.packages = with pkgs; [
