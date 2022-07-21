@@ -12,5 +12,6 @@
     tutanota-desktop
     signal-desktop
     pavucontrol
+    libreoffice
   ];
 }

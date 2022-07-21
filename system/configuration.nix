@@ -17,8 +17,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "master";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "master";
+    networkmanager.enable = true;
+    nameservers = ["1.1.1.1" "1.0.0.1"];
+    resolvconf.enable = false;
+    #resolvconf.useLocalResolver = true;
+  };
 
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";

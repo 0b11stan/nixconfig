@@ -12,6 +12,10 @@
     alejandra
     python39
     gource
+    bat
+    bind
+    evince
+    openvpn
   ];
 
   programs.bash.enable = true;
