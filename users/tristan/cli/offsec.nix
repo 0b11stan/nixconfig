@@ -4,5 +4,8 @@
     nmap
     wireshark-cli
     metasploit
+    inetutils # for ftp
+    thc-hydra
+    arp-scan
   ];
 }
