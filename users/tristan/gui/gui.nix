@@ -13,5 +13,6 @@
     signal-desktop
     pavucontrol
     libreoffice
+    drawio
   ];
 }
