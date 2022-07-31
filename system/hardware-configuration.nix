@@ -13,10 +13,22 @@
   ];
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enableCryptodisk = true;
-  boot.loader.grub.device = "/dev/disk/by-label/boot";
+  boot.loader.grub = {
+    #enableCryptodisk = true;
+    #device = "/dev/disk/by-label/boot";
 
-  boot.initrd.luks.devices.crypted.device = "/dev/disk/by-label/crypted";
+    enable = true;
+    version = 2;
+    device = "nodev";
+    efiSupport = true;
+    enableCryptodisk = true;
+  };
+
+  boot.initrd.luks.devices.crypted = {
+    device = "/dev/disk/by-label/crypted";
+    preLVM = true;
+  };
+
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
   boot.initrd.kernelModules = ["dm-snapshot"];
   boot.kernelModules = ["kvm-intel" "wl"];
