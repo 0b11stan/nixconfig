@@ -14,6 +14,7 @@
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enableCryptodisk = true;
+  boot.loader.grub.device = "/dev/disk/by-label/boot";
 
   boot.initrd.luks.devices.crypted.device = "/dev/disk/by-label/crypted";
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
