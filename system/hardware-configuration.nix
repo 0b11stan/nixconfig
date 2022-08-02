@@ -12,6 +12,12 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=2
+    options hid_apple swap_opt_cmd=1
+    options hid_apple swap_fn_leftctrl=1
+  '';
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     #enableCryptodisk = true;

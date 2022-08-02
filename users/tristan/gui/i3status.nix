@@ -12,7 +12,7 @@ in {
     };
     modules = {
       "wireless _first_".enable = false;
-      "battery all".enable = false;
+      "battery all".enable = true;
       "ipv6".enable = false;
       "volume master" = {
         position = 0;
