@@ -22,6 +22,7 @@ in {
           device = "pulse:1";
         };
       };
+      # TODO : add wireless
       "ethernet _first_" = {
         position = 1;
         settings = {
