@@ -49,12 +49,6 @@ in {
         "10" = [{app_id = "org.qutebrowser.qutebrowser";}];
       };
 
-      startup = [
-        {command = "tutanota-desktop";}
-        {command = "signal-desktop";}
-        {command = "qutebrowser";}
-      ];
-
       keybindings = lib.mkOptionDefault {
         "${mod}+space" = "floating toggle";
 
@@ -69,7 +63,7 @@ in {
             --nf '${colors.white}'
         '';
 
-        "${mod}+ampersand" = "workspace 1; layout tabbed";
+        "${mod}+ampersand" = "workspace 1";
         "${mod}+eacute" = "workspace 2";
         "${mod}+quotedbl" = "workspace 3";
         "${mod}+apostrophe" = "workspace 4";

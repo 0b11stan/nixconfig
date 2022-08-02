@@ -17,7 +17,12 @@
     bind
     evince
     openvpn
+    unzip
   ];
+
+  home.shellAliases = {
+    cme = "mkdir -p ~/.cme && podman run -it --rm -v ~/.cme:/root/.cme -v $PWD:/srv -w /srv byt3bl33d3r/crackmapexec";
+  };
 
   programs.bash.enable = true;
 }

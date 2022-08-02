@@ -7,5 +7,7 @@
     inetutils # for ftp
     thc-hydra
     arp-scan
+    macchanger
+    sipcalc
   ];
 }
