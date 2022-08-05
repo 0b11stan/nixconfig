@@ -10,6 +10,7 @@
     file
     htop
     jq
+    htmlq
     alejandra
     python39
     gource
@@ -17,6 +18,7 @@
     bind
     evince
     openvpn
+    zip
     unzip
   ];
 
