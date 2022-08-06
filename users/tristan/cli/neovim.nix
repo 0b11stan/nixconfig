@@ -21,6 +21,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       nerdtree
+      vim-markdown
       supertab
       {
         plugin = nvim-lspconfig;
