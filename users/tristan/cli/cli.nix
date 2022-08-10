@@ -20,6 +20,8 @@
     openvpn
     zip
     unzip
+    gcc
+    gnumake
   ];
 
   home.shellAliases = {

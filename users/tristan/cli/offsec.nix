@@ -9,5 +9,7 @@
     arp-scan
     macchanger
     sipcalc
+    hashcat
+    python39Packages.impacket
   ];
 }
