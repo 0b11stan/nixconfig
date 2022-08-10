@@ -14,5 +14,7 @@
     pavucontrol
     libreoffice
     drawio
+    pandoc
+    noto-fonts-emoji
   ];
 }

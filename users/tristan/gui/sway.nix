@@ -16,6 +16,9 @@ in {
         "type:keyboard" = {
           xkb_layout = "fr";
         };
+        "type:touchpad" = {
+          tap = "enabled";
+        };
       };
 
       left = "j";
