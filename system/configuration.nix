@@ -38,7 +38,10 @@
 
   console.keyMap = "fr";
 
-  virtualisation.podman.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    defaultNetwork.dnsname.enable = true;
+  };
 
   # Open ports in the firewall.
   #networking.firewall.allowedTCPPorts = [4444];

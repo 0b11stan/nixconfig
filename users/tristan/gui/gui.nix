@@ -14,5 +14,6 @@
     pavucontrol
     libreoffice
     drawio
+    pandoc
   ];
 }

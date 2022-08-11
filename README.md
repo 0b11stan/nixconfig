@@ -19,3 +19,4 @@
 * [x] containerization: [podman](https://podman.io/)
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save
+* [ ] add home-manager feature for neovim ftplugins

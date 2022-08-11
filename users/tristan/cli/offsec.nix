@@ -7,5 +7,8 @@
     inetutils # for ftp
     thc-hydra
     arp-scan
+    vim # for xxd
+    ffuf
+    htmlq
   ];
 }

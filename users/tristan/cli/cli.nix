@@ -17,6 +17,9 @@
     bind
     evince
     openvpn
+    noto-fonts-emoji
+    gnumake
+    pandoc
   ];
 
   programs.bash.enable = true;

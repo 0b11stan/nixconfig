@@ -9,6 +9,9 @@
     rustfmt
     rust-analyzer
 
+    # javascript
+    nodePackages.js-beautify
+
     # python
     python39
     python39Packages.python-lsp-server
