@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
@@ -15,11 +16,12 @@
   '';
 
   networking = {
+    useDHCP = lib.mkDefault true;
     hostName = "master";
     networkmanager.enable = true;
     nameservers = ["1.1.1.1" "1.0.0.1"];
     resolvconf.enable = false;
-    #resolvconf.useLocalResolver = true;
+    resolvconf.useLocalResolver = true;
   };
 
   time.timeZone = "Europe/Paris";

@@ -7,30 +7,46 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  isDesktop = builtins.readDir /sys/class/power_supply == {};
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.extraModprobeConfig = ''
-    options hid_apple fnmode=2
-    options hid_apple swap_opt_cmd=1
-    options hid_apple swap_fn_leftctrl=1
-  '';
+  boot.extraModprobeConfig =
+    if builtins.hasAttr "hid_apple" (builtins.readDir /sys/module)
+    then ''
+      options hid_apple fnmode=2
+      options hid_apple swap_opt_cmd=1
+      options hid_apple swap_fn_leftctrl=1
+    ''
+    else "";
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    version = 2;
-    device = "nodev";
-    efiSupport = true;
-    enableCryptodisk = true;
-  };
 
-  boot.initrd.luks.devices.crypted = {
-    device = "/dev/disk/by-label/crypted";
-    preLVM = true;
-  };
+  boot.loader.systemd-boot.enable = isDesktop;
+
+  boot.loader.grub =
+    if isDesktop
+    then {enable = false;}
+    else {
+      enable = true;
+      version = 2;
+      device = "nodev";
+      efiSupport = true;
+      enableCryptodisk = true;
+    };
+
+  boot.initrd.luks.devices =
+    if isDesktop
+    then {}
+    else {
+      crypted = {
+        device = "/dev/disk/by-label/crypted";
+        preLVM = true;
+      };
+    };
 
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
   boot.initrd.kernelModules = ["dm-snapshot"];
@@ -53,13 +69,6 @@
   };
 
   swapDevices = [{device = "/dev/disk/by-label/swap";}];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp7s0.useDHCP = lib.mkDefault true;
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

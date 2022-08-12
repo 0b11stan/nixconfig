@@ -13,5 +13,7 @@
     python39Packages.impacket
     python39Packages.scapy
     certipy
+    vim # for xxd
+    ffuf
   ];
 }

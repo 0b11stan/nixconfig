@@ -1,21 +1,35 @@
-{pkgs, ...}: {
-  imports = [
-    ./i3status.nix
-    ./sway.nix
-    ./qutebrowser.nix
-    ./alacritty.nix
-    ./batterie_alert.nix
-  ];
+{pkgs, ...}: let
+  isDesktop = builtins.readDir /sys/class/power_supply == {};
+in {
+  imports =
+    [
+      ./i3status.nix
+      ./sway.nix
+      ./qutebrowser.nix
+      ./alacritty.nix
+    ]
+    ++ (
+      if isDesktop
+      then [./batterie_alert.nix]
+      else []
+    );
 
   home.packages = with pkgs; [
+    # fonts
     hack-font
-    bemenu
+    noto-fonts-emoji
+
+    # socials
     tutanota-desktop
     signal-desktop
+
+    # utils
     pavucontrol
+    bemenu
+    notify-desktop
+
+    # apps
     libreoffice
     drawio
-    noto-fonts-emoji
-    notify-desktop
   ];
 }

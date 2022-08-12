@@ -51,7 +51,7 @@ hi CursorLine   cterm=NONE ctermbg=238
 hi CursorColumn cterm=NONE ctermbg=238
 
 " Nixos syntax highlight
-au BufRead,BufNewFile *.nix set filetype=nix
+autocmd BufRead,BufNewFile *.nix set filetype=nix
 
 " FMTs
 function Fmt(cmd)
@@ -66,4 +66,5 @@ autocmd BufWritePre *.rs call Fmt('%!rustfmt')
 " Enable lsp's autocomplete
 set omnifunc=v:lua.vim.lsp.omnifunc
 
+" Command execution in markdown
 autocmd BufEnter *.md noremap X yypV:'<,'>!bash<CR>

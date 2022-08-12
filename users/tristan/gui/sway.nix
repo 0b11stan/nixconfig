@@ -6,6 +6,7 @@
 }: let
   mod = config.wayland.windowManager.sway.config.modifier;
   colors = import ./colors.nix;
+  isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
   fonts.fontconfig.enable = true;
 
@@ -57,6 +58,15 @@ in {
         "10" = [{app_id = "org.qutebrowser.qutebrowser";}];
       };
 
+      startup =
+        if isDesktop
+        then [
+          {command = "tutanota-desktop";}
+          {command = "signal-desktop";}
+          {command = "qutebrowser";}
+        ]
+        else [];
+
       keybindings = lib.mkOptionDefault {
         "${mod}+space" = "floating toggle";
 
@@ -71,7 +81,10 @@ in {
             --nf '${colors.white}'
         '';
 
-        "${mod}+ampersand" = "workspace 1";
+        "${mod}+ampersand" =
+          if isDesktop
+          then "workspace 1; layout tabbed"
+          else "workspace 1";
         "${mod}+eacute" = "workspace 2";
         "${mod}+quotedbl" = "workspace 3";
         "${mod}+apostrophe" = "workspace 4";

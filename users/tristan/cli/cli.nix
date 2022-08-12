@@ -7,19 +7,24 @@
   ];
 
   home.packages = with pkgs; [
+    # utilitaires
     file
     htop
+    bat
+    gource
+    bind
+    evince
+    zip
+    unzip
+    openvpn
+
+    # formaters / linters
     jq
     htmlq
     alejandra
+
+    # source / build tool
     python39
-    gource
-    bat
-    bind
-    evince
-    openvpn
-    zip
-    unzip
     gcc
     gnumake
     pandoc

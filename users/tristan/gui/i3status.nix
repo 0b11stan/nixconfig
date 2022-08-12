@@ -1,5 +1,6 @@
 {...}: let
   colors = import ./colors.nix;
+  isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
   programs.i3status = {
     enable = true;
@@ -12,7 +13,7 @@ in {
     };
     modules = {
       "wireless _first_".enable = false;
-      "battery all".enable = true;
+      "battery all".enable = !isDesktop;
       "ipv6".enable = false;
       "volume master" = {
         position = 0;
@@ -22,7 +23,7 @@ in {
           device = "pulse:1";
         };
       };
-      # TODO : add wireless
+      # TODO : add wireless if !isDesktop
       "ethernet _first_" = {
         position = 1;
         settings = {
