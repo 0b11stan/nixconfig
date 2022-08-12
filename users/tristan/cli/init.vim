@@ -65,3 +65,5 @@ autocmd BufWritePre *.rs call Fmt('%!rustfmt')
 
 " Enable lsp's autocomplete
 set omnifunc=v:lua.vim.lsp.omnifunc
+
+autocmd BufEnter *.md noremap X yypV:'<,'>!bash<CR>

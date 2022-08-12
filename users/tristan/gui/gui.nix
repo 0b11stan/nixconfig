@@ -4,6 +4,7 @@
     ./sway.nix
     ./qutebrowser.nix
     ./alacritty.nix
+    ./batterie_alert.nix
   ];
 
   home.packages = with pkgs; [
@@ -14,5 +15,7 @@
     pavucontrol
     libreoffice
     drawio
+    noto-fonts-emoji
+    notify-desktop
   ];
 }

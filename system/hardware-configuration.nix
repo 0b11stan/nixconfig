@@ -20,9 +20,6 @@
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
-    #enableCryptodisk = true;
-    #device = "/dev/disk/by-label/boot";
-
     enable = true;
     version = 2;
     device = "nodev";

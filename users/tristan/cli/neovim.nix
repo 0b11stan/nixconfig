@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    ctags
+
     # nix
     rnix-lsp
 
@@ -21,6 +23,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       nerdtree
+      vim-markdown
       supertab
       {
         plugin = nvim-lspconfig;
