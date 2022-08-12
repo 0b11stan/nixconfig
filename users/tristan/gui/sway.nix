@@ -9,6 +9,11 @@
 in {
   fonts.fontconfig.enable = true;
 
+  programs.mako = {
+    enable = true;
+    defaultTimeout = 10000;
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     config = {
