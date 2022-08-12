@@ -12,5 +12,6 @@
     hashcat
     python39Packages.impacket
     python39Packages.scapy
+    certipy
   ];
 }
