@@ -10,68 +10,106 @@
 
 ## Initial install
 
+Set keyboard layout for `azerty`
+
 ```bash
-# set keyboard layout
 loadkeys fr
+```
 
-# set larger font if screen is 4K
+Set larger font if screen is 4K
+
+```bash
 setfont ter-v32n
+```
 
-# start wpa_supplicant if wifi is needed
+If wifi is needed, start wpa_supplicant and connect to wifi
+
+```bash
 systemctl start wpa_supplicant.service
 
-# connect to wifi
 wpa_cli <<EOF
 add_network
-set_network 0 ssid "$SSID"
-set_network 0 psk "$PASSWORD"
+set_network 0 ssid "$WIFI_SSID"
+set_network 0 psk "$WIFI_PASSWORD"
 set_network 0 key_mgmt WPA-PSK
 enable_network 0
 EOF
+```
 
-# disk partitioning (create 2 partitions)
-# > /dev/sdx1 | start 2048   | end +512MB | EFI System
-# > /dev/sdx2 | start +512MB | end 100%   | Linux LVM
+Using fdisk, create partitions as follow:
+
+| device    | start  | end    | type       |
+|-----------|--------|--------|------------|
+| /dev/sdx1 | 2048   | +512MB | EFI System |
+| /dev/sdx2 | +512MB | 100%   | Linux LVM  |
+
+```bash
 fdisk /dev/sdx
 # TODO : see how to do commands with parted
+```
 
-# create a luks volume
-cryptsetup luksFormat /dev/sdx2
+Create a luks volume label as `crypted`
 
-# open the luks volume called "cryptlvm"
+```bash
+cryptsetup --label crypted luksFormat /dev/sdx2
+```
+
+Open the luks volume and call it anything (e.g. "cryptlvm")
+
+```bash
 cryptsetup open /dev/sdx2 cryptlvm
+```
 
-# create an lvm physical volume
+Configure LVM physical volume and main volume group
+
+```bash
 pvcreate /dev/mapper/cryptlvm
-
-# create a volume group
 vgcreate main /dev/mapper/cryptlvm
+```
 
-# create lvm volumes
+Create LVM volumes
+
+```bash
 lvcreate -L 10G main -n root
 lvcreate -L 10G main -n home
 lvcreate -L 2G main -n swap
+```
 
-# format volumes 
+Format volumes (create appropriate file system on each)
+
+```bash
 mkfs.ext4 -L root /dev/main/root
 mkfs.ext4 -L home /dev/main/home
 mkswap -L swap /dev/main/swap
 mkfs.fat -F 32 -n boot /dev/main/sdx1
+```
 
-# mount filesystem
+Mount the volumes on the live file system ready for the chroot
+
+```bash
 mount /dev/disk/by-label/root /mnt
 mkdir /mnt/home
 mount /dev/disk/by-label/home /mnt/home
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/disk/by-label/swap
+```
 
-# generate nixos /etc/ structure
+Install the system base
+
+```bash
+# create base file hierarchy
 nixos-generate-config --root /mnt
+
+# pull my "main" config from github
 curl -o /mnt/etc/nixos/hardware-configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
 curl -o /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
+
+# use the nixos install tool (chrooting and installing)
 nixos-install
 ```
+
+`reboot` into the new system.
 
 ## Todo's
 
