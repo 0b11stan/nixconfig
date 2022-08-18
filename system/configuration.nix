@@ -30,6 +30,8 @@
   hardware.pulseaudio.enable = true;
   hardware.opengl.enable = true;
 
+  programs.wireshark.enable = true;
+
   users.users.tristan = {
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "wireshark"];

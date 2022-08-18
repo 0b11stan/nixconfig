@@ -9,7 +9,7 @@ in {
       ./alacritty.nix
     ]
     ++ (
-      if isDesktop
+      if !isDesktop
       then [./batterie_alert.nix]
       else []
     );
