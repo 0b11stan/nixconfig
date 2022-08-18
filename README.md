@@ -105,11 +105,36 @@ nixos-generate-config --root /mnt
 curl -o /mnt/etc/nixos/hardware-configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
 curl -o /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
 
-# use the nixos install tool (chrooting and installing)
+# use the nixos install tool (chrooting, installing and choosing root's password)
 nixos-install
 ```
 
-`reboot` into the new system.
+`reboot` into the new system and login as `root`
+
+Change my user's password
+
+```bash
+passwd tristan
+```
+
+Connect again to the wifi
+
+```bash
+wpa_cli <<EOF
+add_network
+set_network 0 ssid "$WIFI_SSID"
+set_network 0 psk "$WIFI_PASSWORD"
+set_network 0 key_mgmt WPA-PSK
+enable_network 0
+EOF
+```
+
+Pull my configuration
+
+```bash
+nix-shell -p git home-manager
+git clone https://github.com/0b11stan/nixconfig.git ~/sources/0b11stan/nixconfig/
+```
 
 ## Todo's
 

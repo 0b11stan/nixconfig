@@ -27,6 +27,11 @@
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
 
+  console = {
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
+    keyMap = "fr";
+  };
+
   hardware.pulseaudio.enable = true;
   hardware.opengl.enable = true;
 
@@ -36,8 +41,6 @@
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "wireshark"];
   };
-
-  console.keyMap = "fr";
 
   virtualisation.podman.enable = true;
 
