@@ -129,11 +129,13 @@ enable_network 0
 EOF
 ```
 
-Pull my configuration
+Pull my configuration and run it
 
 ```bash
 nix-shell -p git home-manager
 git clone https://github.com/0b11stan/nixconfig.git ~/sources/0b11stan/nixconfig/
+cd ~/sources/0b11stan/nixconfig/
+./apply-users.sh
 ```
 
 ## Todo's
