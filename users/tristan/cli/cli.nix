@@ -18,6 +18,7 @@
     unzip
     openvpn
     exfatprogs
+    pciutils
 
     # formaters / linters
     jq
