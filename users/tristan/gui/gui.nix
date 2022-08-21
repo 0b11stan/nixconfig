@@ -27,6 +27,7 @@ in {
     pavucontrol
     bemenu
     notify-desktop
+    wl-clipboard
 
     # apps
     libreoffice

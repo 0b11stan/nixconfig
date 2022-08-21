@@ -129,7 +129,7 @@ enable_network 0
 EOF
 ```
 
-Pull my configuration and run it
+Pull my configuration and apply user environnment
 
 ```bash
 nix-shell -p git home-manager
@@ -137,6 +137,8 @@ git clone https://github.com/0b11stan/nixconfig.git ~/sources/0b11stan/nixconfig
 cd ~/sources/0b11stan/nixconfig/
 ./apply-users.sh
 ```
+
+Then, reboot and upgrade 
 
 ## Todo's
 
@@ -150,3 +152,5 @@ cd ~/sources/0b11stan/nixconfig/
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save
 * [ ] add home-manager feature for neovim ftplugins
+* [ ] colored man pages
+* [ ] merge "system" and "user" config ? (see [here](https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module))
