@@ -32,5 +32,6 @@ in {
     # apps
     libreoffice
     drawio
+    gimp
   ];
 }
