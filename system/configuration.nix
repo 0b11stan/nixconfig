@@ -28,7 +28,10 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
 
   console = {
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
+    font =
+      if builtins.hasAttr "hid_apple" (builtins.readDir /sys/module)
+      then "Lat2-Terminus16"
+      else "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
     keyMap = "fr";
   };
 
