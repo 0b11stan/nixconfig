@@ -17,6 +17,7 @@
     zip
     unzip
     openvpn
+    exfatprogs
 
     # formaters / linters
     jq

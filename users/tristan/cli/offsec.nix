@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     gobuster
     nmap
-    wireshark-cli
     metasploit
     inetutils # for ftp
     thc-hydra
@@ -15,5 +14,7 @@
     certipy
     vim # for xxd
     ffuf
+    openssl
+    john
   ];
 }
