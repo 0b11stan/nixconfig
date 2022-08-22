@@ -150,6 +150,7 @@ Then, reboot and upgrade
 * [x] communication: [tutanota](https://tutanota.com/) and [signal](https://www.signal.org/)
 * [x] containerization: [podman](https://podman.io/)
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
+* [ ] package [bloodhound](https://bloodhound.readthedocs.io/en/latest/installation/linux.html)
 * [ ] format markdown files on save
 * [ ] add home-manager feature for neovim ftplugins
 * [ ] configure colored man pages
