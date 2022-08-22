@@ -152,5 +152,11 @@ Then, reboot and upgrade
 * [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] format markdown files on save
 * [ ] add home-manager feature for neovim ftplugins
-* [ ] colored man pages
+* [ ] configure colored man pages
 * [ ] merge "system" and "user" config ? (see [here](https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module))
+* [ ] install and configure swayidle
+* [ ] install and configure swaylock
+* [ ] failed password attempts trigger a picture (see [this post](https://askubuntu.com/questions/253189/can-i-make-the-webcam-take-a-picture-when-an-incorrect-password-is-entered))
+* [ ] failed password attempts send the photo to myself (using [signal-cli](https://github.com/AsamK/signal-cli))
+* [ ] failed password attempts show the picture on the login screen
+

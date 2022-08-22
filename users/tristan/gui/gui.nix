@@ -7,6 +7,7 @@ in {
       ./sway.nix
       ./qutebrowser.nix
       ./alacritty.nix
+      ./offsec.nix
     ]
     ++ (
       if !isDesktop

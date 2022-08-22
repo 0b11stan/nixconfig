@@ -16,5 +16,6 @@
     ffuf
     openssl
     john
+    aircrack-ng
   ];
 }
