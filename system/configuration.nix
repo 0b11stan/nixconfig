@@ -8,6 +8,8 @@
     ./hardware-configuration.nix
   ];
 
+  boot.cleanTmpDir = true;
+
   nixpkgs.config.allowUnfree = true;
 
   nix.package = pkgs.nixFlakes;
