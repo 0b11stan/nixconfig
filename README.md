@@ -161,3 +161,8 @@ Then, reboot and upgrade
 * [ ] failed password attempts send the photo to myself (using [signal-cli](https://github.com/AsamK/signal-cli))
 * [ ] failed password attempts show the picture on the login screen
 
+## Credits
+
+* [An amazing documentation](https://nixos.org/guides/nix-pills/index.html)
+* [Will T's nixos introduction series](https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
+* [This reddit comment for packaging workflow](https://www.reddit.com/r/NixOS/comments/drdq0j/comment/f6huuv9/)

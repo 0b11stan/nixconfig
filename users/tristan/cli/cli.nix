@@ -21,6 +21,7 @@
     pciutils
     tree
     nixpkgs-fmt
+    mdfmt
 
     # formaters / linters
     jq
