@@ -149,7 +149,7 @@ Then, reboot and upgrade
 * [x] terminal: [alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/alacritty.nix))
 * [x] communication: [tutanota](https://tutanota.com/) and [signal](https://www.signal.org/)
 * [x] containerization: [podman](https://podman.io/)
-* [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
+* [x] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] package [bloodhound](https://bloodhound.readthedocs.io/en/latest/installation/linux.html)
 * [ ] format markdown files on save
 * [ ] add home-manager feature for neovim ftplugins
