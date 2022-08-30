@@ -70,7 +70,7 @@ vgcreate main /dev/mapper/cryptlvm
 Create LVM volumes
 
 ```bash
-lvcreate -L 10G main -n root
+lvcreate -L 20G main -n root
 lvcreate -L 10G main -n home
 lvcreate -L 2G main -n swap
 ```
