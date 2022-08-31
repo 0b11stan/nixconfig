@@ -6,12 +6,16 @@
 
   programs.home-manager.enable = true;
 
-  home.username = "tristan";
-  home.homeDirectory = "/home/tristan";
-  home.keyboard.layout = "fr";
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    WLR_NO_HARDWARE_CURSORS = 1;
+  nixpkgs.overlays = [(import ./pkgs)];
+
+  home = {
+    username = "tristan";
+    homeDirectory = "/home/tristan";
+    keyboard.layout = "fr";
+    sessionVariables = {
+      EDITOR = "nvim";
+      WLR_NO_HARDWARE_CURSORS = 1;
+    };
   };
 
   # This value determines the Home Manager release that your

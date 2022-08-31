@@ -20,6 +20,7 @@
     pciutils
     tree
     nixpkgs-fmt
+    mdfmt
 
     # apps
     transmission
@@ -40,6 +41,7 @@
     cme = "mkdir -p ~/.cme && podman run -it --rm -v ~/.cme:/root/.cme -v $PWD:/srv -w /srv byt3bl33d3r/crackmapexec";
     ip = "ip --color";
     watch = "watch --color";
+    tree = "tree -C";
   };
 
   # TODO : add notifications for irssi ? (via perl script ?)

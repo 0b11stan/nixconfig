@@ -70,7 +70,7 @@ vgcreate main /dev/mapper/cryptlvm
 Create LVM volumes
 
 ```bash
-lvcreate -L 10G main -n root
+lvcreate -L 20G main -n root
 lvcreate -L 10G main -n home
 lvcreate -L 2G main -n swap
 ```
@@ -149,7 +149,7 @@ Then, reboot and upgrade
 * [x] terminal: [alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/alacritty.nix))
 * [x] communication: [tutanota](https://tutanota.com/) and [signal](https://www.signal.org/)
 * [x] containerization: [podman](https://podman.io/)
-* [ ] package [mdfmt](https://github.com/moorereason/mdfmt)
+* [x] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] package [bloodhound](https://bloodhound.readthedocs.io/en/latest/installation/linux.html)
 * [ ] format markdown files on save
 * [ ] add home-manager feature for neovim ftplugins
@@ -161,3 +161,8 @@ Then, reboot and upgrade
 * [ ] failed password attempts send the photo to myself (using [signal-cli](https://github.com/AsamK/signal-cli))
 * [ ] failed password attempts show the picture on the login screen
 
+## Credits
+
+* [An amazing documentation](https://nixos.org/guides/nix-pills/index.html)
+* [Will T's nixos introduction series](https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
+* [This reddit comment for packaging workflow](https://www.reddit.com/r/NixOS/comments/drdq0j/comment/f6huuv9/)
