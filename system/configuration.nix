@@ -47,6 +47,8 @@
     extraGroups = ["wheel" "audio" "wireshark"];
   };
 
+  security.pam.services.swaylock = {};
+
   virtualisation.podman.enable = true;
 
   # Open ports in the firewall.

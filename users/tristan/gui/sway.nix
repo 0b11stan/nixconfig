@@ -8,6 +8,10 @@
   colors = import ./colors.nix;
   isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
+  home.packages = with pkgs; [
+    swaylock
+  ];
+
   fonts.fontconfig.enable = true;
 
   programs.mako = {
@@ -80,6 +84,8 @@ in {
             --tf '${colors.magenta}' --hf '${colors.magenta}' \
             --nf '${colors.white}'
         '';
+
+        "${mod}+Shift+x" = "exec swaylock -c '#000100'";
 
         "${mod}+ampersand" =
           if isDesktop
