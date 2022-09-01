@@ -20,7 +20,7 @@ in {
   };
 
   services.swayidle = {
-    enable = true;
+    enable = !isDesktop;
     timeouts = [
       {
         timeout = 30;
