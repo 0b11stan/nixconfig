@@ -13,7 +13,6 @@
     bat
     gource
     bind
-    evince
     zip
     unzip
     openvpn
@@ -22,6 +21,9 @@
     tree
     nixpkgs-fmt
     mdfmt
+
+    # apps
+    transmission
 
     # formaters / linters
     jq

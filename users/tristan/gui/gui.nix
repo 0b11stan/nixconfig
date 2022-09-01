@@ -31,6 +31,7 @@ in {
     wl-clipboard
 
     # apps
+    evince
     libreoffice
     drawio
     gimp
