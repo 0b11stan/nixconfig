@@ -1,3 +1,4 @@
 self: super: {
-  mdfmt = super.callPackage ./mdfmt.nix {};
+  # TODO : fix this package
+  #mdfmt = super.callPackage ./mdfmt.nix {};
 }

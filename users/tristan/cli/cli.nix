@@ -20,7 +20,6 @@
     pciutils
     tree
     nixpkgs-fmt
-    mdfmt
 
     # apps
     transmission
