@@ -103,7 +103,7 @@ nixos-generate-config --root /mnt
 
 # pull my "main" config from github
 curl -o /mnt/etc/nixos/hardware-configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
-curl -o /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
+curl -o /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/configuration.nix
 
 # use the nixos install tool (chrooting, installing and choosing root's password)
 nixos-install
@@ -120,13 +120,16 @@ passwd tristan
 Connect again to the wifi
 
 ```bash
-wpa_cli <<EOF
-add_network
-set_network 0 ssid "$WIFI_SSID"
-set_network 0 psk "$WIFI_PASSWORD"
-set_network 0 key_mgmt WPA-PSK
-enable_network 0
-EOF
+nmcli device wifi connect "$WIFI_SSID" password "$WIFI_PASSWORD"
+```
+
+**Log back as tristan**
+
+Add home manager channel
+
+```bash
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
+nix-channel --update
 ```
 
 Pull my configuration and apply user environnment
