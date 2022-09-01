@@ -19,6 +19,28 @@ in {
     defaultTimeout = 10000;
   };
 
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 30;
+        command = "notify-desktop 'IDLE' 'I am going to sleep in 30s'";
+      }
+      {
+        timeout = 50;
+        command = "notify-desktop 'IDLE' 'I am going to sleep in 10s'";
+      }
+      {
+        timeout = 55;
+        command = "notify-desktop -t 5000 'IDLE' 'I am going to sleep in 5s'";
+      }
+      {
+        timeout = 60;
+        command = "swaylock -fF -c '#000100'";
+      }
+    ];
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     config = {
