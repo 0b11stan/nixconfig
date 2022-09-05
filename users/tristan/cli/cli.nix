@@ -23,6 +23,7 @@
 
     # apps
     transmission
+    qemu
 
     # formaters / linters
     jq
