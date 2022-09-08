@@ -234,3 +234,5 @@ in {
     };
   };
 }
+# TODO : https://www.reddit.com/r/swaywm/comments/gd7976/swayidle_in_lock_script_can_i_temporarily_disable/
+
