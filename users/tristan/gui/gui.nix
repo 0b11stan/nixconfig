@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
   imports =
@@ -15,6 +19,11 @@ in {
       else []
     );
 
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "discord"
+    ];
+
   home.packages = with pkgs; [
     # fonts
     hack-font
@@ -23,6 +32,7 @@ in {
     # socials
     tutanota-desktop
     signal-desktop
+    discord
 
     # utils
     pavucontrol
