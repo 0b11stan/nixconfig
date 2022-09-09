@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # TODO : i should use the https://github.com/0b11stan/offsec-toolbox instead
   home.packages = with pkgs; [
     gobuster
     nmap

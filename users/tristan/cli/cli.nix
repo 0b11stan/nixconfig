@@ -38,6 +38,7 @@
   ];
 
   home.shellAliases = {
+    # TODO : move into offsec.nix
     cme = "mkdir -p ~/.cme && podman run -it --rm -v ~/.cme:/root/.cme -v $PWD:/srv -w /srv byt3bl33d3r/crackmapexec";
     ip = "ip --color";
     watch = "watch --color";
