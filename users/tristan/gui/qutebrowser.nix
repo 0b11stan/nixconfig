@@ -8,11 +8,6 @@
       home-manager = "https://github.com/nix-community/home-manager";
     };
 
-    searchEngines = {
-      aw = "https://wiki.archlinux.org/?search={}";
-      nw = "https://nixos.wiki/index.php?search={}";
-    };
-
     keyBindings = {
       normal = {
         "J" = "back";
@@ -25,6 +20,28 @@
         "m" = "scroll right";
       };
     };
+
+    extraConfig = ''
+      config.set('content.images', True, 'chrome-devtools://*')
+      config.set('content.images', True, 'devtools://*')
+
+      config.set('content.javascript.enabled', True, 'chrome-devtools://*')
+      config.set('content.javascript.enabled', True, 'devtools://*')
+      config.set('content.javascript.enabled', True, 'chrome://*/*')
+      config.set('content.javascript.enabled', True, 'qute://*/*')
+      config.set('content.javascript.enabled', True, '*://localhost:*')
+      config.set('content.javascript.enabled', True, 'https://*.twitter.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.duckduckgo.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.youtube.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.linkedin.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.deezer.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.ifixit.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.caisse-epargne.fr/*')
+      config.set('content.javascript.enabled', True, 'https://*.github.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.reddit.com/*')
+      config.set('content.javascript.enabled', True, 'https://*.root-me.org/*')
+      config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
+    '';
 
     settings.content.javascript.enabled = false;
   };

@@ -5,6 +5,7 @@ set tabstop=2
 set shiftwidth=2
 set colorcolumn=81
 set cursorline
+set nofoldenable
 
 set nocompatible
 

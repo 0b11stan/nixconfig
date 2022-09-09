@@ -20,6 +20,7 @@
     pciutils
     tree
     nixpkgs-fmt
+    rdfind
 
     # apps
     transmission
