@@ -23,8 +23,8 @@ in {
     enable = !isDesktop;
     timeouts = [
       {
-        timeout = 30;
-        command = "notify-desktop 'IDLE' 'I am going to sleep in 30s'";
+        timeout = 40;
+        command = "notify-desktop 'IDLE' 'I am going to sleep in 20s'";
       }
       {
         timeout = 50;

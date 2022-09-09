@@ -12,6 +12,7 @@ in {
       ./qutebrowser.nix
       ./alacritty.nix
       ./offsec.nix
+      ./screenshot.nix
     ]
     ++ (
       if !isDesktop
