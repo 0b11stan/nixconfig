@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  offsecToolboxes = builtins.fetchGit {
+    url = "https://github.com/0b11stan/offsec-toolboxes.git";
+    ref = "main";
+  };
+in {
   imports = [
     ./secrets.nix
     ./neovim.nix
@@ -66,5 +71,8 @@
     };
   };
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    bashrcExtra = builtins.readFile "${offsecToolboxes}/offsec-toolboxes.sh";
+  };
 }
