@@ -3,9 +3,21 @@
   programs.qutebrowser = {
     enable = true;
 
+    # TODO : autogrenerate quickmarks and extraConfig
     quickmarks = {
+      search = "https://search.nixos.org/packages";
       nixpkgs = "https://github.com/NixOS/nixpkgs";
       home-manager = "https://github.com/nix-community/home-manager";
+      twitter = "https://twitter.com";
+      duckduckgo = "https://duckduckgo.com";
+      youtube = "https://youtube.com";
+      linkedin = "https://linkedin.com";
+      deezer = "https://deezer.com";
+      ifixit = "https://ifixit.com";
+      caisse-epargne = "https://caisse-epargne.fr";
+      github = "https://github.com";
+      reddit = "https://reddit.com";
+      root-me = "https://root-me.org";
     };
 
     keyBindings = {
@@ -40,6 +52,8 @@
       config.set('content.javascript.enabled', True, 'https://*.github.com/*')
       config.set('content.javascript.enabled', True, 'https://*.reddit.com/*')
       config.set('content.javascript.enabled', True, 'https://*.root-me.org/*')
+      config.set('content.javascript.enabled', True, 'https://*.nixos.org/*')
+
       config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
     '';
 
