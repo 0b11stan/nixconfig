@@ -45,12 +45,12 @@ in {
 
   home.shellAliases = {
     # TODO : move into offsec.nix
-    cme = "mkdir -p ~/.cme && podman run -it --rm -v ~/.cme:/root/.cme -v $PWD:/srv -w /srv byt3bl33d3r/crackmapexec";
     ip = "ip --color";
     watch = "watch --color";
     tree = "tree -C";
     archlinux = "podman run -it --network=host docker.io/archlinux bash";
     debian = "podman run -it --network=host docker.io/debian bash";
+    search = "grep --exclude-dir=.git -ri";
   };
 
   # TODO : add notifications for irssi ? (via perl script ?)
