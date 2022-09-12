@@ -41,6 +41,7 @@
       config.set('content.javascript.enabled', True, 'https://*.reddit.com/*')
       config.set('content.javascript.enabled', True, 'https://*.root-me.org/*')
       config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
+      config.set('content.javascript.enabled', True, 'https://*.nixos.org/*')
     '';
 
     settings.content.javascript.enabled = false;
