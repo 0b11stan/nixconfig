@@ -1,5 +1,5 @@
 self: super: {
-  # TODO : fix this package
-  #mdfmt = super.callPackage ./mdfmt.nix {};
-  bloodhound = super.callPackage ./bloodhound/default.nix {};
+  mdfmt = super.callPackage ./mdfmt.nix {}; # TODO : fix this package
+  bloodhound = super.callPackage ./bloodhound/default.nix {}; # TODO : fix this package
+  windapsearch = super.callPackage ./windapsearch.nix {};
 }
