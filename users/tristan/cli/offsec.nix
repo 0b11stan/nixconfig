@@ -18,5 +18,7 @@
     openssl
     john
     aircrack-ng
+
+    windapsearch
   ];
 }
