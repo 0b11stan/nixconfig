@@ -19,6 +19,8 @@
     john
     aircrack-ng
 
+    # by ropnop
     windapsearch
+    kerbrute
   ];
 }
