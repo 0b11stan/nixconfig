@@ -1,6 +1,6 @@
 # My nixos configuration files
 
-## Useful links
+ ## Useful links
 
 * [NixOS Wiki](https://nixos.wiki/wiki/Main_Page)
 * [home-manager](https://github.com/nix-community/home-manager)

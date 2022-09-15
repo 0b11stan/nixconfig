@@ -46,5 +46,6 @@ in {
     libreoffice
     drawio
     gimp
+    mpv
   ];
 }
