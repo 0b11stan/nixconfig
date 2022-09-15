@@ -42,9 +42,12 @@
 
   programs.wireshark.enable = true;
 
-  users.users.tristan = {
-    isNormalUser = true;
-    extraGroups = ["wheel" "audio" "wireshark"];
+  users = {
+    groups.netdev.members = ["tristan"]; # for qemu
+    users.tristan = {
+      isNormalUser = true;
+      extraGroups = ["wheel" "audio" "wireshark" "netdev"];
+    };
   };
 
   security.pam.services.swaylock = {};
