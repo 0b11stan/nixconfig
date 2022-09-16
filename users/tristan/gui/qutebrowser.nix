@@ -14,10 +14,14 @@
       linkedin = "https://linkedin.com";
       deezer = "https://deezer.com";
       ifixit = "https://ifixit.com";
-      caisse-epargne = "https://caisse-epargne.fr";
+      caisse-epargne = "https://www.caisse-epargne.fr";
       github = "https://github.com";
       reddit = "https://reddit.com";
       root-me = "https://root-me.org";
+
+      teams = "https://teams.microsoft.com/";
+      outlook = "https://outlook.office365.com/mail/";
+      planner = "https://tasks.office.com/";
     };
 
     keyBindings = {
@@ -54,8 +58,11 @@
       config.set('content.javascript.enabled', True, 'https://*.root-me.org/*')
       config.set('content.javascript.enabled', True, 'https://*.nixos.org/*')
 
+      config.set('content.javascript.enabled', True, 'https://teams.microsoft.com/*')
+      config.set('content.javascript.enabled', True, 'https://outlook.office365.com/*')
+      config.set('content.javascript.enabled', True, 'https://tasks.office.com/*')
+
       config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
-      config.set('content.javascript.enabled', True, 'https://*.nixos.org/*')
     '';
 
     settings.content.javascript.enabled = false;
