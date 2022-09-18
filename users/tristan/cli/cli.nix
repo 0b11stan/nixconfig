@@ -29,7 +29,7 @@ in {
 
     # apps
     transmission
-    qemu
+    virt-manager
 
     # formaters / linters
     jq

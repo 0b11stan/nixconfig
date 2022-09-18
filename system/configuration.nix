@@ -43,22 +43,24 @@
   programs.wireshark.enable = true;
 
   users = {
-    groups.netdev.members = ["tristan"]; # for qemu
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "netdev"];
+      extraGroups = ["wheel" "audio" "wireshark" "libvirtd"];
     };
   };
 
   security.pam.services.swaylock = {};
 
-  virtualisation.podman.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    podman.enable = true;
+  };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [4444];
+  # networking.firewall.allowedTCPPorts = [4444];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
