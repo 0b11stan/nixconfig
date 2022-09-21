@@ -42,6 +42,7 @@ in {
     wl-clipboard
 
     # apps
+    firefox
     evince
     libreoffice
     drawio

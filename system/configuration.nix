@@ -37,11 +37,6 @@
     keyMap = "fr";
   };
 
-  hardware.pulseaudio.enable = true;
-  hardware.opengl.enable = true;
-
-  programs.wireshark.enable = true;
-
   users = {
     users.tristan = {
       isNormalUser = true;
@@ -55,6 +50,14 @@
     libvirtd.enable = true;
     podman.enable = true;
   };
+
+  hardware.pulseaudio.enable = true;
+  hardware.opengl.enable = true;
+  programs.wireshark.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-wlr];
+  services.pipewire.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [4444];

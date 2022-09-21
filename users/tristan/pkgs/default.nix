@@ -2,8 +2,8 @@ self: super: let
   nixpkgs = ((import <nixpkgs>) {}).fetchFromGitHub {
     owner = "NixOS";
     repo = "nixpkgs";
-    rev = "master";
-    sha256 = "sha256-MiGg5skTOc0a6Acp5tahoZCR1ymhP4zSLRv/fOxh9hY=";
+    rev = "30b4b73b1c4112ee453083d35f7a53b939ecd481";
+    sha256 = "sha256-gSSa+dTirMp89dmhDAEk5ux/MsD/OSYga0V58O1j3cs=";
   };
 in {
   discord = super.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/discord/default.nix" {};

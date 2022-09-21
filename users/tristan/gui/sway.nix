@@ -42,7 +42,22 @@ in {
   };
 
   wayland.windowManager.sway = {
-    enable = true;
+    enable = !isDesktop;
+
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+
+      # Firefox wayland
+      export MOZ_ENABLE_WAYLAND=1
+
+      # XDG portal related variables (for screen sharing etc)
+      export XDG_SESSION_TYPE=wayland
+      export XDG_CURRENT_DESKTOP=sway
+
+      # Run QT programs in wayland
+      export QT_QPA_PLATFORM=wayland
+    '';
+
     config = {
       input = {
         "type:keyboard" = {
