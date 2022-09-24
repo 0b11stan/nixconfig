@@ -48,10 +48,12 @@ in {
       };
     };
 
+  environment.systemPackages = [pkgs.linuxPackages.v4l2loopback];
+
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
   boot.initrd.kernelModules = ["dm-snapshot"];
-  boot.kernelModules = ["kvm-intel" "wl"];
-  boot.extraModulePackages = [config.boot.kernelPackages.broadcom_sta];
+  boot.kernelModules = ["kvm-intel" "wl" "v4l2loopback"];
+  boot.extraModulePackages = [config.boot.kernelPackages.broadcom_sta config.boot.kernelPackages.v4l2loopback];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/root";

@@ -40,6 +40,7 @@ in {
     bemenu
     notify-desktop
     wl-clipboard
+    ffmpeg
 
     # apps
     firefox

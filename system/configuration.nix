@@ -37,10 +37,15 @@
     keyMap = "fr";
   };
 
+  hardware.pulseaudio.enable = true;
+  hardware.opengl.enable = true;
+  programs.wireshark.enable = true;
+  programs.adb.enable = true;
+
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "libvirtd"];
+      extraGroups = ["wheel" "audio" "wireshark" "libvirtd" "adbusers"];
     };
   };
 
@@ -51,10 +56,7 @@
     podman.enable = true;
   };
 
-  hardware.pulseaudio.enable = true;
-  hardware.opengl.enable = true;
-  programs.wireshark.enable = true;
-
+  # TODO : limit to gui
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-wlr];
   services.pipewire.enable = true;

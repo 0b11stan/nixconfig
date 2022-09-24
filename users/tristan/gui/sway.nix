@@ -42,7 +42,7 @@ in {
   };
 
   wayland.windowManager.sway = {
-    enable = !isDesktop;
+    enable = true;
 
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
