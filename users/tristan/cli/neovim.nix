@@ -6,6 +6,10 @@
       vim-nix
       nerdtree
       vim-markdown
+      {
+        plugin = dracula-vim;
+        config = "colorscheme dracula";
+      }
       supertab
       {
         plugin = nvim-lspconfig;
