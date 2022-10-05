@@ -36,7 +36,6 @@ in {
     discord
 
     # utils
-    dracula-theme
     pavucontrol
     bemenu
     notify-desktop

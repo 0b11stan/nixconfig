@@ -24,6 +24,7 @@
     nameservers = ["1.1.1.1" "1.0.0.1"];
     resolvconf.enable = false;
     resolvconf.useLocalResolver = true;
+    extraHosts = "192.168.122.178 ctflab.demo";
   };
 
   time.timeZone = "Europe/Paris";
