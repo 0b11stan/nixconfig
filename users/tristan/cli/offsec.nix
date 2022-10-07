@@ -18,6 +18,8 @@
     openssl
     john
     aircrack-ng
+    binutils
+    ghidra
 
     # by ropnop
     windapsearch

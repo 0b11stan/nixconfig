@@ -15,6 +15,16 @@
           lua require 'lspconfig'.rust_analyzer.setup{}
         '';
       }
+      /*
+       {
+         plugin = ale;
+         config = ''
+           let g:ale_completion_enabled = 1
+           let g:ale_fix_on_save = 1
+           let g:ale_linters = {'html': ['tidy']}
+         '';
+       }
+       */
     ];
     extraPython3Packages = ps: with ps; [rich];
     extraPackages = with pkgs; [

@@ -55,6 +55,7 @@ hi CursorColumn cterm=NONE ctermbg=238
 autocmd BufRead,BufNewFile *.nix set filetype=nix
 
 " FMTs
+" TODO : use https://github.com/dmerejkowsky/vim-ale#usage-linting instead ?
 function Fmt(cmd)
   normal Mt
   execute a:cmd
@@ -63,6 +64,7 @@ endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
 autocmd BufWritePre *.py call Fmt('%!autopep8 -')
 autocmd BufWritePre *.rs call Fmt('%!rustfmt')
+autocmd BufWritePre *.html call Fmt('%!html-beautify')
 
 " Enable lsp's autocomplete
 set omnifunc=v:lua.vim.lsp.omnifunc

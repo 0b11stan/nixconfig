@@ -48,8 +48,8 @@ in {
     ip = "ip --color";
     watch = "watch --color";
     tree = "tree -C";
-    archlinux = "podman run -it --network=host docker.io/archlinux bash";
-    debian = "podman run -it --network=host docker.io/debian bash";
+    archlinux = "podman run -it --network=host -v $PWD:/srv docker.io/archlinux bash";
+    debian = "podman run -it --network=host -v $PWD:/srv docker.io/debian bash";
     search = "grep --exclude-dir=.git -ri";
     virsh = "sudo virsh";
   };

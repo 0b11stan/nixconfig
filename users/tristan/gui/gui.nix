@@ -48,6 +48,7 @@ in {
     libreoffice
     drawio
     gimp
+    inkscape
     mpv
   ];
 
