@@ -24,9 +24,6 @@
     nameservers = ["1.1.1.1" "1.0.0.1"];
     resolvconf.enable = false;
     resolvconf.useLocalResolver = true;
-    extraHosts = ''
-      57.128.18.85 ragnarhack.fr manager.ragnarhack.fr rp.ragnarhack.fr ctfd.ragnarhack.fr
-    '';
   };
 
   time.timeZone = "Europe/Paris";
