@@ -17,6 +17,8 @@ in {
   programs.mako = {
     enable = true;
     defaultTimeout = 10000;
+    backgroundColor = "${colors.greyLighter}";
+    borderColor = "${colors.orange}";
   };
 
   services.swayidle = {
@@ -162,11 +164,11 @@ in {
         };
 
         focusedInactive = {
-          background = "${colors.greyLight}";
-          border = "${colors.greyLight}";
-          childBorder = "${colors.greyLight}";
-          indicator = "${colors.greyLight}";
-          text = "${colors.white}";
+          background = "${colors.greyDark}";
+          border = "${colors.greyDark}";
+          childBorder = "${colors.greyDark}";
+          indicator = "${colors.greyDark}";
+          text = "${colors.magenta}";
         };
 
         unfocused = {
@@ -174,14 +176,14 @@ in {
           border = "${colors.greyDark}";
           childBorder = "${colors.greyDark}";
           indicator = "${colors.greyDark}";
-          text = "${colors.greyLight}";
+          text = "${colors.magenta}";
         };
 
         urgent = {
-          background = "${colors.red}";
-          border = "${colors.red}";
-          childBorder = "${colors.red}";
-          indicator = "${colors.red}";
+          background = "${colors.orange}";
+          border = "${colors.orange}";
+          childBorder = "${colors.orange}";
+          indicator = "${colors.orange}";
           text = "${colors.greyDark}";
         };
       };
@@ -198,7 +200,7 @@ in {
             inactiveWorkspace = {
               background = "${colors.greyDark}";
               border = "${colors.greyDark}";
-              text = "${colors.greyLight}";
+              text = "${colors.magenta}";
             };
 
             focusedWorkspace = {
@@ -214,12 +216,12 @@ in {
             };
 
             urgentWorkspace = {
-              background = "${colors.red}";
-              border = "${colors.red}";
+              background = "${colors.orange}";
+              border = "${colors.orange}";
               text = "${colors.greyDark}";
             };
 
-            background = "${colors.black}";
+            background = "${colors.greyDark}";
             focusedBackground = null;
             focusedSeparator = null;
             focusedStatusline = null;

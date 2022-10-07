@@ -45,7 +45,7 @@ in {
 
   home.shellAliases = {
     # TODO : move into offsec.nix
-    ip = "ip --color";
+    ip = "ip --color --brief";
     watch = "watch --color";
     tree = "tree -C";
     archlinux = "podman run -it --network=host -v $PWD:/srv docker.io/archlinux bash";
