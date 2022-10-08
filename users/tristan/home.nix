@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [
     ./cli/cli.nix
     ./gui/gui.nix
@@ -17,6 +17,12 @@
       WLR_NO_HARDWARE_CURSORS = 1;
     };
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "discord"
+      "rar"
+    ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

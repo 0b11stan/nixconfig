@@ -20,11 +20,6 @@ in {
       else []
     );
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "discord"
-    ];
-
   home.packages = with pkgs; [
     # fonts
     hack-font
@@ -44,6 +39,7 @@ in {
 
     # apps
     firefox
+    chromium
     evince
     libreoffice
     drawio

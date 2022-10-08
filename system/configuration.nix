@@ -24,6 +24,9 @@
     nameservers = ["1.1.1.1" "1.0.0.1"];
     resolvconf.enable = false;
     resolvconf.useLocalResolver = true;
+    extraHosts = ''
+      57.128.18.85 ragnarhack.fr challenge.ragnarhack.fr manager.ragnarhack.fr rp.ragnarhack.fr ctfd.ragnarhack.fr blog.challenge.ragnarhack.fr fakebook.challenge.ragnarhack.fr instafakegram.challenge.ragnarhack.fr linkedfakein.challenge.ragnarhack.fr mail.challenge.ragnarhack.fr fakemail.challenge.ragnarhack.fr fakebank.challenge.ragnarhack.fr schrodinger.challenge.ragnarhack.fr practice.challenge.ragnarhack.fr subscription.challenge.ragnarhack.fr ccoffee.challenge.ragnarhack.fr paperblog.challenge.ragnarhack.fr
+    '';
   };
 
   time.timeZone = "Europe/Paris";

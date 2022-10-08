@@ -26,6 +26,7 @@ in {
     tree
     nixpkgs-fmt
     rdfind
+    rar
 
     # apps
     transmission
