@@ -38,6 +38,7 @@ in {
     ffmpeg
 
     # apps
+    audacity
     firefox
     chromium
     evince
