@@ -12,7 +12,6 @@ in {
       color_bad = "${colors.red}";
     };
     modules = {
-      "wireless _first_".enable = false;
       "battery all".enable = !isDesktop;
       "ipv6".enable = false;
       "volume master" = {
@@ -23,7 +22,6 @@ in {
           device = "pulse:1";
         };
       };
-      # TODO : add wireless if !isDesktop
       "ethernet _first_" = {
         position = 1;
         settings = {
@@ -31,14 +29,21 @@ in {
           format_down = "ETH: dawn";
         };
       };
-      "disk /" = {
+      "wireless _first_" = {
         position = 2;
+        settings = {
+          format_up = "WLAN: %essid - %ip (%quality, %bitrate)";
+          format_down = "WLAN: dawn";
+        };
+      };
+      "disk /" = {
+        position = 3;
         settings = {
           format = "DISK: %avail";
         };
       };
       "memory" = {
-        position = 3;
+        position = 4;
         settings = {
           format = "MEM: %used / %available";
           threshold_degraded = "1G";
@@ -46,13 +51,13 @@ in {
         };
       };
       "load" = {
-        position = 4;
+        position = 5;
         settings = {
           format = "CPU: %1min";
         };
       };
       "tztime local" = {
-        position = 5;
+        position = 6;
         settings = {
           format = "%Y-%m-%d %H:%M:%S";
         };

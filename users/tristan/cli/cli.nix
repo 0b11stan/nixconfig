@@ -27,6 +27,7 @@ in {
     nixpkgs-fmt
     rdfind
     rar
+    dos2unix
 
     # apps
     transmission
