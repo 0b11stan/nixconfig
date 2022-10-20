@@ -20,6 +20,8 @@
     aircrack-ng
     binutils
     ghidra
+    exiftool
+    stegseek
 
     # by ropnop
     windapsearch
