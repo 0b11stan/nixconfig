@@ -35,6 +35,7 @@
     rdfind
     rar
     dos2unix
+    detox
 
     # apps
     transmission
