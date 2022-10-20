@@ -16,7 +16,7 @@ in {
     ]
     ++ (
       if !isDesktop
-      then [./batterie_alert.nix]
+      then [./batterie_alert]
       else []
     );
 
