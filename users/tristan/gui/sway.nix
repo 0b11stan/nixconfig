@@ -140,6 +140,9 @@ in {
         "${mod}+ccedilla" = "workspace 9";
         "${mod}+agrave" = "workspace 10";
 
+        "${mod}+plus" = "move scratchpad";
+        "${mod}+equal" = "scratchpad show";
+
         "${mod}+1" = "move to workspace 1";
         "${mod}+2" = "move to workspace 2";
         "${mod}+3" = "move to workspace 3";
@@ -150,6 +153,7 @@ in {
         "${mod}+8" = "move to workspace 8";
         "${mod}+9" = "move to workspace 9";
         "${mod}+0" = "move to workspace 10";
+        "${mod}+Shift+minus" = "move to workspace 6";
       };
 
       colors = {
