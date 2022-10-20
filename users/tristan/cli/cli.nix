@@ -41,6 +41,7 @@ in {
     python39
     gcc
     gnumake
+    just
     pandoc
   ];
 
