@@ -4,7 +4,7 @@
     ./secrets
     ./neovim
     ./git.nix
-    ./offsec.nix
+    ./infosec.nix
     ./irssi.nix
   ];
 

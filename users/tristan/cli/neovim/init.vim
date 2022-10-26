@@ -38,6 +38,9 @@ noremap <C-l> <C-w>k
 noremap <C-k> <C-w>j
 noremap <C-j> <C-w>h
 
+" TODO : split line at 80 chars
+"nmap ; 80|gea<CR>
+
 " Remove search
 noremap h :nohlsearch<CR>
 
