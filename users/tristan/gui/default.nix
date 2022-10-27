@@ -23,7 +23,9 @@ in {
   home.packages = with pkgs; [
     # fonts
     hack-font
+    noto-fonts
     noto-fonts-emoji
+    noto-fonts-extra
 
     # socials
     tutanota-desktop
