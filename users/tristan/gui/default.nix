@@ -47,6 +47,7 @@ in {
     gimp
     inkscape
     mpv
+    tor-browser-bundle-bin
   ];
 
   # temporary fix for https://github.com/qutebrowser/qutebrowser/issues/7208
