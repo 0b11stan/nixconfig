@@ -4,7 +4,7 @@
     ./secrets
     ./neovim
     ./git.nix
-    ./offsec.nix
+    ./infosec.nix
     ./irssi.nix
   ];
 
@@ -14,7 +14,7 @@
     tree = "tree -C";
     archlinux = "podman run -it --network=host -v $PWD:/srv docker.io/archlinux bash";
     debian = "podman run -it --network=host -v $PWD:/srv docker.io/debian bash";
-    search = "grep --exclude-dir=.git -ri";
+    search = "grep --exclude-dir=.git --exclude-dir=venv -ri";
     virsh = "sudo virsh";
   };
 
