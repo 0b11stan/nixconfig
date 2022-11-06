@@ -20,6 +20,7 @@
       root-me = https://root-me.org;
       gitlab = https://gitlab.com;
       git = https://git.tic.sh;
+      leboncoin = https://www.leboncoin.fr;
 
       teams = https://teams.microsoft.com/;
       outlook = https://outlook.office365.com/mail/;
@@ -61,6 +62,7 @@
       config.set('content.javascript.enabled', True, 'https://*.nixos.org/*')
       config.set('content.javascript.enabled', True, 'https://*.gitlab.com/*')
       config.set('content.javascript.enabled', True, 'https://*.tic.sh/*')
+      config.set('content.javascript.enabled', True, 'https://*.leboncoin.fr/*')
 
       config.set('content.javascript.enabled', True, 'https://teams.microsoft.com/*')
       config.set('content.javascript.enabled', True, 'https://outlook.office365.com/*')
