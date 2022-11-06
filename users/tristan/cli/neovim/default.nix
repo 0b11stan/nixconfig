@@ -5,6 +5,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       nerdtree
+      # TODO: package NoahTheDuke/vim-just
       vim-markdown
       {
         plugin = dracula-vim;

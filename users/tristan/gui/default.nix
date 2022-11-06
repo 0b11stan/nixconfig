@@ -7,6 +7,7 @@
 in {
   imports =
     [
+      ./obstudio.nix
       ./i3status.nix
       ./sway.nix
       ./qutebrowser.nix
