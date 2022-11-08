@@ -14,7 +14,14 @@
     tree = "tree -C";
     archlinux = "podman run -it --network=host -v $PWD:/srv docker.io/archlinux bash";
     debian = "podman run -it --network=host -v $PWD:/srv docker.io/debian bash";
-    search = "grep --exclude-dir=.git --exclude-dir=venv -ri";
+    search = ''
+      grep --color \
+        --binary-files=without-match \
+        --exclude-dir=.git \
+        --exclude-dir=venv \
+        --recursive \
+        --ignore-case \
+    '';
     virsh = "sudo virsh";
   };
 
