@@ -23,6 +23,10 @@
         --ignore-case \
     '';
     virsh = "sudo virsh";
+    gs = "git status";
+    gd = "git diff";
+    gac = "git commit -am";
+    gp = "git push";
   };
 
   home.packages = with pkgs; [
