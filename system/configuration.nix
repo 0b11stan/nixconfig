@@ -46,7 +46,7 @@
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "libvirtd" "adbusers"];
+      extraGroups = ["wheel" "audio" "wireshark" "libvirtd" "adbusers" "docker"];
     };
   };
 
@@ -55,6 +55,7 @@
   virtualisation = {
     libvirtd.enable = true;
     podman.enable = true;
+    docker.enable = true;
   };
 
   # TODO : limit to gui
