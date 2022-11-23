@@ -27,6 +27,7 @@
     gd = "git diff";
     gac = "git commit -am";
     gp = "git push";
+    password = "head -c 15 /dev/urandom | base32";
   };
 
   home.packages = with pkgs; [
