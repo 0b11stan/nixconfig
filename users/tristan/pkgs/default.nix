@@ -11,6 +11,7 @@ in {
   bloodhound = super.callPackage ./bloodhound/default.nix {}; # TODO : fix this package
   windapsearch = super.callPackage ./windapsearch.nix {};
   kerbrute = super.callPackage ./kerbrute.nix {};
+  burpsuite = super.callPackage ./burpsuitepro.nix {};
 }
 # note : tests packages with
 # nix-build -E '(import <nixpkgs> {}).callPackage ./mypackage.nix {}'

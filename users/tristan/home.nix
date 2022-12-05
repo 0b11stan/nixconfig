@@ -22,6 +22,7 @@
     builtins.elem (lib.getName pkg) [
       "discord"
       "rar"
+      "burpsuite"
     ];
 
   # This value determines the Home Manager release that your

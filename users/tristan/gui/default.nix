@@ -53,6 +53,7 @@ in {
     tor-browser-bundle-bin
     xfce.thunar
     flowblade
+    freerdp
   ];
 
   # temporary fix for https://github.com/qutebrowser/qutebrowser/issues/7208
