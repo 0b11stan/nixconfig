@@ -54,6 +54,7 @@ in {
     xfce.thunar
     flowblade
     freerdp
+    tigervnc
   ];
 
   # temporary fix for https://github.com/qutebrowser/qutebrowser/issues/7208
