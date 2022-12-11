@@ -1,10 +1,15 @@
 {pkgs, ...}: {
+  home.sessionVariables.SECLISTS = pkgs.seclists;
+
   home.packages = with pkgs; [
     # misc
     metasploit
     thc-hydra
     inetutils # for ftp
     python39Packages.impacket
+
+    # github ressources
+    seclists
 
     # cryptography
     certipy
