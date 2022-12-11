@@ -5,6 +5,7 @@
     thc-hydra
     inetutils # for ftp
     python39Packages.impacket
+    wpscan
 
     # cryptography
     certipy
