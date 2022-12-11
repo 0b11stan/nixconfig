@@ -7,6 +7,7 @@
     thc-hydra
     inetutils # for ftp
     python39Packages.impacket
+    wpscan
 
     # github ressources
     seclists

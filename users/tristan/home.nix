@@ -27,6 +27,7 @@
       "discord"
       "rar"
       "burpsuite"
+      "wpscan"
     ];
 
   # This value determines the Home Manager release that your
