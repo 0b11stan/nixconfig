@@ -28,6 +28,7 @@
       "rar"
       "burpsuite"
       "wpscan"
+      "volatility3"
     ];
 
   # This value determines the Home Manager release that your
