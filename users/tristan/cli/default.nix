@@ -48,8 +48,10 @@
     rar
     dos2unix
     detox
+    nfs-utils
 
     # apps
+    asciinema
     transmission
     virt-manager
 

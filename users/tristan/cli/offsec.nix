@@ -40,6 +40,7 @@
     macchanger
     aircrack-ng
     python39Packages.scapy
+    proxychains
 
     # DNS enumeration
     amass
@@ -48,5 +49,8 @@
     # AD exploitation (by ropnop)
     windapsearch
     kerbrute
+
+    # forensics
+    volatility3
   ];
 }
