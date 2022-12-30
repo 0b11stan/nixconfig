@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     wireshark-qt
-    bloodhound
+    #bloodhound
     zap
     burpsuite
   ];

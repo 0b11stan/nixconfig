@@ -6,9 +6,11 @@ self: super: let
     sha256 = "sha256-gSSa+dTirMp89dmhDAEk5ux/MsD/OSYga0V58O1j3cs=";
   };
 in {
+  # mdfmt = super.callPackage ./mdfmt.nix {}; # TODO : fix this package
+  # bloodhound = super.callPackage ./bloodhound/default.nix {}; # TODO : fix this package
+  # exegol = super.callPackage ./exegol.nix {}; # TODO : fix this package
+
   discord = super.callPackage "${nixpkgs}/pkgs/applications/networking/instant-messengers/discord/default.nix" {};
-  mdfmt = super.callPackage ./mdfmt.nix {}; # TODO : fix this package
-  bloodhound = super.callPackage ./bloodhound/default.nix {}; # TODO : fix this package
   windapsearch = super.callPackage ./windapsearch.nix {};
   kerbrute = super.callPackage ./kerbrute.nix {};
   burpsuite = super.callPackage ./burpsuitepro.nix {};

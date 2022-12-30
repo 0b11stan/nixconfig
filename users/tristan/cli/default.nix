@@ -52,6 +52,7 @@
     # apps
     transmission
     virt-manager
+    asciinema
 
     # formaters / linters
     jq

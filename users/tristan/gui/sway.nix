@@ -10,6 +10,7 @@
 in {
   home.packages = with pkgs; [
     swaylock
+    xorg.xhost
   ];
 
   fonts.fontconfig.enable = true;

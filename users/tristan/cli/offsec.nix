@@ -8,6 +8,7 @@
     inetutils # for ftp
     python39Packages.impacket
     wpscan
+    #exegol
 
     # github ressources
     seclists
