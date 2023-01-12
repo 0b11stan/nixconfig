@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  isDesktop = builtins.readDir /sys/class/power_supply == {};
+in {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -24,7 +26,9 @@
     nameservers = ["1.1.1.1" "1.0.0.1"];
     resolvconf.enable = false;
     resolvconf.useLocalResolver = true;
-    extraHosts = "";
+    #    extraHosts = ''
+    #      192.168.122.111 sta.tic.sh hackitn.tic.sh tic.sh blog.tic.sh git.tic.sh myosis.live sophie-joel.fr martinade.fr shynet.tic.sh
+    #    '';
   };
 
   time.timeZone = "Europe/Paris";
@@ -62,12 +66,13 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-wlr];
   services.pipewire.enable = true;
+  services.sshd.enable = isDesktop;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [4444];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

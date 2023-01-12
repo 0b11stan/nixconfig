@@ -16,6 +16,7 @@
     # cryptography
     certipy
     openssl
+    sslscan
 
     # steganographie
     exiftool
