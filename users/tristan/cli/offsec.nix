@@ -43,6 +43,7 @@
     aircrack-ng
     python39Packages.scapy
     proxychains
+    rpcbind
 
     # DNS enumeration
     amass
