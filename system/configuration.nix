@@ -6,6 +6,7 @@
 }: let
   isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
+  # TODO : refactor
   imports = [
     ./hardware-configuration.nix
   ];
@@ -26,9 +27,7 @@ in {
     nameservers = ["1.1.1.1" "1.0.0.1"];
     resolvconf.enable = false;
     resolvconf.useLocalResolver = true;
-    #    extraHosts = ''
-    #      192.168.122.111 sta.tic.sh hackitn.tic.sh tic.sh blog.tic.sh git.tic.sh myosis.live sophie-joel.fr martinade.fr shynet.tic.sh
-    #    '';
+    extraHosts = "";
   };
 
   time.timeZone = "Europe/Paris";
