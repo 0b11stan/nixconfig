@@ -26,14 +26,14 @@ in {
         position = 1;
         settings = {
           format_up = "ETH: %ip (%speed)";
-          format_down = "ETH: dawn";
+          format_down = "ETH: down";
         };
       };
       "wireless _first_" = {
         position = 2;
         settings = {
           format_up = "WLAN: %essid - %ip (%quality, %bitrate)";
-          format_down = "WLAN: dawn";
+          format_down = "WLAN: down";
         };
       };
       "disk /" = {
