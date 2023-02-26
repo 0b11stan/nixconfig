@@ -26,19 +26,15 @@ in {
     enable = !isDesktop;
     timeouts = [
       {
-        timeout = 40;
-        command = "notify-desktop 'IDLE' 'I am going to sleep in 20s'";
+        timeout = 60;
+        command = "notify-desktop 'IDLE' 'I am going to sleep in 60s'";
       }
       {
-        timeout = 50;
-        command = "notify-desktop 'IDLE' 'I am going to sleep in 10s'";
-      }
-      {
-        timeout = 55;
+        timeout = 115;
         command = "notify-desktop -t 5000 'IDLE' 'I am going to sleep in 5s'";
       }
       {
-        timeout = 60;
+        timeout = 120;
         command = "swaylock -fF -c '#000100'";
       }
     ];
