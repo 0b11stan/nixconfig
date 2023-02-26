@@ -56,9 +56,4 @@ in {
     freerdp
     tigervnc
   ];
-
-  # temporary fix for https://github.com/qutebrowser/qutebrowser/issues/7208
-  home.shellAliases.gitlab = ''
-    qutebrowser --temp-basedir ":set content.headers.user_agent 'cloudflare 503 workaround'" https://gitlab.com/users/sign-in
-  '';
 }
