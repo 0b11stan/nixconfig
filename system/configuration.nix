@@ -56,7 +56,10 @@ in {
     adb.enable = true;
   };
 
-  hardware.pulseaudio.enable = true;
+  hardware = {
+    pulseaudio.enable = true;
+    opengl.enable = true;
+  };
 
   security.pam.services.swaylock = {};
 
