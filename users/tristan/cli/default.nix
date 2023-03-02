@@ -14,6 +14,7 @@
     tree = "tree -C";
     archlinux = "podman run -it --network=host -v $PWD:/srv docker.io/archlinux bash";
     debian = "podman run -it --network=host -v $PWD:/srv docker.io/debian bash";
+    ubuntu = "podman run -it --network=host -v $PWD:/srv docker.io/ubuntu bash";
     search = ''
       grep --color \
         --binary-files=without-match \
@@ -49,6 +50,7 @@
     dos2unix
     detox
     nfs-utils
+    man-pages
 
     # apps
     asciinema
