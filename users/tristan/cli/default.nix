@@ -29,6 +29,7 @@
     gac = "git commit -am";
     gp = "git push";
     password = "head -c 15 /dev/urandom | base32";
+    dush = "sudo du -sh .[!.]* * 2>/dev/null | sort -h";
   };
 
   home.packages = with pkgs; [

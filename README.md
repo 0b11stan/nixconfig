@@ -72,6 +72,7 @@ Create LVM volumes
 ```bash
 lvcreate -L 20G main -n root
 lvcreate -L 10G main -n home
+lvcreate -L 20G main -n images
 lvcreate -L 2G main -n swap
 ```
 
@@ -80,6 +81,7 @@ Format volumes (create appropriate file system on each)
 ```bash
 mkfs.ext4 -L root /dev/main/root
 mkfs.ext4 -L home /dev/main/home
+mkfs.ext4 -L images /dev/main/images
 mkswap -L swap /dev/main/swap
 mkfs.fat -F 32 -n boot /dev/main/sdx1
 ```
@@ -89,6 +91,8 @@ Mount the volumes on the live file system ready for the chroot
 ```bash
 mount /dev/disk/by-label/root /mnt
 mkdir /mnt/home
+mount /dev/disk/by-label/images /mnt
+mkdir /mnt/images
 mount /dev/disk/by-label/home /mnt/home
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
@@ -141,7 +145,19 @@ cd ~/sources/0b11stan/nixconfig/
 ./apply-users.sh
 ```
 
-Then, reboot and upgrade 
+Then, reboot and upgrade
+
+Initiate the `/images` folders.
+
+```
+mkdir /images/qemu
+mkdir /images/isos
+chmod -R 644 /images/
+chown -R tristan:users /images/
+chmod +x /images/
+chmod +x /images/isos/
+chmod +x /images/qemu/
+```
 
 ## Todo's
 

@@ -75,12 +75,10 @@ in {
     fsType = "ext4";
   };
 
-  /*
-   fileSystems."/var" = {
-     device = "/dev/disk/by-label/var";
-     fsType = "ext4";
-   };
-   */
+  fileSystems."/images" = {
+    device = "/dev/disk/by-label/images";
+    fsType = "ext4";
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
