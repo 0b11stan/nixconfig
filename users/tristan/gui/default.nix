@@ -11,6 +11,7 @@ in {
       ./i3status.nix
       ./sway.nix
       ./qutebrowser.nix
+      ./firefox.nix
       ./alacritty.nix
       ./offsec.nix
       ./screenshot.nix
@@ -42,7 +43,6 @@ in {
 
     # apps
     audacity
-    firefox
     chromium
     evince
     libreoffice
