@@ -22,10 +22,12 @@
     exiftool
     stegseek
 
-    # reverse
-    ghidra
+    # reverse / pwn
+    # ghidra
     binutils
     vim # for xxd
+    gdb # TODO : nix install of gdb-peda
+    ropgadget
 
     # offline brute-force and dict
     john
@@ -55,5 +57,6 @@
 
     # forensics
     volatility3
+    binwalk
   ];
 }
