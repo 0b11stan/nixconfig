@@ -4,6 +4,7 @@
   ...
 }: let
   isDesktop = builtins.readDir /sys/class/power_supply == {};
+  pkgsUnstable = import <nixpkgs-unstable> {}; # requires nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
 in {
   imports =
     [
@@ -30,7 +31,7 @@ in {
     noto-fonts-extra
 
     # socials
-    tutanota-desktop
+    pkgsUnstable.tutanota-desktop
     signal-desktop
     discord
 
