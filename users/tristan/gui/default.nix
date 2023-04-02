@@ -42,6 +42,7 @@ in {
     ffmpeg
 
     # apps
+    tor-browser-bundle-bin
     audacity
     chromium
     evince
