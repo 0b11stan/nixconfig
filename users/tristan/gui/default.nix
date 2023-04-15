@@ -45,6 +45,7 @@ in {
     # apps
     audacity
     chromium
+    epiphany
     evince
     libreoffice
     drawio
