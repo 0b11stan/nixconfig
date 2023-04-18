@@ -46,6 +46,7 @@ in {
     tor-browser-bundle-bin
     audacity
     chromium
+    epiphany
     evince
     libreoffice
     drawio
