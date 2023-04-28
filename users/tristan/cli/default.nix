@@ -57,8 +57,9 @@
     # apps
     asciinema
     transmission
-    virt-manager
     asciinema
+    qemu
+    dnsmasq
 
     # formaters / linters
     jq
