@@ -64,7 +64,6 @@ in {
   security.pam.services.swaylock = {};
 
   virtualisation = {
-    libvirtd.enable = false;
     podman.enable = true;
     docker.enable = true;
   };
