@@ -47,7 +47,7 @@ in {
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "libvirtd" "adbusers" "docker"];
+      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker"];
     };
   };
 
@@ -64,7 +64,7 @@ in {
   security.pam.services.swaylock = {};
 
   virtualisation = {
-    libvirtd.enable = true;
+    libvirtd.enable = false;
     podman.enable = true;
     docker.enable = true;
   };
