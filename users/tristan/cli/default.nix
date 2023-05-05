@@ -58,8 +58,11 @@
     asciinema
     transmission
     asciinema
-    qemu
     dnsmasq
+
+    # virt
+    qemu
+    OVMF
 
     # formaters / linters
     jq
