@@ -137,10 +137,12 @@ nmcli device wifi connect "$WIFI_SSID" password "$WIFI_PASSWORD"
 
 **Log back as tristan**
 
-Add home manager channel
+Add home manager and unstable channel
 
 ```bash
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
+nix-channel --update
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
 nix-channel --update
 ```
 
@@ -148,8 +150,8 @@ Pull my configuration and apply user environnment
 
 ```bash
 nix-shell -p git home-manager
-git clone https://github.com/0b11stan/nixconfig.git ~/sources/0b11stan/nixconfig/
-cd ~/sources/0b11stan/nixconfig/
+git clone https://github.com/0b11stan/nixconfig.git ~/sources/github.com/0b11stan/nixconfig/
+cd ~/sources/github.com/0b11stan/nixconfig/
 ./apply-users.sh
 ```
 

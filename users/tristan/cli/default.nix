@@ -4,7 +4,7 @@
     ./secrets
     ./neovim
     ./git.nix
-    ./offsec.nix
+    #    ./offsec.nix # TODO : remove offsec definitely
     ./irssi.nix
   ];
 
