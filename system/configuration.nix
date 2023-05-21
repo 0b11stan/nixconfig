@@ -12,7 +12,7 @@ in {
 
   nix = {
     package = pkgs.nixFlakes;
-    nix.settings.auto-optimise-store = true;
+    settings.auto-optimise-store = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
