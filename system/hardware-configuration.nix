@@ -65,6 +65,11 @@ in {
 
   environment.systemPackages = [pkgs.linuxPackages.v4l2loopback];
 
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-label/nix";
+    fsType = "ext4";
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-label/root";
     fsType = "ext4";
@@ -75,10 +80,15 @@ in {
     fsType = "ext4";
   };
 
-  #  fileSystems."/images" = {
-  #    device = "/dev/disk/by-label/images";
-  #    fsType = "ext4";
-  #  };
+  fileSystems."/images" = {
+    device = "/dev/disk/by-label/images";
+    fsType = "ext4";
+  };
+
+  fileSystems."/var/lib/docker" = {
+    device = "/dev/disk/by-label/docker";
+    fsType = "ext4";
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
