@@ -29,6 +29,7 @@
       "burpsuite"
       "wpscan"
       "volatility3"
+      "notion-app-enhanced-v2.0.18"
     ];
 
   home.stateVersion = "22.05"; # DO NOT MODIFY

@@ -80,11 +80,6 @@ in {
     fsType = "ext4";
   };
 
-  fileSystems."/images" = {
-    device = "/dev/disk/by-label/images";
-    fsType = "ext4";
-  };
-
   fileSystems."/var/lib/docker" = {
     device = "/dev/disk/by-label/docker";
     fsType = "ext4";

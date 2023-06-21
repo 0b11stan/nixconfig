@@ -58,5 +58,12 @@ in {
     flowblade
     freerdp
     tigervnc
+    notion-app-enhanced
+    tdesktop
+
+    # hashcat
+    hashcat
+    hashcat-utils
+    hcxtools
   ];
 }

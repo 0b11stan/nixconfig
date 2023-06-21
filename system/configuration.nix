@@ -23,7 +23,9 @@ in {
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "1.0.0.1"];
-    extraHosts = "";
+    extraHosts = ''
+      10.199.104.10 satellite.siaadbm.local
+    '';
     resolvconf = {
       enable = false;
       useLocalResolver = true;
