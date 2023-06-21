@@ -33,6 +33,7 @@ in {
     # socials
     pkgsUnstable.tutanota-desktop
     signal-desktop
+    tdesktop
     discord
 
     # utils
@@ -58,5 +59,6 @@ in {
     flowblade
     freerdp
     tigervnc
+    notion-app-enhanced
   ];
 }
