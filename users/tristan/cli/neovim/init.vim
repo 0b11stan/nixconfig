@@ -17,7 +17,7 @@ au TermOpen * set nonumber
 
 " Autocomment 
 " TODO : make it dependant to language
-vmap " :s/^/#<CR>
+vmap " :s/^/#<CR>:nohlsearch<CR>
 
 " Use M key to set marks
 noremap M m
