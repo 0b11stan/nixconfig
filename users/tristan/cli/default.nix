@@ -53,6 +53,7 @@
     detox
     nfs-utils
     man-pages
+    usbutils
 
     # apps
     asciinema
