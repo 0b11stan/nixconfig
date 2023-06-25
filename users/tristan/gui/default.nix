@@ -33,6 +33,7 @@ in {
     # socials
     pkgsUnstable.tutanota-desktop
     signal-desktop
+    tdesktop
     discord
 
     # utils
