@@ -73,7 +73,6 @@ Create LVM volumes
 lvcreate -L 10G main -n nix
 lvcreate -L 1G main -n root
 lvcreate -L 1G main -n home
-lvcreate -L 1G main -n images
 lvcreate -L 1G main -n docker
 lvcreate -L 2G main -n swap
 ```
@@ -84,7 +83,6 @@ Format volumes (create appropriate file system on each)
 mkfs.ext4 -L nix /dev/main/nix
 mkfs.ext4 -L root /dev/main/root
 mkfs.ext4 -L home /dev/main/home
-mkfs.ext4 -L images /dev/main/images
 mkfs.ext4 -L docker /dev/main/docker
 mkswap -L swap /dev/main/swap
 mkfs.fat -F 32 -n boot /dev/main/sdx1
@@ -98,10 +96,8 @@ mkdir /mnt/nix
 mount /dev/disk/by-label/nix /mnt/nix
 mkdir /mnt/home
 mount /dev/disk/by-label/home /mnt/home
-mkdir /mnt/images
-mount /dev/disk/by-label/images /mnt/images
 mkdir /mnt/docker
-mount /dev/disk/by-label/images /mnt/docker
+mount /dev/disk/by-label/docker /mnt/docker
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/disk/by-label/swap
