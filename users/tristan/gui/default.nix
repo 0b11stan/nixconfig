@@ -43,6 +43,7 @@ in {
     notify-desktop
     wl-clipboard
     ffmpeg
+    cifs-utils
 
     # apps
     tor-browser-bundle-bin
