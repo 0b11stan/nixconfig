@@ -15,7 +15,7 @@ in {
 
   fonts.fontconfig.enable = true;
 
-  programs.mako = {
+  services.mako = {
     enable = true;
     defaultTimeout = 10000;
     backgroundColor = "${colors.greyLighter}";

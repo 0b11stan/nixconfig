@@ -10,7 +10,7 @@ in {
   imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   boot = {
-    cleanTmpDir = true;
+    tmp.cleanOnBoot = true;
 
     extraModprobeConfig =
       if builtins.hasAttr "hid_apple" (builtins.readDir /sys/module)
