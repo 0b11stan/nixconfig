@@ -6,7 +6,10 @@
 }: let
   isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
-  imports = [./hardware-configuration.nix];
+  imports = [
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -42,14 +45,6 @@ in {
       else "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
     keyMap = "fr";
   };
-
-  users = {
-    users.tristan = {
-      isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker"];
-    };
-  };
-
   programs = {
     wireshark.enable = true;
     adb.enable = true;
@@ -78,6 +73,15 @@ in {
     pipewire.enable = true;
     sshd.enable = isDesktop;
   };
+
+  users = {
+    users.tristan = {
+      isNormalUser = true;
+      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker"];
+    };
+  };
+
+  home-manager.users.tristan = ./home.nix;
 
   system.stateVersion = "22.05"; # DO NOT MODIFY
 }

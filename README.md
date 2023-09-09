@@ -131,38 +131,21 @@ Connect again to the wifi
 nmcli device wifi connect "$WIFI_SSID" password "$WIFI_PASSWORD"
 ```
 
-**Log back as tristan**
-
-Add home manager and unstable channel
+Configure channels (ad nixpkgs-unstable for pinning)
 
 ```bash
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
-nix-channel --update
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+nix-channel --add https://channels.nixos.org/nixos-unstable nixpkgs-unstable
 nix-channel --update
 ```
 
 Pull my configuration and apply user environnment
 
 ```bash
-nix-shell -p git home-manager
+nix-shell -p git
 git clone https://github.com/0b11stan/nixconfig.git ~/sources/github.com/0b11stan/nixconfig/
 cd ~/sources/github.com/0b11stan/nixconfig/
 ./apply-users.sh
-```
-
-Then, reboot and upgrade
-
-Initiate the `/images` folders.
-
-```
-mkdir /images/qemu
-mkdir /images/isos
-chmod -R 644 /images/
-chown -R tristan:users /images/
-chmod +x /images/
-chmod +x /images/isos/
-chmod +x /images/qemu/
 ```
 
 ## Todo's

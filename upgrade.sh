@@ -1,5 +1,5 @@
 #!/bin/sh
-eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa && ./sync-pass.sh
-./update-system.sh && ./apply-system.sh
-./update-user.sh && ./apply-users.sh
+eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa && pass git pull && pass git push
+sudo nix-channel --update
+sudo nixos-rebuild switch -I nixos-config=./system/configuration.nix
 sudo nix-collect-garbage --delete-older-than 30d
