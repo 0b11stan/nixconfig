@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: let
+  targetHost = builtins.getEnv "TARGET";
   isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
   imports = [
@@ -16,11 +17,11 @@ in {
   nix = {
     package = pkgs.nixFlakes;
     settings.auto-optimise-store = true;
-    extraOptions = "experimental-features = nix-command flakes";
+    #extraOptions = "experimental-features = nix-command flakes";
   };
 
   networking = {
-    hostName = "neo";
+    hostName = targetHost;
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "1.0.0.1"];
