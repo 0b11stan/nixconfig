@@ -19,11 +19,13 @@
     sessionVariables = {
       EDITOR = "nvim";
       WLR_NO_HARDWARE_CURSORS = 1;
+      BROWSER = "qutebrowser";
     };
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
+      "obsidian"
       "discord"
       "rar"
       "burpsuite"

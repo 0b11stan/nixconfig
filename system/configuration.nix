@@ -13,9 +13,7 @@ in {
   nix = {
     package = pkgs.nixFlakes;
     settings.auto-optimise-store = true;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    extraOptions = "experimental-features = nix-command flakes";
   };
 
   networking = {
@@ -23,9 +21,7 @@ in {
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "1.0.0.1"];
-    extraHosts = ''
-      10.199.104.10 satellite.siaadbm.local
-    '';
+    extraHosts = "";
     resolvconf = {
       enable = false;
       useLocalResolver = true;
@@ -57,6 +53,7 @@ in {
   programs = {
     wireshark.enable = true;
     adb.enable = true;
+    fuse.userAllowOther = true;
   };
 
   hardware = {

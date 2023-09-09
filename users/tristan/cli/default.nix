@@ -31,50 +31,52 @@
     password = "head -c 15 /dev/urandom | base32";
     dush = "sudo du -sh .[!.]* * 2>/dev/null | sort -h";
     openports = "ss -ltn4 'src = 0.0.0.0'";
+    mount = "sudo mount -o uid=$(id -u),gid=$(id -g)";
   };
 
   home.packages = with pkgs; [
     # utilitaires
-    file
-    htop
     bat
-    gource
     bind
-    zip
-    unzip
-    openvpn
-    exfatprogs
-    pciutils
-    tree
-    nixpkgs-fmt
-    rdfind
-    rar
-    dos2unix
+    cifs-utils
     detox
-    nfs-utils
+    dos2unix
+    exfatprogs
+    file
+    gource
+    htop
     man-pages
+    nfs-utils
+    nixpkgs-fmt
+    openssl
+    openvpn
+    pciutils
+    rar
+    rdfind
+    tree
+    unzip
     usbutils
+    zip
 
     # apps
     asciinema
-    transmission
-    asciinema
     dnsmasq
+    transmission
 
     # virt
     qemu
     OVMF
 
     # formaters / linters
-    jq
-    htmlq
     alejandra
+    htmlq
+    jq
 
     # source / build tool
-    python39
     gcc
     gnumake
     just
     pandoc
+    python310
   ];
 }

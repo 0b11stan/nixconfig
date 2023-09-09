@@ -7,10 +7,6 @@
       nerdtree
       # TODO: package NoahTheDuke/vim-just
       vim-markdown
-      {
-        plugin = dracula-vim;
-        config = "colorscheme dracula";
-      }
       supertab
       {
         plugin = nvim-lspconfig;
@@ -19,6 +15,14 @@
           lua require 'lspconfig'.rnix.setup{}
           lua require 'lspconfig'.rust_analyzer.setup{}
         '';
+      }
+      {
+        plugin = markdown-preview-nvim;
+        config = "let g:mkp_browser = '${pkgs.qutebrowser}/bin/qutebrowser'";
+      }
+      {
+        plugin = dracula-vim;
+        config = "colorscheme dracula";
       }
     ];
     extraPython3Packages = ps: with ps; [rich];

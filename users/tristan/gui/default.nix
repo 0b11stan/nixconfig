@@ -36,6 +36,7 @@ in {
     discord
 
     # utils
+    xdg-utils
     pavucontrol
     bemenu
     notify-desktop
@@ -55,11 +56,17 @@ in {
     mpv
     tor-browser-bundle-bin
     xfce.thunar
+    exiftool
+    qimgv
+    jmtpfs
     flowblade
     freerdp
     tigervnc
     notion-app-enhanced
     tdesktop
+    monero-gui
+    obsidian
+    keepassxc
 
     # hashcat
     hashcat
