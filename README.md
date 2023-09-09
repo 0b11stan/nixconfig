@@ -64,28 +64,28 @@ Configure LVM physical volume and main volume group
 
 ```bash
 pvcreate /dev/mapper/cryptlvm
-vgcreate main /dev/mapper/cryptlvm
+vgcreate $TARGET_HOSTNAME /dev/mapper/cryptlvm
 ```
 
 Create LVM volumes
 
 ```bash
-lvcreate -L 10G main -n nix
-lvcreate -L 1G main -n root
-lvcreate -L 1G main -n home
-lvcreate -L 1G main -n docker
-lvcreate -L 2G main -n swap
+lvcreate -L 10G $TARGET_HOSTNAME -n nix
+lvcreate -L 1G $TARGET_HOSTNAME -n root
+lvcreate -L 1G $TARGET_HOSTNAME -n home
+lvcreate -L 1G $TARGET_HOSTNAME -n docker
+lvcreate -L 2G $TARGET_HOSTNAME -n swap
 ```
 
 Format volumes (create appropriate file system on each)
 
 ```bash
-mkfs.ext4 -L nix /dev/main/nix
-mkfs.ext4 -L root /dev/main/root
-mkfs.ext4 -L home /dev/main/home
-mkfs.ext4 -L docker /dev/main/docker
-mkswap -L swap /dev/main/swap
-mkfs.fat -F 32 -n boot /dev/main/sdx1
+mkfs.ext4 -L nix /dev/$TARGET_HOSTNAME/nix
+mkfs.ext4 -L root /dev/$TARGET_HOSTNAME/root
+mkfs.ext4 -L home /dev/$TARGET_HOSTNAME/home
+mkfs.ext4 -L docker /dev/$TARGET_HOSTNAME/docker
+mkswap -L swap /dev/$TARGET_HOSTNAME/swap
+mkfs.fat -F 32 -n boot /dev/sdx1
 ```
 
 Mount the volumes on the live file system ready for the chroot
@@ -96,25 +96,35 @@ mkdir /mnt/nix
 mount /dev/disk/by-label/nix /mnt/nix
 mkdir /mnt/home
 mount /dev/disk/by-label/home /mnt/home
-mkdir /mnt/docker
-mount /dev/disk/by-label/docker /mnt/docker
+mkdir -p /mnt/var/lib/docker
+mount /dev/disk/by-label/docker /mnt/var/lib/docker
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/disk/by-label/swap
 ```
 
+Generate default configuration
+
+```bash
+nixos-generate-config --root /mnt
+```
+
+Change minial settings in /mnt/etc/nixos/configuration.nix
+
+- uncomment the "networkmanager" line
+- choose an hostname
+- choose a timezone
+- add the first user
+
+```nix
+users.users.tristan.isNormalUser = true;
+users.users.tristan.extraGroups = ["wheel"];
+```
+
 Install the system base
 
 ```bash
-# create base file hierarchy
-nixos-generate-config --root /mnt
-
-# pull my "main" config from github
-curl -o /mnt/etc/nixos/hardware-configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/hardware-configuration.nix
-curl -o /mnt/etc/nixos/configuration.nix https://raw.githubusercontent.com/0b11stan/nixconfig/main/system/configuration.nix
-
-# use the nixos install tool (chrooting, installing and choosing root's password)
-nixos-install
+NIXPKGS_ALLOW_UNFREE=1 nixos-install
 ```
 
 `reboot` into the new system and login as `root`
@@ -122,8 +132,11 @@ nixos-install
 Change my user's password
 
 ```bash
+loadkeys fr
 passwd tristan
 ```
+
+**Log in as tristan**
 
 Connect again to the wifi
 
@@ -134,9 +147,9 @@ nmcli device wifi connect "$WIFI_SSID" password "$WIFI_PASSWORD"
 Configure channels (ad nixpkgs-unstable for pinning)
 
 ```bash
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
-nix-channel --add https://channels.nixos.org/nixos-unstable nixpkgs-unstable
-nix-channel --update
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixpkgs-unstable
+sudo nix-channel --update
 ```
 
 Pull my configuration and apply user environnment
@@ -145,7 +158,7 @@ Pull my configuration and apply user environnment
 nix-shell -p git
 git clone https://github.com/0b11stan/nixconfig.git ~/sources/github.com/0b11stan/nixconfig/
 cd ~/sources/github.com/0b11stan/nixconfig/
-./apply-users.sh
+sudo nixos-rebuild switch -I nixos-config=./system/configuration.nix
 ```
 
 ## Todo's
