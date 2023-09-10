@@ -1,73 +1,60 @@
-# https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/python-modules/rich/default.nix
-with import <nixpkgs> {};
-with python310.pkgs;
-  (
-    let
-      argcomplete = buildPythonPackage rec {
-        pname = "argcomplete";
-        version = "3.0.8";
-        format = "setuptools";
-        disabled = pythonOlder "3.7";
-        propagatedBuildInputs = [pexpect];
+{
+  pkgs,
+  fetchPypi,
+}: let
+  python = let
+    packageOverrides = self: super: {
+      docker = super.docker.overridePythonAttrs (old: rec {
+        version = "6.1.3";
+        src = super.fetchPypi {
+          pname = "docker";
+          inherit version;
+          hash = "sha256-qm0XgwBFul7wFo1eqjTTe+6xE5SMQTr/4dWZH8EfmiA=";
+        };
+      });
+      requests = super.requests.overridePythonAttrs (old: rec {
+        version = "2.31.0";
+        src = super.fetchPypi {
+          pname = "requests";
+          inherit version;
+          hash = "sha256-lCxadY+Y15Dq7Ropy27vx/+w0c968Fw9J5Flbb1q0eE=";
+        };
+      });
+      rich = super.rich.overridePythonAttrs (old: rec {
+        version = "13.4.2";
         doCheck = false;
-        pythonImportsCheck = ["argcomplete"];
-        src = fetchPypi {
-          inherit pname version;
-          hash = "sha256-ucqWRI4U+kWddFCkq1oiu/nO5Lp63d8D5lw5i12u6ig=";
+        src = super.fetchPypi {
+          pname = "rich";
+          inherit version;
+          hash = "sha256-1lPWvM7eWEQwTGBdWqyALHz5Yh79cAtGx+wrUeqRSJg=";
         };
-        postPatch = ''
-          substituteInPlace setup.py \
-            --replace '"coverage",' "" \
-            --replace " + lint_require" ""
-        '';
-      };
+      });
+    };
+  in
+    pkgs.python311.override {
+      inherit packageOverrides;
+      self = python;
+    };
+in
+  pkgs.python311Packages.buildPythonPackage rec {
+    pname = "Exegol";
+    version = "4.2.5";
+    format = "setuptools";
 
-      docker = buildPythonPackage rec {
-        pname = "docker";
-        version = "6.1.2";
-        format = "pyproject";
-        disabled = pythonOlder "3.7";
-        src = fetchPypi {
-          inherit pname version;
-          hash = "sha256-3MCIrcLsTnz8WU4nXYvSyXOMVsgI3pdHaTnvZ9ta+MI=";
-        };
-        nativeBuildInputs = [setuptools-scm];
-        propagatedBuildInputs = [packaging requests urllib3 websocket-client];
-        passthru.optional-dependencies.ssh = [paramiko];
-        nativeCheckInputs =
-          [
-            pytestCheckHook
-          ]
-          ++ lib.flatten (builtins.attrValues passthru.optional-dependencies);
-        pytestFlagsArray = ["tests/unit"];
-        disabledTests = lib.optionals stdenv.isDarwin [
-          "api_test"
-          "stream_response"
-          "socket_file"
-        ];
-        dontUseSetuptoolsCheck = true;
-        pythonImportsCheck = ["docker"];
-      };
-      exegol = buildPythonPackage rec {
-        pname = "Exegol";
-        version = "4.2.3";
+    propagatedBuildInputs = [
+      python.pkgs.pyyaml
+      python.pkgs.gitpython
+      # customized
+      python.pkgs.docker
+      python.pkgs.requests
+      python.pkgs.rich
+      python.pkgs.argcomplete
+    ];
 
-        src = fetchPypi {
-          inherit pname version;
-          sha256 = "sha256-LT9uDsYRQea+N6kYvWa29w7IdVLSf345btKWiBTN2To=";
-        };
+    doCheck = false;
 
-        propagatedBuildInputs = [
-          setuptools
-          GitPython
-          rich
-          argcomplete
-          docker
-        ];
-
-        doCheck = false;
-      };
-    in
-      python310.withPackages (ps: with ps; [exegol])
-  )
-  .env
+    src = fetchPypi {
+      inherit pname version;
+      hash = "sha256-X/3Bu0LI/O7sSI5Y3ot497ArGfcRoBPbxkdT+mieapM=";
+    };
+  }

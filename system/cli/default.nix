@@ -62,6 +62,7 @@
     asciinema
     dnsmasq
     transmission
+    exegol
 
     # virt
     qemu
