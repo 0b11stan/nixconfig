@@ -41,14 +41,13 @@ in
     version = "4.2.5";
     format = "setuptools";
 
-    propagatedBuildInputs = [
-      python.pkgs.pyyaml
-      python.pkgs.gitpython
-      # customized
-      python.pkgs.docker
-      python.pkgs.requests
-      python.pkgs.rich
-      python.pkgs.argcomplete
+    propagatedBuildInputs = with python.pkgs; [
+      pyyaml
+      gitpython
+      docker
+      requests
+      rich
+      argcomplete
     ];
 
     doCheck = false;

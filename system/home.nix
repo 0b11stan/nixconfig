@@ -2,15 +2,27 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  stablePackages = import ./config/packages.nix {inherit pkgs;};
+  unstablePackages = [(import <nixpkgs-unstable> {}).tutanota-desktop];
+in {
   imports = [
-    ./cli
-    ./gui
+    ./config/batterie_alert
+    ./config/neovim
+    ./config/secrets
+    ./config/gui.nix
   ];
 
-  programs.home-manager.enable = true;
-
   nixpkgs.overlays = [(import ./pkgs)];
+
+  programs = {
+    home-manager.enable = true;
+    bash = import ./config/bash.nix;
+    git = import ./config/git.nix;
+    irssi = import ./config/irssi.nix;
+    firefox = import ./config/firefox.nix;
+    qutebrowser = import ./config/qutebrowser.nix;
+  };
 
   home = {
     username = "tristan";
@@ -21,18 +33,12 @@
       WLR_NO_HARDWARE_CURSORS = 1;
       BROWSER = "qutebrowser";
     };
+    shellAliases = import ./config/aliases.nix;
+    packages = stablePackages ++ unstablePackages;
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "obsidian"
-      "discord"
-      "rar"
-      "burpsuite"
-      "wpscan"
-      "volatility3"
-      "notion-app-enhanced-v2.0.18"
-    ];
+    builtins.elem (lib.getName pkg) ["obsidian" "discord"];
 
   home.stateVersion = "22.05"; # DO NOT MODIFY
 }
