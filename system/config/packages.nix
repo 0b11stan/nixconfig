@@ -13,6 +13,7 @@ with pkgs; [
   drawio
   evince
   exegol
+  exfat
   exiftool
   ffmpeg
   file
