@@ -17,4 +17,5 @@
   dush = "sudo du -sh .[!.]* * 2>/dev/null | sort -h";
   openports = "ss -ltn4 'src = 0.0.0.0'";
   mount = "sudo mount -o uid=$(id -u),gid=$(id -g)";
+  lsblk = "lsblk -o name,size,ro,type,label,mountpoint";
 }
