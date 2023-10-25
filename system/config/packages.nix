@@ -48,6 +48,7 @@ with pkgs; [
   openvpn
   OVMF
   pandoc
+  texlive.combined.scheme-tetex
   pavucontrol
   pciutils
   python3
