@@ -81,6 +81,7 @@ in {
   };
 
   home-manager.users.tristan = ./home.nix;
+  fonts.enableDefaultFonts = true;
 
   system.stateVersion = "22.05"; # DO NOT MODIFY
 }
