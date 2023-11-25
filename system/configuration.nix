@@ -12,6 +12,9 @@ in {
     <home-manager/nixos>
   ];
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["tristan"];
+
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -29,7 +32,7 @@ in {
       useLocalResolver = true;
     };
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [4444];
     };
   };
