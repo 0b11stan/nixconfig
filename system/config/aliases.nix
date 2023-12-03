@@ -18,4 +18,5 @@
   openports = "ss -ltn4 'src = 0.0.0.0'";
   mount = "sudo mount -o uid=$(id -u),gid=$(id -g)";
   lsblk = "lsblk -o name,size,ro,type,label,mountpoint";
+  nas = "/home/tristan/sources/github.com/0b11stan/selfhost-nas/mount_cifs.sh";
 }
