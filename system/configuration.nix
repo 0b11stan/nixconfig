@@ -33,7 +33,7 @@ in {
     };
     firewall = {
       enable = false;
-      allowedTCPPorts = [4444];
+      allowedTCPPorts = [4444 4443];
     };
   };
 
@@ -69,6 +69,7 @@ in {
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [xdg-desktop-portal-wlr];
+    config.common.default = "*";
   };
 
   services = {
@@ -84,7 +85,7 @@ in {
   };
 
   home-manager.users.tristan = ./home.nix;
-  fonts.enableDefaultFonts = true;
+  fonts.enableDefaultPackages = true;
 
   system.stateVersion = "22.05"; # DO NOT MODIFY
 }
