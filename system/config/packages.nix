@@ -59,10 +59,11 @@ in
     qimgv
     rdfind # duplicate file finder
     signal-desktop
+    sshpass
+    tex
     tor-browser-bundle-bin
     transmission
     tree
-    tex
     unzip
     usbutils
     wl-clipboard

@@ -7,6 +7,7 @@
       nerdtree
       # TODO: package NoahTheDuke/vim-just
       vim-markdown
+      ansible-vim
       supertab
       {
         plugin = nvim-lspconfig;

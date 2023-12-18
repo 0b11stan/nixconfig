@@ -33,7 +33,7 @@ in {
       useLocalResolver = true;
     };
     firewall = {
-      enable = false;
+      enable = true;
       allowedTCPPorts = [4444 4443];
     };
   };
