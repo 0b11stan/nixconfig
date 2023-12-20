@@ -11,12 +11,9 @@ in {
   home.packages = with pkgs; [
     swaylock
     xorg.xhost
-    # for screenshot
     grim
     slurp
   ];
-
-  home.shellAliases.screenshot = "grim -g \"$(slurp)\" /tmp/$(date +screenshot-%s.png)";
 
   wayland.windowManager.sway = import ./sway.nix {
     inherit colors config isDesktop lib pkgs;

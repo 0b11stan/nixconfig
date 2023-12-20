@@ -88,6 +88,13 @@ in {
       '';
 
       "${mod}+Shift+x" = "exec swaylock -c '#000100'";
+      "${mod}+Shift+o" = ''
+        exec /bin/sh -c ' \
+          SCREENPATH=/tmp/$(date +screenshot-%s.png); \
+          grim -g \"$(slurp)\" $SCREENPATH; \
+          printf $SCREENPATH | wl-copy; \
+        '
+      '';
 
       "${mod}+ampersand" =
         if isDesktop
