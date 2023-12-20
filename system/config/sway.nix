@@ -91,7 +91,7 @@ in {
       "${mod}+Shift+o" = ''
         exec /bin/sh -c ' \
           SCREENPATH=/tmp/$(date +screenshot-%s.png); \
-          grim -g \"$(slurp)\" $SCREENPATH; \
+          grim -g \"$(slurp)\" $SCREENPATH && \
           printf $SCREENPATH | wl-copy; \
         '
       '';
