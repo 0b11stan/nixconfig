@@ -6,6 +6,7 @@
 }: let
   hostname = builtins.getEnv "HOSTNAME";
   isDesktop = builtins.readDir /sys/class/power_supply == {};
+  isLaptop = !isDesktop;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -27,7 +28,7 @@ in {
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "1.0.0.1"];
-    extraHosts = "192.168.144.67 nextcloud.siaadbm.local cloud.siaadbm.local";
+    extraHosts = "192.168.144.67 nextcloud.siaadbm.local cloud.siaadbm.local git.siaadbm.local";
     resolvconf = {
       enable = false;
       useLocalResolver = true;
@@ -55,6 +56,10 @@ in {
   };
 
   hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
     pulseaudio.enable = true;
     opengl.enable = true;
   };
@@ -66,7 +71,6 @@ in {
     docker.enable = true;
   };
 
-  # TODO : limit to gui
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [xdg-desktop-portal-wlr];
@@ -74,6 +78,7 @@ in {
   };
 
   services = {
+    blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = isDesktop;
   };

@@ -42,5 +42,7 @@ in {
     permittedInsecurePackages = ["electron-25.9.0"];
   };
 
+  services.mpris-proxy.enable = true; # for bluetooth headset buttons features
+
   home.stateVersion = "22.05"; # DO NOT MODIFY
 }
