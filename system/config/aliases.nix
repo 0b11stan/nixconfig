@@ -19,4 +19,5 @@
   mount = "sudo mount -o uid=$(id -u),gid=$(id -g)";
   lsblk = "lsblk -o name,size,ro,type,label,mountpoint";
   nas = "/home/tristan/sources/github.com/0b11stan/selfhost-nas/mount_cifs.sh";
+  scan = "scanimage --device 'airscan:w0:EPSON XP-5100 Series' --format png --progress --output-file";
 }

@@ -62,6 +62,10 @@ in {
     };
     pulseaudio.enable = true;
     opengl.enable = true;
+    sane = {
+      enable = true;
+      extraBackends = [pkgs.sane-airscan];
+    };
   };
 
   security.pam.services.swaylock = {};
@@ -81,12 +85,17 @@ in {
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = isDesktop;
+    printing = {
+      # TODO : https://nixos.wiki/wiki/Printing
+      enable = true;
+      drivers = [pkgs.epsonscan2];
+    };
   };
 
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker"];
+      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker" "lp" "scanner"];
     };
   };
 

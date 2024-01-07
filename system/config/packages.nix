@@ -9,6 +9,7 @@ in
     audacity
     bat
     bemenu
+    bindfs
     cifs-utils
     detox
     discord
