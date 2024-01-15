@@ -27,8 +27,8 @@ in {
     hostName = hostname;
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
-    nameservers = ["1.1.1.1" "1.0.0.1"];
-    extraHosts = "192.168.144.67 nextcloud.siaadbm.local cloud.siaadbm.local git.siaadbm.local";
+    nameservers = ["1.1.1.1" "8.8.8.8"];
+    extraHosts = ""; # use dnsmasq instead of extrahosts for dev: dnsmasq -A /siaadbm.local/10.10.10.9
     resolvconf = {
       enable = false;
       useLocalResolver = true;
