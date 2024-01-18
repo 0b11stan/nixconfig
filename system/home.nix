@@ -3,8 +3,9 @@
   pkgs,
   ...
 }: let
-  stablePackages = import ./config/packages.nix {inherit pkgs;};
+  #unstablePackages = [];
   unstablePackages = [(import <nixpkgs-unstable> {}).tutanota-desktop];
+  stablePackages = import ./config/packages.nix {inherit pkgs;};
 in {
   imports = [
     ./config/batterie_alert

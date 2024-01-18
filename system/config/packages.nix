@@ -17,9 +17,9 @@ in
     dos2unix
     drawio
     evince
-    exegol
     exfat
     exiftool
+    exegol
     ffmpeg
     file
     freerdp
@@ -61,6 +61,7 @@ in
     rdfind # duplicate file finder
     signal-desktop
     sshpass
+    tutanota-desktop
     tex
     tor-browser-bundle-bin
     transmission
