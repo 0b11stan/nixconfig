@@ -28,7 +28,7 @@ in {
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "8.8.8.8"];
-    extraHosts = ""; # use dnsmasq instead of extrahosts for dev: dnsmasq -A /siaadbm.local/10.10.10.9
+    extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     resolvconf = {
       enable = false;
       useLocalResolver = true;

@@ -61,7 +61,6 @@ in
     rdfind # duplicate file finder
     signal-desktop
     sshpass
-    tutanota-desktop
     tex
     tor-browser-bundle-bin
     transmission
