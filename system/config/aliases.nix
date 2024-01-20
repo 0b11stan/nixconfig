@@ -6,7 +6,7 @@
   debian = "podman run -it --network=host -v $PWD:/srv docker.io/debian bash";
   ubuntu = "podman run -it --network=host -v $PWD:/srv docker.io/ubuntu bash";
   nessus = ''
-    sudo podman run --rm -p 8834:8834 --network host --privileged \
+    sudo podman run --rm --name nessus -p 8834:8834 --network host --privileged \
       --env "USERNAME=0b11stan" \
       --env "PASSWORD=$(pass capgemini/nessus|head -n1)" \
       --env "ACTIVATION_CODE=$(pass capgemini/nessus|head -n2|tail -n1)" \
