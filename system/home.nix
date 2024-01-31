@@ -18,6 +18,7 @@ in {
 
   programs = {
     home-manager.enable = true;
+    nix-index.enable = true;
     bash = import ./config/bash.nix;
     git = import ./config/git.nix;
     irssi = import ./config/irssi.nix;
