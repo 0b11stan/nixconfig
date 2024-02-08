@@ -68,6 +68,7 @@ in
     unzip
     usbutils
     wl-clipboard
+    wl-mirror
     xdg-utils
     xfce.thunar
     zip

@@ -27,4 +27,6 @@
   lsblk = "lsblk -o name,size,ro,type,label,mountpoint";
   nas = "/home/tristan/sources/github.com/0b11stan/selfhost-nas/mount_cifs.sh";
   scan = "scanimage --device 'airscan:w0:EPSON XP-5100 Series' --format png --progress --output-file";
+  mirror = "wl-mirror $(swaymsg -t get_outputs | jq -r '.[0].name')";
+  mirror-zone = ''wl-mirror $(swaymsg -t get_outputs | jq -r '.[0].name') --region "$(slurp)"'';
 }
