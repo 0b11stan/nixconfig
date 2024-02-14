@@ -35,7 +35,7 @@ in {
     };
 
     swayidle = {
-      enable = !isDesktop;
+      enable = true;
       timeouts = [
         {
           timeout = 60;

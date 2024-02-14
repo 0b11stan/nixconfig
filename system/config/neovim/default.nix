@@ -1,13 +1,23 @@
 {pkgs, ...}: {
   programs.neovim = {
     enable = true;
-    withPython3 = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
-      vim-nix
-      nerdtree
-      # TODO: package NoahTheDuke/vim-just
-      vim-markdown
       ansible-vim
+      vim-nix
+      vim-markdown
+      nvim-web-devicons
+      {
+        plugin = nvim-tree-lua;
+        config = ''
+          lua require 'nvim-tree'.setup()
+        '';
+      }
+      # TODO : package https://github.com/nvim-neo-tree/neo-tree.nvim
+      # TODO : package https://github.com/nvim-telescope/telescope.nvim
       supertab
       {
         plugin = nvim-lspconfig;

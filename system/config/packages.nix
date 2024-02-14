@@ -43,6 +43,7 @@ in
     nfs-utils
     nixpkgs-fmt
     notify-desktop
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     noto-fonts
     noto-fonts-emoji
     noto-fonts-extra

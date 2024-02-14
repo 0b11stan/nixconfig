@@ -76,3 +76,7 @@ set omnifunc=v:lua.vim.lsp.omnifunc
 
 " Command execution in markdown
 autocmd BufEnter *.md noremap X yypV:'<,'>!bash<CR>
+
+" Disable netrw for nvim-tree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
