@@ -13,9 +13,6 @@ in {
     <home-manager/nixos>
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["tristan"];
-
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -73,6 +70,7 @@ in {
   virtualisation = {
     podman.enable = true;
     docker.enable = true;
+    virtualbox.host.enable = true;
   };
 
   xdg.portal = {
@@ -95,9 +93,11 @@ in {
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker" "lp" "scanner"];
+      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker" "lp" "scanner" "vboxusers"];
     };
   };
+
+  environment.etc."qemu/bridge.conf".text = "allow all";
 
   home-manager.users.tristan = ./home.nix;
   fonts.enableDefaultPackages = true;

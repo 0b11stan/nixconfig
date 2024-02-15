@@ -46,6 +46,9 @@ noremap <C-j> <C-w>h
 " Remove search
 noremap h :nohlsearch<CR>
 
+" Open Tree
+noremap t :NvimTreeOpen<CR>
+
 " So we can use `:find ...` for fuzzyfind
 set path+=**
 
