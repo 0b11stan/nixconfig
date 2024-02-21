@@ -17,9 +17,9 @@ in
     dos2unix
     drawio
     evince
+    exegol
     exfat
     exiftool
-    exegol
     ffmpeg
     file
     freerdp
@@ -40,10 +40,10 @@ in
     man-pages
     monero-gui
     mpv
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     nfs-utils
     nixpkgs-fmt
     notify-desktop
-    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     noto-fonts
     noto-fonts-emoji
     noto-fonts-extra
@@ -53,6 +53,7 @@ in
     openssl
     openvpn
     OVMF
+    p7zip
     pandoc
     pavucontrol
     pciutils
@@ -63,6 +64,7 @@ in
     signal-desktop
     sshpass
     tex
+    tigervnc
     tor-browser-bundle-bin
     transmission
     tree

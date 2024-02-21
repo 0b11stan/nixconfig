@@ -70,10 +70,10 @@ vgcreate $TARGET_HOSTNAME /dev/mapper/cryptlvm
 Create LVM volumes
 
 ```bash
-lvcreate -L 10G $TARGET_HOSTNAME -n nix
-lvcreate -L 1G $TARGET_HOSTNAME -n root
-lvcreate -L 1G $TARGET_HOSTNAME -n home
-lvcreate -L 1G $TARGET_HOSTNAME -n docker
+lvcreate -L 70G $TARGET_HOSTNAME -n docker
+lvcreate -L 50G $TARGET_HOSTNAME -n nix
+lvcreate -L 10G $TARGET_HOSTNAME -n home
+lvcreate -L 5G $TARGET_HOSTNAME -n root
 lvcreate -L 2G $TARGET_HOSTNAME -n swap
 ```
 

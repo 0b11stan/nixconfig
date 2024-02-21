@@ -8,6 +8,8 @@
   isDesktop = builtins.readDir /sys/class/power_supply == {};
   isLaptop = !isDesktop;
 in {
+  # TODO : https://nixos.wiki/wiki/Nvidia
+  # TODO : https://exegol.readthedocs.io/en/latest/getting-started/faq.html#how-to-install-exegol-on-an-external-drive
   imports = [
     ./hardware-configuration.nix
     <home-manager/nixos>

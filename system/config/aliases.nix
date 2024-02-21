@@ -2,9 +2,10 @@
   ip = "ip --color --brief";
   watch = "watch --color";
   tree = "tree -C";
-  archlinux = "podman run -it --network=host -v $PWD:/srv docker.io/archlinux bash";
-  debian = "podman run -it --network=host -v $PWD:/srv docker.io/debian bash";
-  ubuntu = "podman run -it --network=host -v $PWD:/srv docker.io/ubuntu bash";
+  archlinux = "podman run -it --network=host -v $PWD:/mnt docker.io/archlinux bash";
+  debian = "podman run -it --network=host -v $PWD:/mnt docker.io/debian bash";
+  ubuntu = "podman run -it --network=host -v $PWD:/mnt docker.io/ubuntu bash";
+  kali = "podman run -it --network=host -v $PWD:/mnt docker.io/kalilinux/kali-rolling";
   nessus = ''
     sudo podman run --name nessus -p 8834:8834 --network host --privileged \
       --env "USERNAME=0b11stan" \
