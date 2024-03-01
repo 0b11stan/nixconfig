@@ -42,6 +42,7 @@ in
     mpv
     (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     nfs-utils
+    ntfs3g
     nixpkgs-fmt
     notify-desktop
     noto-fonts
