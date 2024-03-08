@@ -28,10 +28,6 @@ in {
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "8.8.8.8"];
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
-    resolvconf = {
-      enable = false;
-      useLocalResolver = true;
-    };
     firewall = {
       enable = true;
       allowedTCPPorts = [4444 4443];

@@ -10,6 +10,7 @@ in
     bat
     bemenu
     bindfs
+    (burpsuite.override {proEdition = true;})
     cifs-utils
     detox
     discord
@@ -42,12 +43,12 @@ in
     mpv
     (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     nfs-utils
-    ntfs3g
     nixpkgs-fmt
     notify-desktop
     noto-fonts
     noto-fonts-emoji
     noto-fonts-extra
+    ntfs3g
     obsidian
     obs-studio
     obs-studio-plugins.wlrobs

@@ -40,7 +40,12 @@ in {
   };
 
   nixpkgs.config = {
-    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["obsidian" "discord"];
+    allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [
+        "obsidian"
+        "discord"
+        "burpsuite"
+      ];
     permittedInsecurePackages = ["electron-25.9.0"];
   };
 
