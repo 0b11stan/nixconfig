@@ -46,7 +46,7 @@ in {
         "discord"
         "burpsuite"
       ];
-    permittedInsecurePackages = ["electron-25.9.0"];
+    permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];
   };
 
   services.mpris-proxy.enable = true; # for bluetooth headset buttons features
