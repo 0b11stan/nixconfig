@@ -5,8 +5,6 @@
 in
   with pkgs; [
     alejandra
-    asciinema
-    audacity
     bat
     bemenu
     bindfs
@@ -25,16 +23,13 @@ in
     file
     freerdp
     gcc
-    gimp
     gnumake
     gource
     hack-font
     htmlq
     htop
-    inkscape
     jmtpfs
     jq
-    just
     keepassxc
     ldns # for dns utils
     libreoffice
@@ -50,8 +45,6 @@ in
     noto-fonts-extra
     ntfs3g
     obsidian
-    obs-studio
-    obs-studio-plugins.wlrobs
     openssl
     openvpn
     OVMF
@@ -61,7 +54,6 @@ in
     pciutils
     python3
     qemu
-    qimgv
     rdfind # duplicate file finder
     signal-desktop
     sshpass
