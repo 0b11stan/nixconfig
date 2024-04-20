@@ -3,8 +3,7 @@
   pkgs,
   ...
 }: let
-  #unstablePackages = [];
-  unstablePackages = [(import <nixpkgs-unstable> {}).tutanota-desktop];
+  unstablePackages = [(import <nixos-unstable> {}).tutanota-desktop];
   stablePackages = import ./config/packages.nix {inherit pkgs;};
 in {
   imports = [

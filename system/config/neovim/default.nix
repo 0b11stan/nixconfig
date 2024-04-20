@@ -9,6 +9,7 @@
       ansible-vim
       vim-nix
       vim-markdown
+      rust-vim
       nvim-web-devicons
       {
         plugin = nvim-tree-lua;

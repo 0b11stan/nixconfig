@@ -71,8 +71,8 @@ function Fmt(cmd)
 endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
 autocmd BufWritePre *.py call Fmt('%!autopep8 -')
-autocmd BufWritePre *.rs call Fmt('%!rustfmt')
 autocmd BufWritePre *.html call Fmt('%!html-beautify')
+let g:rustfmt_autosave = 1
 
 " Enable lsp's autocomplete
 set omnifunc=v:lua.vim.lsp.omnifunc
