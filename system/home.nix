@@ -11,6 +11,7 @@ in {
     ./config/batterie_alert
     ./config/neovim
     ./config/secrets
+    ./config/pandoc
     ./config/gui.nix
   ];
 

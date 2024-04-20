@@ -1,6 +1,39 @@
 {pkgs}: let
   tex = pkgs.texlive.combine {
-    inherit (pkgs.texlive) scheme-tetex framed tcolorbox sectsty;
+    inherit
+      (pkgs.texlive)
+      adjustbox
+      babel-german
+      background
+      bidi
+      collectbox
+      csquotes
+      everypage
+      filehook
+      footmisc
+      footnotebackref
+      framed
+      fvextra
+      letltxmacro
+      ly1
+      mdframed
+      mweights
+      needspace
+      pagecolor
+      scheme-tetex
+      sectsty
+      sourcecodepro
+      sourcesanspro
+      tcolorbox
+      titling
+      ucharcat
+      ulem
+      unicode-math
+      upquote
+      xecjk
+      xurl
+      zref
+      ;
   };
 in
   with pkgs; [
@@ -49,7 +82,6 @@ in
     openvpn
     OVMF
     p7zip
-    pandoc
     pavucontrol
     pciutils
     python3
