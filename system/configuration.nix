@@ -18,6 +18,10 @@ in {
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
+    };
     package = pkgs.nixFlakes;
     settings.auto-optimise-store = true;
   };
