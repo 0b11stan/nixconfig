@@ -71,7 +71,7 @@ in {
 
   virtualisation = {
     podman.enable = true;
-    docker.enable = true;
+    docker.enable = false;
     virtualbox.host.enable = true;
   };
 
