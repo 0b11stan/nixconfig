@@ -33,7 +33,7 @@ in {
     nameservers = ["1.1.1.1" "8.8.8.8"];
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [4444 4443];
     };
   };

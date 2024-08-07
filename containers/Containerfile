@@ -1,0 +1,3 @@
+FROM docker.io/archlinux
+RUN pacman -Syu --noconfirm
+RUN pacman -S --noconfirm openshot
