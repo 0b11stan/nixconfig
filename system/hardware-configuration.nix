@@ -82,10 +82,10 @@ in {
     fsType = "ext4";
   };
 
-  fileSystems."/var/lib/docker" = {
-    device = "/dev/disk/by-label/docker";
-    fsType = "ext4";
-  };
+  #  fileSystems."/var/lib/docker" = {
+  #    device = "/dev/disk/by-label/docker";
+  #    fsType = "ext4";
+  #  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";

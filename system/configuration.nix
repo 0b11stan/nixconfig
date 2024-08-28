@@ -33,7 +33,7 @@ in {
     nameservers = ["1.1.1.1" "8.8.8.8"];
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
-      enable = false;
+      enable = true;
       allowedTCPPorts = [4444 4443];
     };
   };
@@ -71,7 +71,7 @@ in {
 
   virtualisation = {
     podman.enable = true;
-    docker.enable = true;
+    docker.enable = false;
     virtualbox.host.enable = true;
   };
 
