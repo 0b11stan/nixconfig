@@ -15,7 +15,7 @@
       };
     };
     live_config_reload = true;
-    key_bindings = [
+    keyboard.bindings = [
       {
         key = "L";
         mode = "Vi|~Search";

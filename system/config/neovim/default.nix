@@ -24,7 +24,6 @@
         plugin = nvim-lspconfig;
         config = ''
           lua require 'lspconfig'.pylsp.setup{}
-          lua require 'lspconfig'.rnix.setup{}
           lua require 'lspconfig'.rust_analyzer.setup{}
         '';
       }
@@ -41,9 +40,6 @@
     extraPackages = with pkgs; [
       ctags
 
-      # nix
-      rnix-lsp
-
       # rust
       cargo
       rustc
@@ -54,9 +50,9 @@
       nodePackages.js-beautify
 
       # python
-      python39
-      python39Packages.python-lsp-server
-      python39Packages.autopep8
+      python312
+      python312Packages.python-lsp-server
+      python312Packages.autopep8
     ];
     extraConfig = builtins.readFile ./init.vim;
   };
