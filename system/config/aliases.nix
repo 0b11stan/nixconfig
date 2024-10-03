@@ -32,13 +32,13 @@
   mirror-zone = ''wl-mirror $(swaymsg -t get_outputs | jq -r '.[0].name') --region "$(slurp)"'';
 
   # docker aliases
-  dcu = "docker-compose up";
-  dcub = "docker-compose up --build";
-  dcd = "docker-compose down";
-  dcdv = "docker-compose down --volumes";
+  dcu = "docker compose up";
+  dcub = "docker compose up --build";
+  dcd = "docker compose down";
+  dcdv = "docker compose down --volumes";
   dstopall = "docker stop `docker ps -a -q`";
   drmall = "docker rm `docker ps -a -q`";
   dgenocide = "dstopall && drmall";
-  dce = "docker-compose exec";
-  dceme = "docker-compose exec --user = 1000";
+  dce = "docker compose exec";
+  dceme = "docker compose exec --user = 1000";
 }
