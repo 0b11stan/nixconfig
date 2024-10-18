@@ -13,6 +13,7 @@
       footmisc
       footnotebackref
       framed
+      biber
       fvextra
       letltxmacro
       ly1
