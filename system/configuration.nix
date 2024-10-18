@@ -34,7 +34,11 @@ in {
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
       enable = true;
-      allowedTCPPorts = [4444 4443];
+      allowedTCPPorts = [
+        4444 # for pentest
+        4443 # for pentest
+        5182 # for wireguard
+      ];
     };
   };
 
@@ -85,6 +89,7 @@ in {
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = isDesktop;
+    mullvad-vpn.enable = true;
     printing = {
       # TODO : https://nixos.wiki/wiki/Printing
       enable = true;
