@@ -39,13 +39,16 @@ in {
     packages = stablePackages ++ unstablePackages;
   };
 
+  nixpkgs.config.allowBroken = true;
   nixpkgs.config = {
     allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [
         "obsidian"
         "discord"
         "burpsuite"
+        "minecraft-launcher"
       ];
+
     permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];
   };
 

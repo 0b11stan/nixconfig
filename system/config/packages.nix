@@ -5,6 +5,7 @@
       adjustbox
       babel-german
       background
+      biber
       bidi
       collectbox
       csquotes
@@ -13,7 +14,6 @@
       footmisc
       footnotebackref
       framed
-      biber
       fvextra
       letltxmacro
       ly1
@@ -62,12 +62,14 @@ in
     hack-font
     htmlq
     htop
+    iw
     jmtpfs
     jq
     keepassxc
     ldns # for dns utils
     libreoffice
     man-pages
+    minecraft
     monero-gui
     mpv
     (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})

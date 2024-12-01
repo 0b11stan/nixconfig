@@ -2,27 +2,30 @@
   fetchPypi,
   lib,
   python3,
+  xorg,
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "exegol";
-  version = "4.3.4";
+  version = "4.3.8";
   format = "setuptools";
 
   # Project has no unit tests
   doCheck = false;
 
-  propagatedBuildInputs = with python3.pkgs; [
-    pyyaml
-    gitpython
-    docker
-    requests
-    rich
-    argcomplete
-  ];
+  propagatedBuildInputs = with python3.pkgs;
+    [
+      pyyaml
+      gitpython
+      docker
+      requests
+      rich
+      argcomplete
+    ]
+    ++ [xorg.xhost];
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-SjpzGHW06lyEJ70I7LSMoxcH6FxX3TLAD/BwLEKt34w=";
+    hash = "sha256-x2kIQOwbokJ0/uOafWZp0X67FmuEjF0WvI4D4jCLWnk=";
   };
 
   meta = with lib; {
@@ -39,6 +42,9 @@ python3.pkgs.buildPythonApplication rec {
     changelog = "https://github.com/ThePorgs/Exegol/releases/tag/${version}";
     license = licenses.gpl3Only;
     mainProgram = "exegol";
-    maintainers = with maintainers; [_0b11stan charB66];
+    maintainers = with maintainers; [
+      _0b11stan
+      charB66
+    ];
   };
 }

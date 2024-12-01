@@ -173,7 +173,6 @@ sudo nixos-rebuild switch -I nixos-config=./system/configuration.nix
 * [x] package [mdfmt](https://github.com/moorereason/mdfmt)
 * [ ] package [bloodhound](https://bloodhound.readthedocs.io/en/latest/installation/linux.html)
 * [ ] format markdown files on save
-* [ ] add home-manager feature for neovim ftplugins
 * [ ] configure colored man pages
 * [ ] merge "system" and "user" config ? (see [here](https://nix-community.github.io/home-manager/index.html#sec-install-nixos-module))
 * [x] install and configure swaylock

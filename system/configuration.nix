@@ -104,7 +104,10 @@ in {
     };
   };
 
-  environment.etc."qemu/bridge.conf".text = "allow all";
+  environment = {
+    etc."qemu/bridge.conf".text = "allow all";
+    systemPackages = with pkgs; [wireshark];
+  };
 
   home-manager.users.tristan = ./home.nix;
   fonts.enableDefaultPackages = true;
