@@ -99,6 +99,7 @@ in
     tree
     unzip
     usbutils
+    wireguard-tools
     wl-clipboard
     wl-mirror
     xdg-utils

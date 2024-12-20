@@ -35,8 +35,6 @@ in {
     firewall = {
       enable = true;
       allowedTCPPorts = [
-        4444 # for pentest
-        4443 # for pentest
         5182 # for wireguard
       ];
     };
