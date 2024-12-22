@@ -2,10 +2,7 @@
   lib,
   pkgs,
   ...
-}: let
-  unstablePackages = [(import <nixos-unstable> {}).tutanota-desktop];
-  stablePackages = import ./config/packages.nix {inherit pkgs;};
-in {
+}: {
   imports = [
     ./config/batterie_alert
     ./config/neovim
@@ -36,17 +33,18 @@ in {
       BROWSER = "qutebrowser";
     };
     shellAliases = import ./config/aliases.nix;
-    packages = stablePackages ++ unstablePackages;
+    packages = import ./config/packages.nix {inherit pkgs;};
   };
 
   nixpkgs.config.allowBroken = true;
   nixpkgs.config = {
     allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [
-        "obsidian"
-        "discord"
         "burpsuite"
+        "discord"
+        "drawio"
         "minecraft-launcher"
+        "obsidian"
       ];
 
     permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];

@@ -70,7 +70,6 @@ vgcreate $TARGET_HOSTNAME /dev/mapper/cryptlvm
 Create LVM volumes
 
 ```bash
-lvcreate -L 70G $TARGET_HOSTNAME -n docker
 lvcreate -L 50G $TARGET_HOSTNAME -n nix
 lvcreate -L 10G $TARGET_HOSTNAME -n home
 lvcreate -L 5G $TARGET_HOSTNAME -n root
@@ -83,7 +82,6 @@ Format volumes (create appropriate file system on each)
 mkfs.ext4 -L nix /dev/$TARGET_HOSTNAME/nix
 mkfs.ext4 -L root /dev/$TARGET_HOSTNAME/root
 mkfs.ext4 -L home /dev/$TARGET_HOSTNAME/home
-mkfs.ext4 -L docker /dev/$TARGET_HOSTNAME/docker
 mkswap -L swap /dev/$TARGET_HOSTNAME/swap
 mkfs.fat -F 32 -n boot /dev/sdx1
 ```
@@ -96,8 +94,6 @@ mkdir /mnt/nix
 mount /dev/disk/by-label/nix /mnt/nix
 mkdir /mnt/home
 mount /dev/disk/by-label/home /mnt/home
-mkdir -p /mnt/var/lib/docker
-mount /dev/disk/by-label/docker /mnt/var/lib/docker
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/disk/by-label/swap

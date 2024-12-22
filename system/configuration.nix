@@ -3,11 +3,7 @@
   lib,
   pkgs,
   ...
-}: let
-  hostname = builtins.getEnv "HOSTNAME";
-  isDesktop = builtins.readDir /sys/class/power_supply == {};
-  isLaptop = !isDesktop;
-in {
+}: {
   # TODO : https://nixos.wiki/wiki/Nvidia
   # TODO : https://exegol.readthedocs.io/en/latest/getting-started/faq.html#how-to-install-exegol-on-an-external-drive
   imports = [
@@ -22,12 +18,11 @@ in {
       automatic = true;
       options = "--delete-older-than 30d";
     };
-    package = pkgs.nixFlakes;
     settings.auto-optimise-store = true;
   };
 
   networking = {
-    hostName = hostname;
+    hostName = "neo";
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     nameservers = ["1.1.1.1" "8.8.8.8"];
@@ -41,15 +36,10 @@ in {
   };
 
   time.timeZone = "Europe/Paris";
-  i18n.defaultLocale = "fr_FR.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
-  console = {
-    font =
-      if builtins.hasAttr "hid_apple" (builtins.readDir /sys/module)
-      then "Lat2-Terminus16"
-      else "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
-    keyMap = "fr";
-  };
+  console.keyMap = "fr";
+
   programs = {
     wireshark.enable = true;
     adb.enable = true;
@@ -62,7 +52,8 @@ in {
       powerOnBoot = true;
     };
     pulseaudio.enable = true;
-    opengl.enable = true;
+    #opengl.enable = true;
+    graphics.enable = true;
     sane = {
       enable = true;
       extraBackends = [pkgs.sane-airscan];
@@ -86,7 +77,7 @@ in {
   services = {
     blueman.enable = true;
     pipewire.enable = true;
-    sshd.enable = isDesktop;
+    sshd.enable = true;
     mullvad-vpn.enable = true;
     printing = {
       # TODO : https://nixos.wiki/wiki/Printing
@@ -110,5 +101,5 @@ in {
   home-manager.users.tristan = ./home.nix;
   fonts.enableDefaultPackages = true;
 
-  system.stateVersion = "22.05"; # DO NOT MODIFY
+  system.stateVersion = "24.11"; # DO NOT MODIFY !
 }

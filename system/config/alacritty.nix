@@ -14,7 +14,7 @@
         cyan = "${colors.cyan}";
       };
     };
-    live_config_reload = true;
+    general.live_config_reload = true;
     keyboard.bindings = [
       {
         key = "L";

@@ -95,7 +95,6 @@ in
     tex
     tigervnc
     tor-browser-bundle-bin
-    transmission
     tree
     unzip
     usbutils
