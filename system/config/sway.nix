@@ -24,6 +24,15 @@ in {
   '';
 
   config = {
+    output = {
+      eDP-1 = {
+        position = "0 0";
+      };
+      HDMI-A-2 = {
+        position = "1920 0";
+      };
+    };
+
     input = {
       "type:keyboard" = {
         xkb_layout = "fr";
@@ -50,11 +59,7 @@ in {
         workspace = "1";
       }
       {
-        output = "DP-2";
-        workspace = "5";
-      }
-      {
-        output = "HDMI-A-1";
+        output = "HDMI-A-2";
         workspace = "10";
       }
     ];
