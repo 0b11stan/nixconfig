@@ -9,6 +9,7 @@
       ansible-vim
       vim-nix
       vim-markdown
+      vim-svelte
       rust-vim
       nvim-web-devicons
       {
@@ -25,6 +26,7 @@
         config = ''
           lua require 'lspconfig'.pylsp.setup{}
           lua require 'lspconfig'.rust_analyzer.setup{}
+          lua require 'lspconfig'.gopls.setup{}
         '';
       }
       {
@@ -38,8 +40,6 @@
     ];
     extraPython3Packages = ps: with ps; [rich];
     extraPackages = with pkgs; [
-      ctags
-
       # rust
       cargo
       rustc
@@ -53,6 +53,10 @@
       python312
       python312Packages.python-lsp-server
       python312Packages.autopep8
+
+      # go
+      go
+      gopls
     ];
     extraConfig = builtins.readFile ./init.vim;
   };

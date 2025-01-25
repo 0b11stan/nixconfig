@@ -40,6 +40,9 @@ noremap <C-l> <C-w>k
 noremap <C-k> <C-w>j
 noremap <C-j> <C-w>h
 
+" Fix azerty keyboard go to definition
+noremap <C-)> <C-]>
+
 " TODO : split line at 80 chars
 "nmap ; 80|gea<CR>
 
@@ -49,11 +52,9 @@ noremap h :nohlsearch<CR>
 " Open Tree
 noremap t :NvimTreeOpen<CR>
 
+
 " So we can use `:find ...` for fuzzyfind
 set path+=**
-
-" TODO : link it to the write command!
-command! MakeTags !ctags -R .
 
 " Highlight cursor line
 hi CursorLine   cterm=NONE ctermbg=238
@@ -70,7 +71,7 @@ function Fmt(cmd)
   normal `t
 endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
-autocmd BufWritePre *.py call Fmt('%!autopep8 -')
+autocmd BufWritePre *.py call Fmt('%!autopep8 --ignore=E731 -')
 autocmd BufWritePre *.html call Fmt('%!html-beautify')
 let g:rustfmt_autosave = 1
 
