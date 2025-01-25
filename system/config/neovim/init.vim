@@ -73,6 +73,7 @@ endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
 autocmd BufWritePre *.py call Fmt('%!autopep8 --ignore=E731 -')
 autocmd BufWritePre *.html call Fmt('%!html-beautify')
+autocmd BufWritePre *.go call Fmt('%!gofmt')
 let g:rustfmt_autosave = 1
 
 " Enable lsp's autocomplete
