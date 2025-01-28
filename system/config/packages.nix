@@ -57,6 +57,7 @@ in
     file
     freerdp
     gcc
+    gimp
     gnumake
     gource
     hack-font
@@ -92,16 +93,20 @@ in
     rdfind # duplicate file finder
     signal-desktop
     sshpass
+    ssm-session-manager-plugin
+    tenv
     tex
     tigervnc
     tor-browser-bundle-bin
     tree
     unzip
     usbutils
+    uv
     wireguard-tools
     wl-clipboard
     wl-mirror
     xdg-utils
     xfce.thunar
+    xxd
     zip
   ]
