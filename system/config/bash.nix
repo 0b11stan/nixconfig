@@ -1,7 +1,9 @@
 {pkgs}: {
   enable = true;
   bashrcExtra = ''
-    cdx() { cd "$1"; ls -l; }; alias cd="cdx"
+    eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
+
+    cdx() { z "$1"; ls -l; }; alias cd="cdx"
 
     aws-login() {
       export AWS_PROFILE=$(
@@ -24,7 +26,5 @@
         | jq -r '.Reservations[0].Instances[0].InstanceId'
       );
     }
-
-    eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
   '';
 }
