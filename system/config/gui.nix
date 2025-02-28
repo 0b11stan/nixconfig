@@ -23,7 +23,10 @@ in {
 
   programs = {
     alacritty = import ./alacritty.nix {inherit colors;};
-    i3status = import ./i3status.nix {inherit colors isDesktop;};
+    waybar = {
+      enable = true;
+      style = ./gui/waybar.css;
+    };
   };
 
   services = {
