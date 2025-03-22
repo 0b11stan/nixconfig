@@ -57,6 +57,7 @@ in
     file
     freerdp
     gcc
+    ghidra
     gimp
     gnumake
     gource
@@ -109,4 +110,5 @@ in
     xfce.thunar
     xxd
     zip
+    zoxide
   ]

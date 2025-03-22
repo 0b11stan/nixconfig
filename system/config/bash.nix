@@ -1,5 +1,10 @@
 {pkgs}: {
   enable = true;
+  sessionVariables = {
+    # for ghidra (and other java apps to work)
+    _JAVA_AWT_WM_NONREPARENTING = 1;
+  };
+
   bashrcExtra = ''
     eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
 
@@ -25,6 +30,11 @@
         aws ec2 describe-instances --filter Name=tag:Name,Values=$NAME \
         | jq -r '.Reservations[0].Instances[0].InstanceId'
       );
+    }
+
+    kdrive() {
+      pass -c deepjump/infomaniak
+      sudo mount.davfs -o rw,uid=1000,gid=1000 https://1476083.connect.kdrive.infomaniak.com ~/kdrive/
     }
   '';
 }
