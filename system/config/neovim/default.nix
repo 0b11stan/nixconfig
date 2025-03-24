@@ -6,17 +6,17 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      copilot-vim
       ansible-vim
       vim-nix
       vim-markdown
       vim-svelte
+      vim-terraform
       rust-vim
       nvim-web-devicons
       {
         plugin = nvim-tree-lua;
-        config = ''
-          lua require 'nvim-tree'.setup()
-        '';
+        config = "lua require 'nvim-tree'.setup{}";
       }
       # TODO : package https://github.com/nvim-neo-tree/neo-tree.nvim
       # TODO : package https://github.com/nvim-telescope/telescope.nvim

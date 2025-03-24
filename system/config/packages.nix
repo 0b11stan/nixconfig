@@ -68,6 +68,7 @@ in
     jmtpfs
     jq
     keepassxc
+    ksnip
     ldns # for dns utils
     libreoffice
     man-pages

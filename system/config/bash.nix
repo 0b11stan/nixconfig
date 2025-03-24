@@ -1,9 +1,5 @@
 {pkgs}: {
   enable = true;
-  sessionVariables = {
-    # for ghidra (and other java apps to work)
-    _JAVA_AWT_WM_NONREPARENTING = 1;
-  };
 
   bashrcExtra = ''
     eval "$(${pkgs.zoxide}/bin/zoxide init bash)"

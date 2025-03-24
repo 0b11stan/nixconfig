@@ -8,6 +8,7 @@
   # TODO : https://exegol.readthedocs.io/en/latest/getting-started/faq.html#how-to-install-exegol-on-an-external-drive
   imports = [
     ./hardware-configuration.nix
+    ./clients/system.nix
     <home-manager/nixos>
   ];
 
@@ -68,6 +69,7 @@
     podman.enable = true;
     docker.enable = true;
     virtualbox.host.enable = true;
+    #vmware.host.enable = true;
   };
 
   xdg.portal = {
@@ -85,6 +87,11 @@
       # TODO : https://nixos.wiki/wiki/Printing
       enable = true;
       drivers = [pkgs.epsonscan2];
+    };
+    davfs2 = {
+      enable = true;
+      davUser = "tristan";
+      davGroup = "users";
     };
   };
 

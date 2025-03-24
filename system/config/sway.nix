@@ -167,65 +167,6 @@ in {
       };
     };
 
-    bars = [
-      {
-        colors = {
-          activeWorkspace = {
-            background = "${colors.greyLight}";
-            border = "${colors.greyLight}";
-            text = "${colors.white}";
-          };
-
-          inactiveWorkspace = {
-            background = "${colors.greyDark}";
-            border = "${colors.greyDark}";
-            text = "${colors.magenta}";
-          };
-
-          focusedWorkspace = {
-            background = "${colors.magenta}";
-            border = "${colors.magenta}";
-            text = "${colors.greyDark}";
-          };
-
-          bindingMode = {
-            background = "${colors.red}";
-            border = "${colors.grey}";
-            text = "${colors.white}";
-          };
-
-          urgentWorkspace = {
-            background = "${colors.orange}";
-            border = "${colors.orange}";
-            text = "${colors.greyDark}";
-          };
-
-          background = "${colors.greyDark}";
-          focusedBackground = null;
-          focusedSeparator = null;
-          focusedStatusline = null;
-          separator = "${colors.greyLight}";
-          statusline = "${colors.white}";
-        };
-
-        command = "${pkgs.sway}/bin/swaybar";
-
-        extraConfig = "";
-        fonts = {
-          names = ["monospace"];
-          size = 9.0;
-          style = "";
-        };
-
-        hiddenState = "hide";
-        id = "bar-0";
-        mode = "dock";
-        position = "top";
-        statusCommand = "i3status";
-        trayOutput = "primary";
-        workspaceButtons = true;
-        workspaceNumbers = true;
-      }
-    ];
+    bars = [{command = "${pkgs.waybar}/bin/waybar";}];
   };
 }

@@ -9,6 +9,7 @@
     ./config/secrets
     ./config/pandoc
     ./config/gui.nix
+    ./clients/home.nix
   ];
 
   nixpkgs.overlays = [(import ./pkgs)];
@@ -16,11 +17,17 @@
   programs = {
     home-manager.enable = true;
     nix-index.enable = true;
-    bash = import ./config/bash.nix;
+    bash = import ./config/bash.nix {inherit pkgs;};
     git = import ./config/git.nix;
     irssi = import ./config/irssi.nix;
     firefox = import ./config/firefox.nix;
     qutebrowser = import ./config/qutebrowser.nix;
+    awscli.enable = true;
+    fzf = {
+      enable = true;
+      #      defaultOptions = ["--ignore-case" "--height=10" "--layout=reverse"];
+      #      historyWidgetOptions = ["--ignore-case" "--height=10" "--layout=reverse"];
+    };
   };
 
   home = {
@@ -28,6 +35,8 @@
     homeDirectory = "/home/tristan";
     keyboard.layout = "fr";
     sessionVariables = {
+      # for ghidra (and other java apps to work)
+      _JAVA_AWT_WM_NONREPARENTING = 1;
       EDITOR = "nvim";
       WLR_NO_HARDWARE_CURSORS = 1;
       BROWSER = "qutebrowser";
@@ -45,6 +54,7 @@
         "drawio"
         "minecraft-launcher"
         "obsidian"
+        "copilot.vim"
       ];
 
     permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];

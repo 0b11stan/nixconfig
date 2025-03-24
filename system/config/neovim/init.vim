@@ -71,7 +71,7 @@ function Fmt(cmd)
   normal `t
 endfunction
 autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
-autocmd BufWritePre *.py call Fmt('%!autopep8 --ignore=E731 -')
+autocmd BufWritePre *.py call Fmt('%!autopep8 --ignore=E731 --max-line-length=120 -')
 autocmd BufWritePre *.html call Fmt('%!html-beautify')
 autocmd BufWritePre *.go call Fmt('%!gofmt')
 let g:rustfmt_autosave = 1

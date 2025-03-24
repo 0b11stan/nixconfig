@@ -1,11 +1,25 @@
 {
   enable = true;
-  profiles.custom = {
-    bookmarks = {
-      planner.url = "https://tasks.office.com";
-      outlook.url = "https://outlook.office.com";
-      teams.url = "https://teams.microsoft.com";
-    };
+  profiles.private = {
+    bookmarks = [
+      {
+        toolbar = true;
+        bookmarks = [
+          {
+            name = "DJ - tuta";
+            url = "https://app.tuta.com/";
+          }
+          {
+            name = "DJ - tiime";
+            url = "https://apps.tiime.fr/";
+          }
+          {
+            name = "kdrive";
+            url = "https://ksuite.infomaniak.com/";
+          }
+        ];
+      }
+    ];
     settings = {
       # Hide some search engines in top searchbar
       "browser.search.hiddenOneOffs" = "Google,Bing";

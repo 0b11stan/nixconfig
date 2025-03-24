@@ -20,10 +20,8 @@
     gitlab = https://gitlab.com;
     git = https://git.tic.sh;
     leboncoin = https://www.leboncoin.fr;
-
     teams = https://teams.microsoft.com/;
     outlook = https://outlook.office365.com/mail/;
-    planner = https://tasks.office.com/;
   };
 
   keyBindings = {
