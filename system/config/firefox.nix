@@ -1,6 +1,7 @@
 {
   enable = true;
   profiles.private = {
+    id = 0;
     bookmarks = [
       {
         toolbar = true;
