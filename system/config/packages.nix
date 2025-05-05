@@ -96,6 +96,7 @@ in
     signal-desktop
     sshpass
     ssm-session-manager-plugin
+    nmap
     tenv
     tex
     tigervnc

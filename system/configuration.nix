@@ -98,7 +98,7 @@
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker" "lp" "scanner" "vboxusers"];
+      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker" "scanner" "vboxusers"];
     };
   };
 
