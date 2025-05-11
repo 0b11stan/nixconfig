@@ -2,6 +2,16 @@
   enable = true;
   profiles.private = {
     id = 0;
+
+    search = {
+      force = true;
+      default = "DuckDuckGo";
+      engines = {
+        "Bing".metaData.hidden = true;
+        "Google".metaData.hidden = true;
+      };
+    };
+
     bookmarks = [
       {
         toolbar = true;
@@ -21,6 +31,7 @@
         ];
       }
     ];
+
     settings = {
       # Hide some search engines in top searchbar
       "browser.search.hiddenOneOffs" = "Google,Bing";
@@ -36,6 +47,8 @@
       "datareporting.healthreport.uploadEnabled" = false;
       # Disable mozilla studies
       "app.shield.optoutstudies.enabled" = false;
+      # Enable extensions by default
+      "extensions.autoDisableScopes" = 0;
     };
   };
 }

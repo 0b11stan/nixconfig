@@ -12,7 +12,14 @@
     ./clients/home.nix
   ];
 
-  nixpkgs.overlays = [(import ./pkgs)];
+  nixpkgs = {
+    overlays = [(import ./pkgs)];
+    config.packageOverrides = pkgs: {
+      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
+        inherit pkgs;
+      };
+    };
+  };
 
   programs = {
     home-manager.enable = true;
@@ -22,7 +29,6 @@
     irssi = import ./config/irssi.nix;
     firefox = import ./config/firefox.nix;
     qutebrowser = import ./config/qutebrowser.nix;
-    awscli.enable = true;
     fzf = {
       enable = true;
       #      defaultOptions = ["--ignore-case" "--height=10" "--layout=reverse"];

@@ -23,7 +23,7 @@
   };
 
   networking = {
-    hostName = "neo";
+    hostName = "trinity";
     networkmanager = {
       enable = true;
       #appendNameservers = ["1.1.1.1" "8.8.8.8"];
@@ -47,6 +47,7 @@
     wireshark.enable = true;
     adb.enable = true;
     fuse.userAllowOther = true;
+    noisetorch.enable = true;
   };
 
   hardware = {

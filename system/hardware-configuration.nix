@@ -70,7 +70,7 @@
   };
 
   fileSystems."/var/lib/docker" = {
-    device = "/dev/neo/docker";
+    device = "/dev/disk/by-label/docker";
     fsType = "ext4";
   };
 
