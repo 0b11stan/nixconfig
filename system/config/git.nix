@@ -1,7 +1,7 @@
 {
   enable = true;
   userEmail = "tristan@tic.sh";
-  userName = "Tristan Pinaudeau";
+  userName = "Tristan Auvinet Pinaudeau";
   aliases = {
     lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
   };
