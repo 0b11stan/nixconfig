@@ -1,0 +1,3 @@
+[submodule "system/clients"]
+	path = system/clients
+	url = git@zion.tic.sh:nix-deepjump-clients.git
