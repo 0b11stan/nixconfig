@@ -24,6 +24,9 @@
 
   networking = {
     hostName = "trinity";
+    hosts = {
+      "192.168.1.242" = ["zion.tic.sh" "shynet.zion.tic.sh"];
+    };
     networkmanager = {
       enable = true;
       #appendNameservers = ["1.1.1.1" "8.8.8.8"];
