@@ -27,10 +27,7 @@
     hosts = {
       "192.168.1.242" = ["zion.tic.sh" "shynet.zion.tic.sh"];
     };
-    networkmanager = {
-      enable = true;
-      #appendNameservers = ["1.1.1.1" "8.8.8.8"];
-    };
+    networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
@@ -83,6 +80,10 @@
   };
 
   services = {
+    dnsmasq = {
+      enable = true;
+      settings.server = ["1.1.1.1" "8.8.8.8"];
+    };
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = true;
