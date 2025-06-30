@@ -65,6 +65,7 @@
     config.set('content.javascript.enabled', True, 'https://outlook.office365.com/*')
     config.set('content.javascript.enabled', True, 'https://tasks.office.com/*')
     config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
+    config.set('content.javascript.enabled', True, 'https://*.energy-robotics.com/*')
   '';
 
   settings.content.javascript.enabled = false;
