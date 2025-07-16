@@ -28,6 +28,14 @@
             name = "kdrive";
             url = "https://ksuite.infomaniak.com/";
           }
+          {
+            name = "consensus";
+            url = "https://consensus.app/";
+          }
+          {
+            name = "our world in data";
+            url = "https://ourworldindata.org/";
+          }
         ];
       }
     ];
