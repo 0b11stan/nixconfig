@@ -34,6 +34,7 @@
       enable = true;
       allowedTCPPorts = [
         5182 # for wireguard
+        4444
       ];
     };
   };
@@ -98,6 +99,7 @@
       davUser = "tristan";
       davGroup = "users";
     };
+    netbird.enable = true;
   };
 
   users = {
