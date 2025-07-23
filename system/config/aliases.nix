@@ -2,6 +2,7 @@
   ip = "ip --color --brief";
   watch = "watch --color";
   tree = "tree -C";
+  ps = "ps -f --ppid 2 --pid 2 --deselect";
 
   # containers
   archlinux = "podman run -it --network=host -v $PWD:/mnt docker.io/archlinux bash";
