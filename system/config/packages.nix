@@ -76,7 +76,7 @@ in
     minecraft
     monero-gui
     mpv
-    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+    pkgs.nerd-fonts.symbols-only
     nfs-utils
     nixpkgs-fmt
     nmap
