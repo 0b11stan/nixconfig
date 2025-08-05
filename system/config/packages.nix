@@ -39,6 +39,7 @@
 in
   with pkgs; [
     alejandra
+    azure-cli
     bat
     bemenu
     bindfs
@@ -78,6 +79,7 @@ in
     (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     nfs-utils
     nixpkgs-fmt
+    nmap
     notify-desktop
     noto-fonts
     noto-fonts-emoji
@@ -96,7 +98,6 @@ in
     signal-desktop
     sshpass
     ssm-session-manager-plugin
-    nmap
     tenv
     tex
     tigervnc
