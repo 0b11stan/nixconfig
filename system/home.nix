@@ -66,7 +66,10 @@
     permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];
   };
 
-  services.mpris-proxy.enable = true; # for bluetooth headset buttons features
+  services = {
+    mpris-proxy.enable = true; # for bluetooth headset buttons features
+    #netbird.enable = true;
+  };
 
   home.stateVersion = "22.05"; # DO NOT MODIFY
 }
