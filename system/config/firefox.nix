@@ -5,40 +5,43 @@
 
     search = {
       force = true;
-      default = "DuckDuckGo";
+      default = "ddg";
       engines = {
         "Bing".metaData.hidden = true;
         "Google".metaData.hidden = true;
       };
     };
 
-    bookmarks = [
-      {
-        toolbar = true;
-        bookmarks = [
-          {
-            name = "DJ - tuta";
-            url = "https://app.tuta.com/";
-          }
-          {
-            name = "DJ - tiime";
-            url = "https://apps.tiime.fr/";
-          }
-          {
-            name = "kdrive";
-            url = "https://ksuite.infomaniak.com/";
-          }
-          {
-            name = "consensus";
-            url = "https://consensus.app/";
-          }
-          {
-            name = "our world in data";
-            url = "https://ourworldindata.org/";
-          }
-        ];
-      }
-    ];
+    bookmarks = {
+      force = true;
+      settings = [
+        {
+          toolbar = true;
+          bookmarks = [
+            {
+              name = "DJ - tuta";
+              url = "https://app.tuta.com/";
+            }
+            {
+              name = "DJ - tiime";
+              url = "https://apps.tiime.fr/";
+            }
+            {
+              name = "kdrive";
+              url = "https://ksuite.infomaniak.com/";
+            }
+            {
+              name = "consensus";
+              url = "https://consensus.app/";
+            }
+            {
+              name = "our world in data";
+              url = "https://ourworldindata.org/";
+            }
+          ];
+        }
+      ];
+    };
 
     settings = {
       # Hide some search engines in top searchbar
