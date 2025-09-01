@@ -50,6 +50,7 @@ in
     dnsmasq
     dos2unix
     drawio
+    envsubst
     evince
     exegol
     exfat
@@ -76,7 +77,6 @@ in
     minecraft
     monero-gui
     mpv
-    pkgs.nerd-fonts.symbols-only
     nfs-utils
     nixpkgs-fmt
     nmap
@@ -92,6 +92,7 @@ in
     p7zip
     pavucontrol
     pciutils
+    pkgs.nerd-fonts.symbols-only
     python3
     qemu
     rdfind # duplicate file finder
