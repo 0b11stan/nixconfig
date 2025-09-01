@@ -5,7 +5,7 @@
 
     search = {
       force = true;
-      default = "DuckDuckGo";
+      default = "ddg";
       engines = {
         "Bing".metaData.hidden = true;
         "Google".metaData.hidden = true;

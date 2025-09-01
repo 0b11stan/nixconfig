@@ -100,6 +100,10 @@
       davGroup = "users";
     };
     netbird.enable = true;
+    clamav = {
+      daemon.enable = true;
+      updater.enable = true;
+    };
   };
 
   users = {
@@ -115,7 +119,17 @@
   };
 
   home-manager.users.tristan = ./home.nix;
-  fonts.enableDefaultPackages = true;
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      hack-font
+      nerd-fonts.symbols-only
+      noto-fonts
+      noto-fonts-emoji
+      noto-fonts-extra
+    ];
+  };
 
   system.stateVersion = "24.11"; # DO NOT MODIFY !
 }
