@@ -66,6 +66,9 @@
     config.set('content.javascript.enabled', True, 'https://tasks.office.com/*')
     config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
     config.set('content.javascript.enabled', True, 'https://*.energy-robotics.com/*')
+    config.set('content.javascript.enabled', True, 'https://*.energy-robotics.net/*')
+    config.set('content.javascript.enabled', True, 'https://*.awsapps.com/*')
+    config.set('content.javascript.enabled', True, 'https://*.amazon.com/*')
   '';
 
   settings.content.javascript.enabled = false;
