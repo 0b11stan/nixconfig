@@ -86,5 +86,14 @@
 
   # TODO
   #powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware = {
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.finegrained = false;
+      # powerManagement.enable = false;
+      open = false;
+      nvidiaSettings = true;
+    };
+  };
 }

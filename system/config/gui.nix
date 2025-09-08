@@ -32,9 +32,11 @@ in {
   services = {
     mako = {
       enable = true;
-      defaultTimeout = 10000;
-      backgroundColor = "${colors.greyLighter}";
-      borderColor = "${colors.orange}";
+      settings = {
+        default-timeout = 10000;
+        background-color = "${colors.greyLighter}";
+        border-color = "${colors.orange}";
+      };
     };
 
     swayidle = {

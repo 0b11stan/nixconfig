@@ -7,8 +7,8 @@
       force = true;
       default = "ddg";
       engines = {
-        "Bing".metaData.hidden = true;
-        "Google".metaData.hidden = true;
+        "bing".metaData.hidden = true;
+        "google".metaData.hidden = true;
       };
     };
 

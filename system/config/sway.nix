@@ -28,7 +28,7 @@ in {
       eDP-1 = {
         position = "0 0";
       };
-      DP-1 = {
+      DP-3 = {
         position = "0 0";
       };
       HDMI-A-1 = {

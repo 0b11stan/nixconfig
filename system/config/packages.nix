@@ -1,7 +1,7 @@
 {pkgs}:
 with pkgs; [
   alejandra
-  azure-cli
+  (azure-cli.withExtensions [azure-cli-extensions.ssh])
   bat
   bemenu
   bindfs
