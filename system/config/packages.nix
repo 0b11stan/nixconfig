@@ -13,6 +13,7 @@ with pkgs; [
   dnsmasq
   dos2unix
   drawio
+  envsubst
   evince
   exegol
   exfat
