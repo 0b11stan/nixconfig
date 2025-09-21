@@ -60,6 +60,8 @@
       "app.shield.optoutstudies.enabled" = false;
       # Enable extensions by default
       "extensions.autoDisableScopes" = 0;
+      # Disable saving passwords
+      "signon.rememberSignons" = false;
     };
   };
 }

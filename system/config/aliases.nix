@@ -35,6 +35,9 @@
   mirror = "wl-mirror $(swaymsg -t get_outputs | jq -r '.[0].name')";
   mirror-zone = ''wl-mirror $(swaymsg -t get_outputs | jq -r '.[0].name') --region "$(slurp)"'';
   webgitopen = ''$BROWSER $(printf "$(git config --get remote.origin.url) $(git rev-parse --abbrev-ref HEAD)" | sed "s%ssh://git@\(.*\)[:][0-9]*\(.*\).git \(.*\)$%https://\1\2/-/tree/\3%")'';
+  mediarename = ''
+    ls | xargs -I {} sh -c 'mv -v {} $(exiftool -T -createdate {} | tr " " "_" | tr ":" "-").$(echo {} | rev | cut -d "." -f 1 | rev | tr "[:upper:]" "[:lower:]")'
+  '';
 
   # docker aliases
   dcu = "docker compose up";
