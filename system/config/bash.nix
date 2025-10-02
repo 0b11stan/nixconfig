@@ -47,5 +47,23 @@
         && git bundle create notes.git master \
         && mv notes.git ~/kdrive/
     }
+
+    aws-secrets() {
+      # List secret names, let user select one
+      local SECRET_NAME=$(aws secretsmanager list-secrets \
+        --query 'SecretList[].Name' --output text | tr '\t' '\n' | sort | fzf --height=15 --reverse --prompt="Select secret: ")
+
+      [[ -z "$SECRET_NAME" ]] && return
+
+      # Get the secret value
+      local SECRET_STRING=$(aws secretsmanager get-secret-value --secret-id "$SECRET_NAME" --query 'SecretString' --output text)
+
+      # Try to pretty-print JSON secrets, otherwise print as is
+      if echo "$SECRET_STRING" | jq -e . >/dev/null 2>&1; then
+        echo "$SECRET_STRING" | jq
+      else
+        echo "$SECRET_STRING"
+      fi
+    }
   '';
 }
