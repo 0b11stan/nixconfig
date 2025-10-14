@@ -50,6 +50,7 @@ with pkgs; [
   p7zip
   pavucontrol
   pciutils
+  prismlauncher # minecraft
   python3
   qemu
   rdfind # duplicate file finder
