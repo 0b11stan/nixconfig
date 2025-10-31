@@ -22,7 +22,7 @@ in {
   fonts.fontconfig.enable = true;
 
   programs = {
-    alacritty = import ./alacritty.nix {inherit colors;};
+    alacritty = import ./alacritty.nix {inherit colors pkgs;};
     waybar = {
       enable = true;
       style = ./gui/waybar.css;

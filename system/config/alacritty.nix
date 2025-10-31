@@ -1,5 +1,9 @@
-{colors}: {
+{
+  colors,
+  pkgs,
+}: {
   enable = true;
+  package = pkgs.alacritty-graphics;
   settings = {
     colors = {
       primary.background = "${colors.black}";

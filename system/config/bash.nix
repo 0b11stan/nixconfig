@@ -6,6 +6,12 @@
 
     cdx() { z "$1"; ls -l; }; alias cd="cdx"
 
+    icat() {
+      mkdir -p /tmp/sixel;
+      ${pkgs.libsixel}/bin/img2sixel -o /tmp/sixel/$1.six -w 1000px $1;
+      cat /tmp/sixel/$1.six;
+    }
+
     aws-login() {
       export AWS_PROFILE=$(
         aws configure list-profiles \

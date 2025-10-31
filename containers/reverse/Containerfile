@@ -3,7 +3,7 @@ FROM archlinux:latest
 ARG PWNDBG_VERSION=2025.05.30
 
 RUN pacman --noconfirm -Syu
-RUN pacman --noconfirm -S base-devel python git neovim
+RUN pacman --noconfirm -S base-devel python git neovim vim
 
 RUN curl -Lo /tmp/pwndbg.tar.zst https://github.com/pwndbg/pwndbg/releases/download/$PWNDBG_VERSION/pwndbg-$PWNDBG_VERSION-1-x86_64.pkg.tar.zst \
     && pacman --noconfirm -U /tmp/pwndbg.tar.zst \

@@ -126,8 +126,7 @@
       hack-font
       nerd-fonts.symbols-only
       noto-fonts
-      noto-fonts-emoji
-      noto-fonts-extra
+      noto-fonts-color-emoji
     ];
   };
 
