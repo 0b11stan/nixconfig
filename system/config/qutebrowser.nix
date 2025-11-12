@@ -69,6 +69,7 @@
     config.set('content.javascript.enabled', True, 'https://*.energy-robotics.net/*')
     config.set('content.javascript.enabled', True, 'https://*.awsapps.com/*')
     config.set('content.javascript.enabled', True, 'https://*.amazon.com/*')
+    config.set('content.javascript.enabled', True, 'https://*.atlassian.net/*')
   '';
 
   settings.content.javascript.enabled = false;
