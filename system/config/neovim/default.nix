@@ -14,20 +14,11 @@
       vim-terraform
       rust-vim
       nvim-web-devicons
+      supertab
+      image-nvim
       {
         plugin = nvim-tree-lua;
         config = "lua require 'nvim-tree'.setup{}";
-      }
-      # TODO : package https://github.com/nvim-neo-tree/neo-tree.nvim
-      # TODO : package https://github.com/nvim-telescope/telescope.nvim
-      supertab
-      {
-        plugin = nvim-lspconfig;
-        config = ''
-          lua require 'lspconfig'.pylsp.setup{}
-          lua require 'lspconfig'.rust_analyzer.setup{}
-          lua require 'lspconfig'.gopls.setup{}
-        '';
       }
       {
         plugin = markdown-preview-nvim;
@@ -37,6 +28,16 @@
         plugin = dracula-vim;
         config = "colorscheme dracula";
       }
+      # TODO : package https://github.com/nvim-neo-tree/neo-tree.nvim
+      # TODO : package https://github.com/nvim-telescope/telescope.nvim
+      #      {
+      #        plugin = nvim-lspconfig;
+      #        config = ''
+      #          lua require 'lspconfig'.pylsp.setup{}
+      #          lua require 'lspconfig'.rust_analyzer.setup{}
+      #          lua require 'lspconfig'.gopls.setup{}
+      #        '';
+      #      }
     ];
     extraPython3Packages = ps: with ps; [rich];
     extraPackages = with pkgs; [
@@ -57,7 +58,12 @@
       # go
       go
       gopls
+
+      # for image-nvim
+      imagemagick
     ];
+    extraLuaPackages = ps: [ps.magick];
     extraConfig = builtins.readFile ./init.vim;
+    extraLuaConfig = builtins.readFile ./init.lua;
   };
 }
