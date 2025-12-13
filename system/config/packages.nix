@@ -7,7 +7,6 @@ with pkgs; [
   bindfs
   (burpsuite.override {proEdition = true;})
   cifs-utils
-  clamav
   detox
   discord
   dnsmasq

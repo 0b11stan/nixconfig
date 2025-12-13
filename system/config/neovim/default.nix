@@ -21,14 +21,14 @@
       # TODO : package https://github.com/nvim-neo-tree/neo-tree.nvim
       # TODO : package https://github.com/nvim-telescope/telescope.nvim
       supertab
-      {
-        plugin = nvim-lspconfig;
-        config = ''
-          lua require 'lspconfig'.pylsp.setup{}
-          lua require 'lspconfig'.rust_analyzer.setup{}
-          lua require 'lspconfig'.gopls.setup{}
-        '';
-      }
+      #      {
+      #        plugin = nvim-lspconfig;
+      #        config = ''
+      #          lua require 'lspconfig'.pylsp.setup{}
+      #          lua require 'lspconfig'.rust_analyzer.setup{}
+      #          lua require 'lspconfig'.gopls.setup{}
+      #        '';
+      #      }
       {
         plugin = markdown-preview-nvim;
         config = "let g:mkp_browser = '${pkgs.qutebrowser}/bin/qutebrowser'";

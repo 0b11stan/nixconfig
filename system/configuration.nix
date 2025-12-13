@@ -99,11 +99,6 @@
       davUser = "tristan";
       davGroup = "users";
     };
-    netbird.enable = true;
-    clamav = {
-      daemon.enable = true;
-      updater.enable = true;
-    };
   };
 
   users = {
