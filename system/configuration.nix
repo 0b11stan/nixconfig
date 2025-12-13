@@ -23,7 +23,7 @@
   };
 
   networking = {
-    hostName = "trinity";
+    hostName = "deepjump";
     hosts = {
       "192.168.1.242" = ["zion.tic.sh" "shynet.zion.tic.sh"];
     };
