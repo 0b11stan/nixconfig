@@ -72,12 +72,6 @@
     #vmware.host.enable = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [xdg-desktop-portal-wlr];
-    config.common.default = "*";
-  };
-
   services = {
     xserver.videoDrivers = ["nvidia"];
     pulseaudio.enable = true;
@@ -92,7 +86,6 @@
     printing = {
       # TODO : https://nixos.wiki/wiki/Printing
       enable = true;
-      drivers = [pkgs.epsonscan2];
     };
     davfs2 = {
       enable = true;
