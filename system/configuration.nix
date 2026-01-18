@@ -46,7 +46,6 @@
 
   programs = {
     wireshark.enable = true;
-    adb.enable = true;
     fuse.userAllowOther = true;
     noisetorch.enable = true;
   };

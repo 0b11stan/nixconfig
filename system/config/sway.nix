@@ -103,7 +103,7 @@ in {
         exec /bin/sh -c ' \
           SCREENPATH=/tmp/$(date +screenshot-%s.png); \
           grim -g \"$(slurp)\" $SCREENPATH && \
-          printf $SCREENPATH | wl-copy; \
+          cat $SCREENPATH | wl-copy; \
         '
       '';
 
