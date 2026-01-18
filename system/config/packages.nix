@@ -1,6 +1,7 @@
 {pkgs}:
 with pkgs; [
   alejandra
+  android-tools
   (azure-cli.withExtensions [azure-cli-extensions.ssh])
   bat
   bemenu
@@ -21,7 +22,7 @@ with pkgs; [
   file
   freerdp
   gcc
-  ghidra
+  #ghidra
   gimp
   gnumake
   gource
@@ -53,6 +54,7 @@ with pkgs; [
   python3
   qemu
   rdfind # duplicate file finder
+  shutter
   signal-desktop
   sshpass
   ssm-session-manager-plugin
