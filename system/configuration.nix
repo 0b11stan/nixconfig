@@ -48,6 +48,7 @@
     wireshark.enable = true;
     fuse.userAllowOther = true;
     noisetorch.enable = true;
+    ghidra.enable = true;
   };
 
   hardware = {
@@ -90,6 +91,10 @@
       enable = true;
       davUser = "tristan";
       davGroup = "users";
+    };
+    udev = {
+      enable = true;
+      packages = [pkgs.libsigrok];
     };
   };
 
