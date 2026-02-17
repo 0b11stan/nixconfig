@@ -22,7 +22,6 @@ with pkgs; [
   file
   freerdp
   gcc
-  #ghidra
   gimp
   gnumake
   gource
@@ -35,6 +34,7 @@ with pkgs; [
   ksnip
   ldns # for dns utils
   libreoffice
+  appimage-run
   man-pages
   mpv
   nfs-utils
@@ -43,6 +43,7 @@ with pkgs; [
   notify-desktop
   ntfs3g
   obsidian
+  libsigrok
   openssl
   openvpn
   opkssh
@@ -53,6 +54,7 @@ with pkgs; [
   prismlauncher # minecraft
   python3
   qemu
+  pulseview
   rdfind # duplicate file finder
   shutter
   signal-desktop
@@ -68,7 +70,6 @@ with pkgs; [
   wl-clipboard
   wl-mirror
   xdg-utils
-  xfce.thunar
   xxd
   zip
   zoxide
