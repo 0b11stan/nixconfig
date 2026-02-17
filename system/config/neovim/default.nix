@@ -64,6 +64,6 @@
     ];
     extraLuaPackages = ps: [ps.magick];
     extraConfig = builtins.readFile ./init.vim;
-    extraLuaConfig = builtins.readFile ./init.lua;
+    initLua = builtins.readFile ./init.lua;
   };
 }

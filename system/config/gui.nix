@@ -10,7 +10,7 @@
 in {
   home.packages = with pkgs; [
     swaylock
-    xorg.xhost
+    xhost
     grim
     slurp
   ];

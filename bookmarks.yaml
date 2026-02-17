@@ -1,0 +1,50 @@
+offsec:
+
+  knowledge-bases:
+
+    hacktricks: https://book.hacktricks.wiki/en/index.html
+    ctfrecipes: https://www.ctfrecipes.com/
+    thehackerrecipes: https://www.thehacker.recipes/
+
+  blogs:
+
+    google-project-zero: https://projectzero.google/
+    pentestmonkey: https://pentestmonkey.net/
+    hackndo: https://en.hackndo.com/
+
+  youtube-channels:
+
+    # cybersecurity conferences
+    defcon: https://www.youtube.com/@DEFCONConference
+    blackhat: https://www.youtube.com/@BlackHatOfficialYT
+    ccc: https://www.youtube.com/@mediacccde
+    lehack: https://www.youtube.com/@hzvprod
+    thc: https://www.youtube.com/@THCon
+    nullcon: https://www.youtube.com/@Nullcon
+    nixcon: https://www.youtube.com/@NixCon
+    fosdem: https://www.youtube.com/@fosdemtalks
+
+    # misc
+    ippsec: https://www.youtube.com/@ippsec
+    nullbyte: https://www.youtube.com/@NullByteWHT
+    liveoverflow: https://www.youtube.com/@LiveOverflow
+    hackersploit: https://www.youtube.com/@Hackersploit
+
+  challenges:
+
+    hackthebox: https://www.hackthebox.com/
+    tryhackme: https://tryhackme.com/
+    root-me: https://www.root-me.org/
+    cryptohack: https://cryptohack.org/
+    overthewire: https://overthewire.org/wargames/
+    pwnable: https://pwnable.kr/
+    microcorruption: https://microcorruption.com/
+
+  bug-bounty-platforms:
+
+    hackerone: https://www.hackerone.com/
+    yeswehack: https://www.yeswehack.com/
+    intigriti: https://www.intigriti.com/
+    bugcrowd: https://www.bugcrowd.com/
+    openbugbounty: https://www.openbugbounty.org/
+    synack: https://www.synack.com/
