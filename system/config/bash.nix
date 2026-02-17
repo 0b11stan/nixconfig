@@ -71,5 +71,16 @@
         echo "$SECRET_STRING"
       fi
     }
+
+    file-fzf-hack() {
+      if [ $# -lt 1 ]; then
+        fd --type f | fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {}),esc:abort"
+      else
+        fd --type f "$1" | fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {}),esc:abort"
+      fi
+    }
+    alias ffp='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+}),esc:abort"'
+    alias fdp='fzf -m --preview="eza --icons=always --color=always {}" --bind "enter:execute(cd {} && clear),esc:abort"'
+    alias vsf='file-fzf-hack'
   '';
 }

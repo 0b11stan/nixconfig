@@ -68,7 +68,6 @@ with pkgs; [
   wl-clipboard
   wl-mirror
   xdg-utils
-  xfce.thunar
   xxd
   zip
   zoxide
