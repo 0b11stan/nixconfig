@@ -19,12 +19,17 @@
           toolbar = true;
           bookmarks = [
             {
-              name = "DJ - tuta";
-              url = "https://app.tuta.com/";
+              name = "Deep Jump";
+              bookmarks = [
+                {
+                  name = "tiime";
+                  url = "https://apps.tiime.fr/";
+                }
+              ];
             }
             {
-              name = "DJ - tiime";
-              url = "https://apps.tiime.fr/";
+              name = "tuta";
+              url = "https://app.tuta.com/";
             }
             {
               name = "kdrive";
