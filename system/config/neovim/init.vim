@@ -74,6 +74,7 @@ autocmd BufWritePre *.nix call Fmt('%!alejandra -q')
 autocmd BufWritePre *.py call Fmt('%!autopep8 --ignore=E731 --max-line-length=120 -')
 autocmd BufWritePre *.html call Fmt('%!html-beautify')
 autocmd BufWritePre *.go call Fmt('%!gofmt')
+autocmd BufWritePre *.tf call Fmt('%!terraform fmt -')
 let g:rustfmt_autosave = 1
 
 " Enable lsp's autocomplete

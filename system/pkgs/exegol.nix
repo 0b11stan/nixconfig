@@ -21,7 +21,7 @@ python3.pkgs.buildPythonApplication rec {
       rich
       argcomplete
     ]
-    ++ [xhost];
+    ++ [xorg.xhost];
 
   src = fetchPypi {
     inherit pname version;
