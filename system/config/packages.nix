@@ -15,7 +15,7 @@ with pkgs; [
   drawio
   envsubst
   evince
-  exegol
+  # exegol
   exfat
   exiftool
   ffmpeg
@@ -24,7 +24,6 @@ with pkgs; [
   gcc
   gimp
   gnumake
-  gource
   htmlq
   htop
   iw
@@ -57,7 +56,7 @@ with pkgs; [
   pulseview
   rdfind # duplicate file finder
   shutter
-  signal-desktop
+  # signal-desktop
   sshpass
   ssm-session-manager-plugin
   tenv
