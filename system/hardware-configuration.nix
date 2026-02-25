@@ -13,16 +13,6 @@
       useTmpfs = true;
     };
 
-    # APPLE TODO
-    #    extraModprobeConfig =
-    #      if builtins.hasAttr "hid_apple" (builtins.readDir /sys/module)
-    #      then ''
-    #        options hid_apple fnmode=2
-    #        options hid_apple swap_opt_cmd=1
-    #        options hid_apple swap_fn_leftctrl=1
-    #      ''
-    #      else "";
-
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
@@ -41,18 +31,9 @@
       ];
       kernelModules = ["dm-snapshot"];
     };
-    # TODO
-    #kernelModules = ["kvm-intel" "wl" "v4l2loopback"];
     kernelModules = ["kvm-intel"];
-    extraModulePackages = [
-      # TODO
-      #config.boot.kernelPackages.broadcom_sta
-      #config.boot.kernelPackages.v4l2loopback
-    ];
+    extraModulePackages = [];
   };
-
-  # TODO
-  #environment.systemPackages = [pkgs.linuxPackages.v4l2loopback];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/root";
