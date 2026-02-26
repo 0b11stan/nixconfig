@@ -12,15 +12,6 @@
     ./clients/home.nix
   ];
 
-  nixpkgs = {
-    overlays = [(import ./pkgs)];
-    config.packageOverrides = pkgs: {
-      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
-        inherit pkgs;
-      };
-    };
-  };
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [xdg-desktop-portal-wlr];
@@ -57,8 +48,17 @@
     packages = import ./config/packages.nix {inherit pkgs;};
   };
 
-  nixpkgs.config.allowBroken = true;
+  nixpkgs = {
+    overlays = [(import ./pkgs)];
+    config.packageOverrides = pkgs: {
+      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
+        inherit pkgs;
+      };
+    };
+  };
+
   nixpkgs.config = {
+    allowBroken = true;
     allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [
         "burpsuite"

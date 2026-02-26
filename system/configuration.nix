@@ -30,9 +30,8 @@
     useDHCP = lib.mkDefault true;
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
-      enable = false;
+      enable = true;
       allowedTCPPorts = [
-        5182 # for wireguard
         4444
       ];
     };
@@ -40,7 +39,6 @@
 
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
-
   console.keyMap = "fr";
 
   programs = {
@@ -67,8 +65,6 @@
   virtualisation = {
     podman.enable = true;
     docker.enable = true;
-    virtualbox.host.enable = true;
-    #vmware.host.enable = true;
   };
 
   services = {
@@ -81,7 +77,6 @@
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = true;
-    mullvad-vpn.enable = true;
     davfs2 = {
       enable = true;
       davUser = "tristan";
