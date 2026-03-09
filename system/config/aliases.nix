@@ -18,6 +18,22 @@
       docker.io/tenable/nessus:latest-ubuntu
   '';
 
+  exegol-open = ''
+    sudo systemctl stop docker \
+    && sudo umount /var/lib/docker \
+    && sudo cryptsetup open /dev/disk/by-label/exegol-disk exegol-crypt \
+    && sudo mount /dev/disk/by-label/exegol-docker /var/lib/docker \
+    && sudo systemctl start docker
+  '';
+
+  exegol-close = ''
+    sudo systemctl stop docker \
+    && sudo umount /var/lib/docker \
+    && sudo cryptsetup close exegol-crypt \
+    && sudo mount /dev/mapper/neo-docker /var/lib/docker \
+    && sudo systemctl start docker
+  '';
+
   search = ''
     grep --color \
       --binary-files=without-match \

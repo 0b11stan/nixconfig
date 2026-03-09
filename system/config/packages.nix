@@ -22,7 +22,7 @@ in
     drawio
     envsubst
     evince
-    # exegol
+    exegol4
     exfat
     exiftool
     ffmpeg
