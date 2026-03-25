@@ -26,11 +26,28 @@
     irssi = import ./config/irssi.nix;
     firefox = import ./config/firefox.nix;
     qutebrowser = import ./config/qutebrowser.nix;
-    fzf = {
+    yazi = {
       enable = true;
-      #      defaultOptions = ["--ignore-case" "--height=10" "--layout=reverse"];
-      #      historyWidgetOptions = ["--ignore-case" "--height=10" "--layout=reverse"];
+      shellWrapperName = "y";
     };
+    gurk-rs = {
+      enable = true;
+      settings = {
+        signal_db_path = "/home/tristan/.local/share/gurk/signal-db";
+        #        first_name_only = false;
+        #        show_receipts = true;
+        #        notifications = true;
+        #        bell = true;
+        #        colored_messages = false;
+        #        default_keybindings = true;
+        user = {
+          name = "0b11stan";
+          phone_number = "+33681675337";
+        };
+        keybindings = {};
+      };
+    };
+    fzf.enable = true;
   };
 
   home = {

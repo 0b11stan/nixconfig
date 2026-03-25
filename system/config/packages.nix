@@ -28,6 +28,7 @@ in
     ffmpeg
     file
     freerdp
+    frida-tools
     gcc
     gimp
     gnumake
@@ -73,6 +74,7 @@ in
     unzip
     usbutils
     uv
+    viu
     wireguard-tools
     wl-clipboard
     wl-mirror
