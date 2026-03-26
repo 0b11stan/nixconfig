@@ -70,10 +70,6 @@
   services = {
     xserver.videoDrivers = ["nvidia"];
     pulseaudio.enable = true;
-    dnsmasq = {
-      enable = true;
-      settings.server = ["1.1.1.1" "8.8.8.8"];
-    };
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = true;

@@ -4,6 +4,9 @@
   tree = "tree -C";
   ps = "ps -f --ppid 2 --pid 2 --deselect";
 
+  notes = "cd ~/notes && nvim '+lua Snacks.picker.explorer()'";
+  nixconfig = "cd ~/sources/github.com/0b11stan/nixconfig && nvim '+lua Snacks.picker.explorer()'";
+
   # containers
   reverse = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt localhost/reverse bash";
   archlinux = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt docker.io/archlinux bash";
@@ -16,6 +19,22 @@
       --env "PASSWORD=$(pass capgemini/nessus|head -n1)" \
       --env "ACTIVATION_CODE=$(pass capgemini/nessus|head -n2|tail -n1)" \
       docker.io/tenable/nessus:latest-ubuntu
+  '';
+
+  exegol-open = ''
+    sudo systemctl stop docker &> /dev/null \
+    && sudo umount /var/lib/docker \
+    && sudo cryptsetup open /dev/disk/by-label/exegol-disk exegol-crypt \
+    && sudo mount /dev/disk/by-label/exegol-docker /var/lib/docker \
+    && sudo systemctl start docker
+  '';
+
+  exegol-close = ''
+    sudo systemctl stop docker &> /dev/null \
+    && sudo umount /var/lib/docker \
+    && sudo cryptsetup close exegol-crypt \
+    && sudo mount /dev/mapper/neo-docker /var/lib/docker \
+    && sudo systemctl start docker
   '';
 
   search = ''

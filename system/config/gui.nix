@@ -23,6 +23,18 @@ in {
 
   programs = {
     alacritty = import ./alacritty.nix {inherit colors pkgs;};
+    kitty = {
+      enable = true;
+      themeFile = "Dracula";
+      shellIntegration.enableBashIntegration = true;
+      # TODO : add missing https://github.com/mikesmithgh/kitty-scrollback.nvim
+      extraConfig = ''
+        allow_remote_control socket-only
+        listen_on unix:/tmp/kitty-socket
+        shell_integration enabled
+        kitten_alias scrollback_pager nvim --headless +'KittyScrollbackGenerateKittens'
+      '';
+    };
     waybar = {
       enable = true;
       style = ./gui/waybar.css;

@@ -7,7 +7,9 @@ set colorcolumn=81
 set cursorline
 set smartcase
 set foldmethod=indent
+set clipboard+=unnamedplus
 "set nofoldenable
+set foldlevel=99
 
 set nocompatible
 
@@ -16,11 +18,6 @@ filetype plugin on
 
 " Terminal mode configuration
 au TermOpen * set nonumber
-
-" Autocomment 
-" TODO : make it dependant to language
-vmap " :s/^/#<CR>:nohlsearch<CR>
-vmap # :s/^#/<CR>:nohlsearch<CR>
 
 " Use M key to set marks
 noremap M m
@@ -31,15 +28,16 @@ noremap k j
 noremap l k
 noremap m l
 
-" Leave terminal mode on escape
-tnoremap <Esc> <C-\><C-n>
-
 " Move in panels using CTRL
 " (following line is a fix : https://github.com/neovim/neovim/issues/18245)
 noremap <CR> <C-w>l
 noremap <C-l> <C-w>k
 noremap <C-k> <C-w>j
 noremap <C-j> <C-w>h
+
+" Toggle and escape terminal
+noremap <C-t> <C-w>s<C-k>:terminal<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " Fix azerty keyboard go to definition
 noremap <C-)> <C-]>
@@ -52,6 +50,10 @@ noremap h :nohlsearch<CR>
 
 " Open Tree
 noremap t :NvimTreeOpen<CR>
+
+" Open Picker
+noremap <C-p> :lua Snacks.picker()<CR>
+
 
 
 " So we can use `:find ...` for fuzzyfind

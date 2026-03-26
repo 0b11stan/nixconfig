@@ -23,12 +23,13 @@ in
     drawio
     envsubst
     evince
-    # exegol
+    exegol4
     exfat
     exiftool
     ffmpeg
     file
     freerdp
+    frida-tools
     gcc
     gimp
     gnumake
@@ -74,6 +75,7 @@ in
     unzip
     usbutils
     uv
+    viu
     wireguard-tools
     wl-clipboard
     wl-mirror

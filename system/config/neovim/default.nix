@@ -6,6 +6,8 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      # render-markdown-nvim
+      snacks-nvim
       copilot-vim
       ansible-vim
       vim-nix
@@ -14,8 +16,8 @@
       vim-terraform
       rust-vim
       nvim-web-devicons
+      kitty-scrollback-nvim
       supertab
-      image-nvim
       {
         plugin = nvim-tree-lua;
         config = "lua require 'nvim-tree'.setup{}";
@@ -28,8 +30,6 @@
         plugin = dracula-vim;
         config = "colorscheme dracula";
       }
-      # TODO : package https://github.com/nvim-neo-tree/neo-tree.nvim
-      # TODO : package https://github.com/nvim-telescope/telescope.nvim
       #      {
       #        plugin = nvim-lspconfig;
       #        config = ''
@@ -59,8 +59,11 @@
       go
       gopls
 
-      # for image-nvim
+      # for snacks plugins
       imagemagick
+      mermaid-cli
+      fd
+      ripgrep
     ];
     extraLuaPackages = ps: [ps.magick];
     extraConfig = builtins.readFile ./init.vim;
