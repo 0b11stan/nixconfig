@@ -9,6 +9,7 @@ in
   with pkgs; [
     alejandra
     android-tools
+    appimage-run
     # (azure-cli.withExtensions [azure-cli-extensions.ssh])
     bat
     bemenu
@@ -39,9 +40,10 @@ in
     jq
     keepassxc
     ksnip
+    kubectl
     ldns # for dns utils
     libreoffice
-    appimage-run
+    libsigrok
     man-pages
     mpv
     nfs-utils
@@ -50,7 +52,6 @@ in
     notify-desktop
     ntfs3g
     obsidian
-    libsigrok
     openssl
     openvpn
     opkssh
@@ -61,12 +62,12 @@ in
     prismlauncher # minecraft
     python3
     qemu
-    stablePkgs.pulseview # pinned to stable for now, as the latest version in unstable has a bug that causes it to crash on launch
     rdfind # duplicate file finder
     shutter
     signal-desktop
     sshpass
     ssm-session-manager-plugin
+    stablePkgs.pulseview # pinned to stable for now, as the latest version in unstable has a bug that causes it to crash on launch
     tenv
     tigervnc
     tree
