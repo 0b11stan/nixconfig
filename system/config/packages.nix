@@ -72,6 +72,7 @@ in
     tenv
     tigervnc
     tree
+    universal-ctags
     unzip
     usbutils
     uv
