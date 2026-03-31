@@ -68,8 +68,18 @@
   # TODO
   #powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    sane = {
+      enable = true;
+      extraBackends = [pkgs.sane-airscan];
+    };
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    graphics.enable = true;
     nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
       modesetting.enable = true;
       powerManagement.finegrained = false;
       # powerManagement.enable = false;

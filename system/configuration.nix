@@ -49,18 +49,6 @@
     ghidra.enable = true;
   };
 
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-    graphics.enable = true;
-    sane = {
-      enable = true;
-      extraBackends = [pkgs.sane-airscan];
-    };
-  };
-
   security.pam.services.swaylock = {};
 
   virtualisation = {
