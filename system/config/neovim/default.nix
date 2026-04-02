@@ -48,7 +48,7 @@
       rust-analyzer
 
       # javascript
-      nodePackages.js-beautify
+      js-beautify
 
       # python
       python312
