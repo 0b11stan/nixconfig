@@ -63,9 +63,9 @@
   dcub = "docker compose up --build";
   dcd = "docker compose down";
   dcdv = "docker compose down --volumes";
-  dstopall = "docker stop `docker ps -a -q`";
+  dstopall = "docker stop $(docker ps -a -q)";
   drmall = "docker rm `docker ps -a -q`";
-  dgenocide = "dstopall && drmall";
+  dgenocide = "dstopall && drmall && docker rmi $(docker image ls -aq)";
   dce = "docker compose exec";
   dceme = "docker compose exec --user = 1000";
 
