@@ -72,6 +72,21 @@
       fi
     }
 
+    azssh() {
+      local vm_name=$(
+        grep "^Host er-" ~/.ssh/config.d/azure-qat | \
+        awk '{print $2}' | \
+        fzf \
+          --ignore-case \
+          --height=10 \
+          --layout reverse \
+          --preview 'cat ~/.ssh/config.d/azure-qat | grep {} -A2'
+      )
+
+      [ -n "$vm_name" ] && ssh "$vm_name"
+    }
+
+
     file-fzf-hack() {
       if [ $# -lt 1 ]; then
         fd --type f | fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {}),esc:abort"
@@ -79,6 +94,7 @@
         fd --type f "$1" | fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {}),esc:abort"
       fi
     }
+
     alias ffp='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+}),esc:abort"'
     alias fdp='fzf -m --preview="eza --icons=always --color=always {}" --bind "enter:execute(cd {} && clear),esc:abort"'
     alias vsf='file-fzf-hack'

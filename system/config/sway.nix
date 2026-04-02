@@ -91,7 +91,7 @@ in {
       "${mod}+v" = "splitv";
 
       "${mod}+d" = ''
-        exec bemenu-run -m 1 -p '>' --fn 'monospace 10' -H 21 \
+        exec bemenu-run -m 1 -p '>' --fn 'monospace 12' -H 30 \
           --tb '${colors.black}' --fb '${colors.black}' \
           --nb '${colors.black}' --hb '${colors.black}' \
           --tf '${colors.magenta}' --hf '${colors.magenta}' \

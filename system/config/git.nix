@@ -1,5 +1,6 @@
 {
   enable = true;
+  signing.format = null;
   settings = {
     alias.lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
     user.email = "tristan@tic.sh";
