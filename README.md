@@ -166,7 +166,7 @@ sudo nixos-rebuild switch -I nixos-config=./system/configuration.nix
 * [x] terminal: [alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/0b11stan/nixconfig/blob/main/users/tristan/gui/alacritty.nix))
 * [x] communication: [tutanota](https://tutanota.com/) and [signal](https://www.signal.org/)
 * [x] containerization: [podman](https://podman.io/)
-* [ ] use waybar instead of i3status
+* [x] use waybar instead of i3status
 * [ ] find a smart wallpaper
 * [ ] format markdown files on save
 * [ ] configure colored man pages

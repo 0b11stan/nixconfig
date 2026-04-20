@@ -26,3 +26,5 @@ require('snacks').setup({
     }
   }
 })
+
+vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#808080", italic = true })
