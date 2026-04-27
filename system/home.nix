@@ -33,7 +33,7 @@
     gurk-rs = {
       enable = true;
       settings = {
-        signal_db_path = "/home/tristan/.local/share/gurk/signal-db";
+        # signal_db_path = "/home/tristan/.local/share/gurk/signal-db";
         #        first_name_only = false;
         #        show_receipts = true;
         #        notifications = true;
@@ -45,6 +45,46 @@
           phone_number = "+33681675337";
         };
         keybindings = {};
+      };
+    };
+    opencode = {
+      enable = true;
+      settings = {
+        "$schema" = "https://opencode.ai/config.json";
+        model = "claude-4-5-sonnet";
+        small_model = "claude-4-5-haiku";
+        provider = {
+          openwebui = {
+            name = "Openwebui";
+            npm = "@ai-sdk/openai-compatible";
+            options = {
+              baseURL = "https://chat-development.devtest.internal.energy-robotics.net/api";
+              apiKey = builtins.readFile /home/tristan/.local/share/secrets/er-openwebui-api-key.txt;
+            };
+            models = {
+              claude-4-6-opus = {
+                id = "claude-4-6-opus";
+                name = "Opus 4.6";
+                modalities = {
+                  input = ["text" "image"];
+                  output = ["text"];
+                };
+              };
+              claude-4-6-sonnet = {
+                id = "eu.anthropic.claude-sonnet-4-6";
+                name = "Sonnet 4.6";
+                limit = {
+                  context = 200000;
+                  output = 64000;
+                };
+                modalities = {
+                  input = ["text" "image"];
+                  output = ["text"];
+                };
+              };
+            };
+          };
+        };
       };
     };
     fzf.enable = true;

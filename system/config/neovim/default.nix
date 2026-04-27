@@ -24,6 +24,7 @@
           })
         '';
       }
+      # maybe I should try https://github.com/folke/sidekick.nvim instead of avante
       {
         # Requires to have the environment variable ANTHROPIC_API_KEY set to a
         # valid API key. You can look at ../aliases.nix to see how it is
@@ -47,6 +48,12 @@
               auto_suggestions = false,                  -- copilot.lua handles this already
               auto_apply_diff_after_generation = false,  -- always review diffs first
               minimize_diff = true,
+            },
+            mappings = {
+              submit = {
+                normal = "<CR>",
+                insert = "<C-s>",
+              },
             },
             windows = {
               position = "right",

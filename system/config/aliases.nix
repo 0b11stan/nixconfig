@@ -4,7 +4,9 @@
   tree = "tree -C";
   ps = "ps -f --ppid 2 --pid 2 --deselect";
 
-  nvim = "ANTHROPIC_API_KEY=$(cat ~/.local/share/claude-api-key.txt) nvim";
+  nvim = "ANTHROPIC_API_KEY=$(cat ~/.local/share/secrets/claude-api-key.txt) nvim";
+
+  discordo = "DISCORDO_TOKEN=$(pass self/tristan/discord-token) discordo";
 
   notes = "cd ~/notes && nvim '+lua Snacks.picker.explorer()'";
   nixconfig = "cd ~/sources/github.com/0b11stan/nixconfig && nvim '+lua Snacks.picker.explorer()'";
