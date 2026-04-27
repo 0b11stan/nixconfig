@@ -4,6 +4,10 @@
   tree = "tree -C";
   ps = "ps -f --ppid 2 --pid 2 --deselect";
 
+  nvim = "ANTHROPIC_API_KEY=$(cat ~/.local/share/secrets/claude-api-key.txt) nvim";
+
+  discordo = "DISCORDO_TOKEN=$(pass self/tristan/discord-token) discordo";
+
   notes = "cd ~/notes && nvim '+lua Snacks.picker.explorer()'";
   nixconfig = "cd ~/sources/github.com/0b11stan/nixconfig && nvim '+lua Snacks.picker.explorer()'";
 
@@ -63,9 +67,9 @@
   dcub = "docker compose up --build";
   dcd = "docker compose down";
   dcdv = "docker compose down --volumes";
-  dstopall = "docker stop `docker ps -a -q`";
+  dstopall = "docker stop $(docker ps -a -q)";
   drmall = "docker rm `docker ps -a -q`";
-  dgenocide = "dstopall && drmall";
+  dgenocide = "dstopall && drmall && docker rmi $(docker image ls -aq)";
   dce = "docker compose exec";
   dceme = "docker compose exec --user = 1000";
 

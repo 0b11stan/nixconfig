@@ -17,7 +17,8 @@ in
     (burpsuite.override {proEdition = true;})
     cifs-utils
     detox
-    discord
+    # discord
+    discordo
     dnsmasq
     dos2unix
     drawio

@@ -86,7 +86,6 @@
       [ -n "$vm_name" ] && ssh "$vm_name"
     }
 
-
     file-fzf-hack() {
       if [ $# -lt 1 ]; then
         fd --type f | fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {}),esc:abort"
