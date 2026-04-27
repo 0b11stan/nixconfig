@@ -12,6 +12,8 @@
     ./clients/home.nix
   ];
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [xdg-desktop-portal-wlr];
@@ -72,22 +74,22 @@
         inherit pkgs;
       };
     };
-  };
 
-  nixpkgs.config = {
-    allowBroken = true;
-    allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "burpsuite"
-        "discord"
-        "drawio"
-        "minecraft-launcher"
-        "obsidian"
-        "copilot.vim"
-        # "exegol"
-      ];
+    config = {
+      allowBroken = true;
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          "burpsuite"
+          "discord"
+          "drawio"
+          "minecraft-launcher"
+          "obsidian"
+          "copilot.vim"
+          # "exegol"
+        ];
 
-    permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];
+      permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];
+    };
   };
 
   services = {

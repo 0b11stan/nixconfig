@@ -18,7 +18,10 @@
       automatic = true;
       options = "--delete-older-than 30d";
     };
-    settings.auto-optimise-store = true;
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
   };
 
   networking = {
