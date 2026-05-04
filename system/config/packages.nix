@@ -10,7 +10,7 @@ in
     alejandra
     android-tools
     appimage-run
-    # (azure-cli.withExtensions [azure-cli-extensions.ssh])
+    (azure-cli.withExtensions [azure-cli-extensions.ssh])
     bat
     bemenu
     bindfs
@@ -24,7 +24,7 @@ in
     drawio
     envsubst
     evince
-    exegol4
+    # exegol4
     exfat
     exiftool
     ffmpeg
@@ -47,7 +47,7 @@ in
     libreoffice
     libsigrok
     man-pages
-    mpv
+    # mpv
     nfs-utils
     nixpkgs-fmt
     nmap
@@ -78,7 +78,7 @@ in
     usbutils
     uv
     viu
-    wireguard-tools
+    # wireguard-tools
     wl-clipboard
     wl-mirror
     xdg-utils

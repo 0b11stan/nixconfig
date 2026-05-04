@@ -46,7 +46,7 @@
   console.keyMap = "fr";
 
   programs = {
-    wireshark.enable = true;
+    # wireshark.enable = true;
     fuse.userAllowOther = true;
     noisetorch.enable = true;
     ghidra.enable = true;
@@ -65,11 +65,11 @@
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = true;
-    davfs2 = {
-      enable = true;
-      davUser = "tristan";
-      davGroup = "users";
-    };
+    # davfs2 = {
+    #   enable = true;
+    #   davUser = "tristan";
+    #   davGroup = "users";
+    # };
     udev = {
       enable = true;
       packages = [pkgs.libsigrok];
@@ -79,13 +79,14 @@
   users = {
     users.tristan = {
       isNormalUser = true;
-      extraGroups = ["wheel" "audio" "wireshark" "adbusers" "docker" "scanner" "vboxusers"];
+      # add to wireshark if needed
+      extraGroups = ["wheel" "audio" "adbusers" "docker" "scanner" "vboxusers"];
     };
   };
 
   environment = {
     etc."qemu/bridge.conf".text = "allow all";
-    systemPackages = with pkgs; [wireshark];
+    # systemPackages = with pkgs; [wireshark];
   };
 
   home-manager.users.tristan = ./home.nix;
