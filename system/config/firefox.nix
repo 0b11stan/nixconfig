@@ -1,5 +1,7 @@
 {
   enable = true;
+  configPath = ".mozilla/firefox";
+  # configPath = "${config.xdg.configHome}/mozilla/firefox"; # the better option but needs to move stuff from home to config
   profiles.private = {
     id = 0;
 

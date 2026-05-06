@@ -74,7 +74,7 @@
 
     azssh() {
       local vm_name=$(
-        grep "^Host er-" ~/.ssh/config.d/azure-qat | \
+        grep "^Host er-" ~/.ssh/config.d/er-azure-* | \
         awk '{print $2}' | \
         fzf \
           --ignore-case \

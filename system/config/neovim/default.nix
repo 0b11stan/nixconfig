@@ -5,6 +5,8 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    withRuby = false;
+    withPython3 = true;
     plugins = with pkgs.vimPlugins; [
       # render-markdown-nvim
       snacks-nvim
