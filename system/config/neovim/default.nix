@@ -71,7 +71,11 @@
       vim-terraform
       rust-vim
       nvim-web-devicons
-      kitty-scrollback-nvim
+      {
+        plugin = kitty-scrollback-nvim;
+        type = "lua";
+        config = "require('kitty-scrollback').setup{}";
+      }
       {
         plugin = nvim-tree-lua;
         type = "lua";
@@ -82,8 +86,8 @@
         config = "let g:mkp_browser = '${pkgs.qutebrowser}/bin/qutebrowser'";
       }
       {
-        plugin = dracula-vim;
-        config = "colorscheme dracula";
+        plugin = catppuccin-nvim;
+        config = "colorscheme catppuccin-macchiato"; # the default catppuccin is good also
       }
       #      {
       #        plugin = nvim-lspconfig;

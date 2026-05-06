@@ -53,7 +53,7 @@ in {
     up = "l";
     right = "m";
 
-    terminal = "alacritty";
+    terminal = "kitty";
     menu = "bemenu";
 
     window.hideEdgeBorders = "both";

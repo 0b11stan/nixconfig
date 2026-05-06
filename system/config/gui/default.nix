@@ -23,18 +23,7 @@ in {
 
   programs = {
     alacritty = import ./alacritty.nix {inherit colors pkgs;};
-    kitty = {
-      enable = true;
-      themeFile = "Dracula";
-      shellIntegration.enableBashIntegration = true;
-      # TODO : add missing https://github.com/mikesmithgh/kitty-scrollback.nvim
-      extraConfig = ''
-        allow_remote_control socket-only
-        listen_on unix:/tmp/kitty-socket
-        shell_integration enabled
-        kitten_alias scrollback_pager nvim --headless +'KittyScrollbackGenerateKittens'
-      '';
-    };
+    kitty = import ./kitty.nix;
     waybar = {
       enable = true;
       style = ./waybar.css;
@@ -51,23 +40,24 @@ in {
       };
     };
 
-    swayidle = {
-      enable = true;
-      timeouts = [
-        {
-          timeout = 60;
-          command = "notify-desktop 'IDLE' 'I am going to sleep in 60s'";
-        }
-        {
-          timeout = 115;
-          command = "notify-desktop -t 5000 'IDLE' 'I am going to sleep in 5s'";
-        }
-        {
-          timeout = 120;
-          command = "swaylock -fF -c '#000100'";
-        }
-      ];
-    };
+    # TODO
+    # swayidle = {
+    #   enable = true;
+    #   timeouts = [
+    #     {
+    #       timeout = 60;
+    #       command = "notify-desktop 'IDLE' 'I am going to sleep in 60s'";
+    #     }
+    #     {
+    #       timeout = 115;
+    #       command = "notify-desktop -t 5000 'IDLE' 'I am going to sleep in 5s'";
+    #     }
+    #     {
+    #       timeout = 120;
+    #       command = "swaylock -fF -c '#000100'";
+    #     }
+    #   ];
+    # };
   };
 }
 # TODO : https://www.reddit.com/r/swaywm/comments/gd7976/swayidle_in_lock_script_can_i_temporarily_disable/
