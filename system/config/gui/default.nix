@@ -37,7 +37,7 @@ in {
     };
     waybar = {
       enable = true;
-      style = ./gui/waybar.css;
+      style = ./waybar.css;
     };
   };
 
