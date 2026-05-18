@@ -38,12 +38,29 @@
               url = "https://ksuite.infomaniak.com/";
             }
             {
-              name = "consensus";
-              url = "https://consensus.app/";
+              name = "banque postale";
+              url = "https://labanquepostale.fr";
             }
             {
-              name = "our world in data";
-              url = "https://ourworldindata.org/";
+              name = "caisse d'épargne";
+              url = "https://www.caisse-epargne.fr/";
+            }
+            {
+              name = "mutuelle";
+              url = "https://adherents.acpsgestion.com";
+            }
+            {
+              name = "misc";
+              bookmarks = [
+                {
+                  name = "consensus";
+                  url = "https://consensus.app/";
+                }
+                {
+                  name = "our world in data";
+                  url = "https://ourworldindata.org/";
+                }
+              ];
             }
           ];
         }

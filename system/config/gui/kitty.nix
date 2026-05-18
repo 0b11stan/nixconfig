@@ -1,6 +1,6 @@
 {
   enable = true;
-  themeFile = "Catppuccin-Macchiato";
+  themeFile = "Catppuccin-Mocha";
   # TODO : https://sw.kovidgoyal.net/kitty/overview/#the-scrollback-buffer
   # TODO : add missing https://github.com/mikesmithgh/kitty-scrollback.nvim
 

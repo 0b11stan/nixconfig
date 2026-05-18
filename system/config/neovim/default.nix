@@ -87,7 +87,7 @@
       }
       {
         plugin = catppuccin-nvim;
-        config = "colorscheme catppuccin-macchiato"; # the default catppuccin is good also
+        config = "colorscheme catppuccin-mocha";
       }
       #      {
       #        plugin = nvim-lspconfig;
