@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-  # TODO : https://nixos.wiki/wiki/Nvidia
   # TODO : https://exegol.readthedocs.io/en/latest/getting-started/faq.html#how-to-install-exegol-on-an-external-drive
   imports = [
     ./hardware-configuration.nix
@@ -83,10 +82,6 @@
     pipewire.enable = true;
     sshd.enable = true;
     mullvad-vpn.enable = true;
-    printing = {
-      # TODO : https://nixos.wiki/wiki/Printing
-      enable = true;
-    };
     davfs2 = {
       enable = true;
       davUser = "tristan";
