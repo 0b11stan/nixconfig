@@ -61,7 +61,6 @@
   nixpkgs.config = {
     allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [
-        "burpsuite"
         "discord"
         "drawio"
         "minecraft-launcher"

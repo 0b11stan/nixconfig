@@ -6,7 +6,6 @@ with pkgs; [
   bat
   bemenu
   bindfs
-  (burpsuite.override {proEdition = true;})
   cifs-utils
   detox
   discord
