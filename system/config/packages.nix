@@ -14,10 +14,9 @@ in
     bat
     bemenu
     bindfs
-    (burpsuite.override {proEdition = true;})
     cifs-utils
     detox
-    # discord
+    discord
     discordo
     dnsmasq
     dos2unix
@@ -34,7 +33,7 @@ in
     gcc
     gimp
     gnumake
-    # gource
+    gource
     htmlq
     htop
     iw
@@ -47,7 +46,7 @@ in
     libreoffice
     libsigrok
     man-pages
-    # mpv
+    mpv
     nfs-utils
     nixpkgs-fmt
     nmap
@@ -69,7 +68,7 @@ in
     signal-desktop
     sshpass
     ssm-session-manager-plugin
-    stablePkgs.pulseview # pinned to stable for now, as the latest version in unstable has a bug that causes it to crash on launch
+    pulseview
     tenv
     tigervnc
     tree
@@ -78,7 +77,6 @@ in
     usbutils
     uv
     viu
-    # wireguard-tools
     wl-clipboard
     wl-mirror
     xdg-utils
