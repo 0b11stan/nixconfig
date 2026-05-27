@@ -69,6 +69,7 @@ in
     sshpass
     ssm-session-manager-plugin
     pulseview
+    # (steampipe.withPlugins [steampipe-plugins.aws steampipe-plugins.azure])
     tenv
     tigervnc
     tree

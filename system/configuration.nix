@@ -35,9 +35,7 @@
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
       enable = true;
-      allowedTCPPorts = [
-        4444
-      ];
+      allowedTCPPorts = [4444];
     };
   };
 

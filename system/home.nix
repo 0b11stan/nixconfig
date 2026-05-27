@@ -32,6 +32,20 @@
       enable = true;
       shellWrapperName = "y";
     };
+    thunderbird = {
+      enable = true;
+      settings = {
+        #        show_receipts = true;
+        #        notifications = true;
+        #        bell = true;
+        #        colored_messages = false;
+        #        default_keybindings = true;
+        user = {
+          name = "0b11stan";
+          email = "tristan@kharos.fr";
+        };
+      };
+    };
     gurk-rs = {
       enable = true;
       settings = {
