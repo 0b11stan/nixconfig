@@ -61,6 +61,7 @@ in
     pavucontrol
     pciutils
     prismlauncher # minecraft
+    pulseview
     python3
     qemu
     rdfind # duplicate file finder
@@ -68,9 +69,9 @@ in
     signal-desktop
     sshpass
     ssm-session-manager-plugin
-    pulseview
     # (steampipe.withPlugins [steampipe-plugins.aws steampipe-plugins.azure])
     tenv
+    terragrunt
     tigervnc
     tree
     universal-ctags
