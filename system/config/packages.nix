@@ -70,7 +70,6 @@ in
     sshpass
     ssm-session-manager-plugin
     # (steampipe.withPlugins [steampipe-plugins.aws steampipe-plugins.azure])
-    tenv
     terragrunt
     tigervnc
     tree

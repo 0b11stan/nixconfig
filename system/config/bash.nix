@@ -80,7 +80,7 @@
           --ignore-case \
           --height=10 \
           --layout reverse \
-          --preview 'cat ~/.ssh/config.d/azure-qat | grep {} -A2'
+          --preview 'cat ~/.ssh/config.d/er-azure-* | grep {} -A2'
       )
 
       [ -n "$vm_name" ] && ssh "$vm_name"

@@ -83,10 +83,12 @@
       }
       {
         plugin = markdown-preview-nvim;
+        type = "viml";
         config = "let g:mkp_browser = '${pkgs.qutebrowser}/bin/qutebrowser'";
       }
       {
         plugin = catppuccin-nvim;
+        type = "viml";
         config = "colorscheme catppuccin-mocha";
       }
       #      {
