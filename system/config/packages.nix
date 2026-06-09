@@ -34,6 +34,7 @@ in
     gimp
     gnumake
     gource
+    go-task
     htmlq
     htop
     iw
