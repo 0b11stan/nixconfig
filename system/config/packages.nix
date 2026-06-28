@@ -70,8 +70,9 @@ in
     signal-desktop
     sshpass
     ssm-session-manager-plugin
-    # (steampipe.withPlugins [steampipe-plugins.aws steampipe-plugins.azure])
-    terragrunt
+    steampipe
+    steampipePackages.steampipe-plugin-aws
+    # steampipePackages.steampipe-plugin-azure
     tigervnc
     tree
     universal-ctags
@@ -84,5 +85,6 @@ in
     xdg-utils
     xxd
     zip
+    zotero
     zoxide
   ]
