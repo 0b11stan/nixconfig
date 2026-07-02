@@ -1,6 +1,6 @@
 FROM docker.io/alpine
 
-RUN apk update && apk upgrade && apk add --no-cache curl wget
+RUN apk update && apk upgrade && apk add --no-cache curl wget aws-cli
 RUN /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"
 
 RUN adduser -D steampipe
