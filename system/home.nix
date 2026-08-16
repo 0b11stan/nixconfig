@@ -94,11 +94,13 @@
       allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
           "discord"
+          "discord-unwrapped"
           "drawio"
           "minecraft-launcher"
           "obsidian"
           "copilot.vim"
           # "exegol"
+          "copilot-language-server"
         ];
 
       permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];

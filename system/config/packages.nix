@@ -38,7 +38,8 @@ in
     htmlq
     htop
     iw
-    jmtpfs
+    # TODO : have been removed from nixpkgs, need to find a replacement
+    # jmtpfs
     jq
     keepassxc
     ksnip
