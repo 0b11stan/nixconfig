@@ -38,7 +38,7 @@ in
     htmlq
     htop
     iw
-    jmtpfs
+    # jmtpfs # try to find a better alternative
     jq
     keepassxc
     ksnip

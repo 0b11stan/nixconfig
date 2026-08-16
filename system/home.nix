@@ -93,6 +93,7 @@
       allowBroken = true;
       allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
+          "copilot-language-server"
           "discord"
           "drawio"
           "minecraft-launcher"
