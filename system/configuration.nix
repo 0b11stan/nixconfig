@@ -63,11 +63,11 @@
     blueman.enable = true;
     pipewire.enable = true;
     sshd.enable = true;
-    # davfs2 = {
-    #   enable = true;
-    #   davUser = "tristan";
-    #   davGroup = "users";
-    # };
+    davfs2 = {
+      enable = true;
+      davUser = "tristan";
+      davGroup = "users";
+    };
     udev = {
       enable = true;
       packages = [pkgs.libsigrok];
