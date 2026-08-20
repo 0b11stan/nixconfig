@@ -10,6 +10,7 @@
     plugins = with pkgs.vimPlugins; [
       # render-markdown-nvim
       snacks-nvim
+      img-clip-nvim
       # supertab # commented because it breaks copilot-lua, which is a replacement for copilot-vim, which is no longer maintained
       {
         plugin = copilot-lua;
