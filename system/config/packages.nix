@@ -33,13 +33,11 @@ in
     gcc
     gimp
     gnumake
-    gource
     go-task
+    gource
     htmlq
     htop
     iw
-    # TODO : have been removed from nixpkgs, need to find a replacement
-    # jmtpfs
     jq
     keepassxc
     ksnip
@@ -80,6 +78,7 @@ in
     unzip
     usbutils
     uv
+    virtiofsd
     viu
     wl-clipboard
     wl-mirror
