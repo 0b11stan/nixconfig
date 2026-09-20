@@ -1,7 +1,6 @@
 {
   colors,
   config,
-  isDesktop,
   lib,
   pkgs,
 }: let
@@ -75,15 +74,6 @@ in {
       "10" = [{app_id = "org.qutebrowser.qutebrowser";}];
     };
 
-    startup =
-      if isDesktop
-      then [
-        {command = "tutanota-desktop";}
-        {command = "signal-desktop";}
-        {command = "qutebrowser";}
-      ]
-      else [];
-
     keybindings = lib.mkOptionDefault {
       "${mod}+space" = "floating toggle";
 
@@ -107,10 +97,7 @@ in {
         '
       '';
 
-      "${mod}+ampersand" =
-        if isDesktop
-        then "workspace 1; layout tabbed"
-        else "workspace 1";
+      "${mod}+ampersand" = "workspace 1";
       "${mod}+eacute" = "workspace 2";
       "${mod}+quotedbl" = "workspace 3";
       "${mod}+apostrophe" = "workspace 4";

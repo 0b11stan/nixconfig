@@ -6,7 +6,6 @@
 }: let
   mod = config.wayland.windowManager.sway.config.modifier;
   colors = import ./colors.nix;
-  isDesktop = builtins.readDir /sys/class/power_supply == {};
 in {
   home.packages = with pkgs; [
     swaylock
@@ -16,7 +15,7 @@ in {
   ];
 
   wayland.windowManager.sway = import ./sway.nix {
-    inherit colors config isDesktop lib pkgs;
+    inherit colors config lib pkgs;
   };
 
   fonts.fontconfig.enable = true;

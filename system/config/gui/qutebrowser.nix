@@ -63,6 +63,7 @@
     config.set('content.javascript.enabled', True, 'https://*.offsec.com/*')
     config.set('content.javascript.enabled', True, 'https://teams.microsoft.com/*')
     config.set('content.javascript.enabled', True, 'https://*.microsoftonline.com/*')
+    config.set('content.javascript.enabled', True, 'https://login.microsoftonline.com/*')
     config.set('content.javascript.enabled', True, 'https://outlook.office365.com/*')
     config.set('content.javascript.enabled', True, 'https://tasks.office.com/*')
     config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
