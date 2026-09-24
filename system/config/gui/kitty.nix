@@ -10,6 +10,7 @@
   extraConfig = ''
     font_size   12
     font_family Hack
+    background_opacity 0.8
     allow_remote_control socket-only
     listen_on unix:/tmp/kitty
     kitten_alias scrollback_pager nvim --headless +'KittyScrollbackGenerateKittens'

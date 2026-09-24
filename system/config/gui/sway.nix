@@ -22,10 +22,13 @@ in {
     export QT_QPA_PLATFORM=wayland
   '';
 
+  checkConfig = false;
+
   config = {
     output = {
       eDP-1 = {
         position = "0 0";
+        bg = "/home/tristan/pictures/wallpapers/nix-wallpaper-nineish-catppuccin-mocha-alt.png fill";
       };
       DP-3 = {
         position = "0 0";
