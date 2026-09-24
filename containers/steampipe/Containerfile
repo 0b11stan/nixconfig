@@ -1,12 +1,9 @@
-FROM docker.io/alpine
+FROM ubuntu:22.04
 
-RUN apk update && apk upgrade && apk add --no-cache curl wget aws-cli
+RUN groupadd -r steampipe && useradd -r -g steampipe steampipe
+RUN apt-get update && apt-get install -y curl wget ca-certificates && rm -rf /var/lib/apt/lists/*
 RUN /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"
 
-RUN adduser -D steampipe
 USER steampipe
 WORKDIR /home/steampipe
-
-RUN steampipe plugin install aws
-
-ENTRYPOINT ["steampipe"]
+ENTRYPOINT ["/usr/local/bin/steampipe"]

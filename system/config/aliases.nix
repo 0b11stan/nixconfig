@@ -12,6 +12,13 @@
   nixconfig = "cd ~/sources/github.com/0b11stan/nixconfig && nvim '+lua Snacks.picker.explorer()'";
 
   # containers
+  steampipe = ''
+    podman run -it \
+        --user $(id -u):$(id -g) --userns=keep-id \
+        -v ~/.steampipe:/home/steampipe/.steampipe \
+        -v ~/.aws/:/home/steampipe/.aws:ro \
+        -v /nix/store:/nix/store:ro \
+        steampipe'';
   reverse = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt localhost/reverse bash";
   archlinux = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt docker.io/archlinux bash";
   debian = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt docker.io/debian bash";

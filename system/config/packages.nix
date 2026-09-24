@@ -69,9 +69,6 @@ in
     signal-desktop
     sshpass
     ssm-session-manager-plugin
-    steampipe
-    steampipePackages.steampipe-plugin-aws
-    # steampipePackages.steampipe-plugin-azure
     tigervnc
     tree
     universal-ctags
