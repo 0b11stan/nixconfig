@@ -1,19 +1,18 @@
-# from dracula
+# catppuccin mocha
 {
-  white = "#F8F8F2";
-  greyLighter = "#424450";
-  greyLight = "#424450";
-  #greyLight = "#343746";
-  grey = "#282A36";
-  greyDark = "#21222C";
-  black = "#191A21";
-  blue = "#6272A4";
-  cyan = "#8BE9FD";
-  green = "#50FA7B";
-  orange = "#FFB86C";
-  pink = "#FF79C6";
-  purple = "#BD93F9";
-  magenta = "#BD93F9";
-  red = "#FF5555";
-  yellow = "#F1FA8C";
+  white = "#cdd6f4";      # Text
+  greyLighter = "#313244"; # Surface 0
+  greyLight = "#313244";   # Surface 0
+  grey = "#181825";        # Mantle
+  greyDark = "#1e1e2e";    # Base
+  black = "#11111b";       # Crust
+  blue = "#89b4fa";        # Blue
+  cyan = "#89dceb";        # Sky
+  green = "#a6e3a1";       # Green
+  orange = "#fab387";      # Peach
+  pink = "#f5c2e7";        # Pink
+  purple = "#cba6f7";      # Mauve
+  magenta = "#cba6f7";     # Mauve
+  red = "#f38ba8";         # Red
+  yellow = "#f9e2af";      # Yellow
 }

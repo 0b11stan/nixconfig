@@ -89,8 +89,14 @@
       }
       {
         plugin = catppuccin-nvim;
-        type = "viml";
-        config = "colorscheme catppuccin-mocha";
+        ## backup to this if tired of transparent background feel
+        # type = "viml";
+        # config = "colorscheme catppuccin-mocha";
+        type = "lua";
+        config = ''
+          require('catppuccin').setup({ transparent_background = true })
+          vim.cmd.colorscheme('catppuccin-mocha')
+        '';
       }
       #      {
       #        plugin = nvim-lspconfig;
