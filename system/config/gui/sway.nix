@@ -91,7 +91,8 @@ in {
           --nf '${colors.white}'
       '';
 
-      "${mod}+Shift+x" = "exec swaylock -i /home/$(whoami)/pictures/lockscreen/$((RANDOM % ($(ls /home/$(whoami)/pictures/lockscreen/ | wc -l) - 1 + 1) + 1))*";
+      # TODO : https://github.com/swaywm/swaylock/issues/205
+      "${mod}+Shift+x" = "exec swaylock -i /home/$(whoami)/pictures/lockscreen/$(ls /home/$(whoami)/pictures/lockscreen/ | shuf -n 1)";
       "${mod}+Shift+o" = ''
         exec /bin/sh -c ' \
           SCREENPATH=/tmp/$(date +screenshot-%s.png); \
