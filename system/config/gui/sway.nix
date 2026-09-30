@@ -28,16 +28,19 @@ in {
     output = {
       eDP-1 = {
         position = "0 0";
-        bg = "/home/tristan/pictures/wallpapers/nix-wallpaper-nineish-catppuccin-mocha-alt.png fill";
+        bg = "/home/tristan/pictures/wallpapers/nix.png fill";
       };
       DP-3 = {
         position = "0 0";
+        bg = "/home/tristan/pictures/wallpapers/nix.png fill";
       };
       HDMI-A-1 = {
         position = "1920 0";
+        bg = "/home/tristan/pictures/wallpapers/nix.png fill";
       };
       DP-2 = {
         position = "3840 0";
+        bg = "/home/tristan/pictures/wallpapers/nix.png fill";
       };
     };
 
