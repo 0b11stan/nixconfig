@@ -130,6 +130,9 @@ in {
       "${mod}+9" = "move to workspace 9";
       "${mod}+0" = "move to workspace 10";
       "${mod}+Shift+minus" = "move to workspace 6";
+
+      "${mod}+Shift+Page_Up" = "move workspace to output right";
+      "${mod}+Shift+Page_Down" = "move workspace to output left";
     };
 
     colors = {
