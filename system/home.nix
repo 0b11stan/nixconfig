@@ -9,6 +9,7 @@
     ./config/secrets
     ./config/pandoc
     ./config/gui
+    ./config/deepjump/home.nix
     ./clients/home.nix
   ];
 

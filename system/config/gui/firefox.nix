@@ -21,15 +21,6 @@
           toolbar = true;
           bookmarks = [
             {
-              name = "Deep Jump";
-              bookmarks = [
-                {
-                  name = "tiime";
-                  url = "https://apps.tiime.fr/";
-                }
-              ];
-            }
-            {
               name = "tuta";
               url = "https://app.tuta.com/";
             }
