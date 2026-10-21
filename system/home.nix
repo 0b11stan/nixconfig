@@ -10,7 +10,7 @@
     ./config/pandoc
     ./config/gui
     ./config/deepjump/home.nix
-    ./clients/home.nix
+    ./customers/home.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

@@ -7,7 +7,7 @@
   # TODO : https://exegol.readthedocs.io/en/latest/getting-started/faq.html#how-to-install-exegol-on-an-external-drive
   imports = [
     ./hardware-configuration.nix
-    ./clients/system.nix
+    ./customers/system.nix
     <home-manager/nixos>
   ];
 
