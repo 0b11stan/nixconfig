@@ -9,7 +9,6 @@
     ./config/secrets
     ./config/pandoc
     ./config/gui
-    ./config/deepjump/home.nix
     ./customers/home.nix
   ];
 
@@ -27,8 +26,6 @@
     bash = import ./config/bash.nix {inherit pkgs;};
     git = import ./config/git.nix;
     irssi = import ./config/irssi.nix;
-    firefox = import ./config/gui/firefox.nix;
-    qutebrowser = import ./config/gui/qutebrowser.nix;
     yazi = {
       enable = true;
       shellWrapperName = "y";

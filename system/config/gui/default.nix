@@ -23,6 +23,16 @@ in {
   programs = {
     alacritty = import ./alacritty.nix {inherit colors pkgs;};
     kitty = import ./kitty.nix;
+    qutebrowser = import ./qutebrowser.nix;
+    firefox = {
+      enable = true;
+      configPath = ".mozilla/firefox";
+      # configPath = "${config.xdg.configHome}/mozilla/firefox"; # the better option but needs to move stuff from home to config
+      profiles = {
+        deepjump = import ./ff-deepjump.nix {inherit pkgs;};
+        private = import ./ff-private.nix {inherit pkgs;};
+      };
+    };
     waybar = {
       # TODO : https://github.com/catppuccin/waybar
       enable = true;
