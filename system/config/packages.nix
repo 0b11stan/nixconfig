@@ -8,6 +8,7 @@
 in
   with pkgs; [
     alejandra
+    android-file-transfer
     android-tools
     appimage-run
     # (azure-cli.withExtensions [azure-cli-extensions.ssh])
