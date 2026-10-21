@@ -100,11 +100,16 @@
           "minecraft-launcher"
           "obsidian"
           "copilot.vim"
+          "firefox-esr-140-bin-unwrapped"
           # "exegol"
           "copilot-language-server"
         ];
 
-      permittedInsecurePackages = ["nix-2.15.3" "electron-25.9.0"];
+      permittedInsecurePackages = [
+        "nix-2.15.3"
+        "electron-25.9.0"
+        "firefox-esr-140-bin-unwrapped-140.17.0esr"
+      ];
     };
   };
 

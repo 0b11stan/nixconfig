@@ -10,7 +10,7 @@ in
     alejandra
     android-tools
     appimage-run
-    (azure-cli.withExtensions [azure-cli-extensions.ssh])
+    # (azure-cli.withExtensions [azure-cli-extensions.ssh])
     bat
     bemenu
     bindfs
@@ -82,6 +82,5 @@ in
     xdg-utils
     xxd
     zip
-    zotero
     zoxide
   ]
