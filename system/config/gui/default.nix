@@ -8,6 +8,7 @@
   colors = import ./colors.nix;
   mullvadStatus = pkgs.writeShellScript "mullvad-status" (builtins.readFile ./mullvad-status.sh);
   mullvadConnect = pkgs.writeShellScript "mullvad-connect" (builtins.readFile ./mullvad-connect.sh);
+  mullvadToggle = pkgs.writeShellScript "mullvad-toggle" (builtins.readFile ./mullvad-toggle.sh);
 in {
   home.packages = with pkgs; [
     swaylock
@@ -264,8 +265,7 @@ in {
             interval = 10;
             exec = "${mullvadStatus}";
             signal = 8;
-            on-click = "${mullvadConnect} &";
-            on-click-right = "mullvad disconnect; pkill -RTMIN+8 waybar";
+            on-click = "${mullvadToggle} &";
           };
 
           "custom/media" = {
