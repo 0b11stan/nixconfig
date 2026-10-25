@@ -19,10 +19,7 @@
     };
 
     initrd = {
-      luks.devices.crypted = {
-        device = "/dev/disk/by-label/crypted";
-        preLVM = true;
-      };
+      luks.devices.crypted.device = "/dev/disk/by-label/crypted";
       availableKernelModules = [
         "xhci_pci"
         "nvme"
