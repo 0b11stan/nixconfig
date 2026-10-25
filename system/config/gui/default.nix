@@ -7,7 +7,6 @@
   mod = config.wayland.windowManager.sway.config.modifier;
   colors = import ./colors.nix;
   mullvadStatus = pkgs.writeShellScript "mullvad-status" (builtins.readFile ./mullvad-status.sh);
-  mullvadConnect = pkgs.writeShellScript "mullvad-connect" (builtins.readFile ./mullvad-connect.sh);
   mullvadToggle = pkgs.writeShellScript "mullvad-toggle" (builtins.readFile ./mullvad-toggle.sh);
 in {
   home.packages = with pkgs; [
