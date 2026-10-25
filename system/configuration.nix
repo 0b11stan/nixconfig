@@ -31,7 +31,6 @@
     };
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
-    resolvconf.enable = true;
     extraHosts = ""; # instead use : sudo dnsmasq --server 1.1.1.1 -A /...domain.../...ip...
     firewall = {
       enable = true;
@@ -58,6 +57,7 @@
   };
 
   services = {
+    mullvad-vpn.enable = true;
     xserver.videoDrivers = ["nvidia"];
     pulseaudio.enable = true;
     blueman.enable = true;
