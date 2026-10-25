@@ -7,6 +7,7 @@
   mod = config.wayland.windowManager.sway.config.modifier;
   colors = import ./colors.nix;
   mullvadStatus = pkgs.writeShellScript "mullvad-status" (builtins.readFile ./mullvad-status.sh);
+  mullvadConnect = pkgs.writeShellScript "mullvad-connect" (builtins.readFile ./mullvad-connect.sh);
 in {
   home.packages = with pkgs; [
     swaylock
@@ -262,8 +263,9 @@ in {
             return-type = "json";
             interval = 10;
             exec = "${mullvadStatus}";
-            on-click = "mullvad connect";
-            on-click-right = "mullvad disconnect";
+            signal = 8;
+            on-click = "${mullvadConnect} &";
+            on-click-right = "mullvad disconnect; pkill -RTMIN+8 waybar";
           };
 
           "custom/media" = {
