@@ -281,3 +281,17 @@ button:hover {
 #custom-mullvad.disconnected {
   color: @red;
 }
+
+#custom-netbird {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 2px 0;
+}
+
+#custom-netbird.connected {
+  color: @green;
+}
+
+#custom-netbird.disconnected {
+  color: @red;
+}

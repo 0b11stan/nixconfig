@@ -8,6 +8,8 @@
   colors = import ./colors.nix;
   mullvadStatus = pkgs.writeShellScript "mullvad-status" (builtins.readFile ./mullvad-status.sh);
   mullvadToggle = pkgs.writeShellScript "mullvad-toggle" (builtins.readFile ./mullvad-toggle.sh);
+  netbirdStatus = pkgs.writeShellScript "netbird-status" (builtins.readFile ./netbird-status.sh);
+  netbirdToggle = pkgs.writeShellScript "netbird-toggle" (builtins.readFile ./netbird-toggle.sh);
 in {
   home.packages = with pkgs; [
     swaylock
@@ -49,6 +51,7 @@ in {
             "bluetooth"
             "network"
             "custom/mullvad"
+            "custom/netbird"
             "custom/notification"
             "backlight"
             "battery"
@@ -256,6 +259,15 @@ in {
               default = [" " " " " "];
             };
             on-click = "pavucontrol";
+          };
+
+          "custom/netbird" = {
+            format = "{}";
+            return-type = "json";
+            interval = 10;
+            exec = "${netbirdStatus}";
+            signal = 9;
+            on-click = "${netbirdToggle} &";
           };
 
           "custom/mullvad" = {
