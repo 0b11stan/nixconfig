@@ -6,6 +6,7 @@
 }: let
   mod = config.wayland.windowManager.sway.config.modifier;
   colors = import ./colors.nix;
+  mullvadStatus = pkgs.writeShellScript "mullvad-status" (builtins.readFile ./mullvad-status.sh);
 in {
   home.packages = with pkgs; [
     swaylock
@@ -46,6 +47,7 @@ in {
             "pulseaudio"
             "bluetooth"
             "network"
+            "custom/mullvad"
             "custom/notification"
             "backlight"
             "battery"
@@ -253,6 +255,15 @@ in {
               default = [" " " " " "];
             };
             on-click = "pavucontrol";
+          };
+
+          "custom/mullvad" = {
+            format = "{}";
+            return-type = "json";
+            interval = 10;
+            exec = "${mullvadStatus}";
+            on-click = "mullvad connect";
+            on-click-right = "mullvad disconnect";
           };
 
           "custom/media" = {

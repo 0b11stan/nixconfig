@@ -267,3 +267,17 @@ button:hover {
 #custom-notification.dnd-none {
   color: @red;
 }
+
+#custom-mullvad {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 2px 0;
+}
+
+#custom-mullvad.connected {
+  color: @green;
+}
+
+#custom-mullvad.disconnected {
+  color: @red;
+}
