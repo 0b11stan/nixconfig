@@ -1,6 +1,10 @@
 {pkgs}: {
   id = 0;
 
+  extensions.packages = [
+    pkgs.nur.repos.rycee.firefox-addons.ublock-origin
+  ];
+
   search = {
     force = true;
     default = "ddg";
