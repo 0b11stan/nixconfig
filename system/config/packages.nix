@@ -14,6 +14,8 @@ in
     # (azure-cli.withExtensions [azure-cli-extensions.ssh])
     bat
     bemenu
+    claude-code
+    claude-monitor
     bindfs
     cifs-utils
     detox

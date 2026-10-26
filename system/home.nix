@@ -101,6 +101,7 @@
           "firefox-esr-140-bin-unwrapped"
           # "exegol"
           "copilot-language-server"
+          "claude-code"
         ];
 
       permittedInsecurePackages = [
