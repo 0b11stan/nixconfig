@@ -14,10 +14,10 @@ in
     # (azure-cli.withExtensions [azure-cli-extensions.ssh])
     bat
     bemenu
-    claude-code
-    claude-monitor
     bindfs
     cifs-utils
+    claude-code
+    claude-monitor
     detox
     discord
     discordo
@@ -68,6 +68,7 @@ in
     python3
     qemu
     rdfind # duplicate file finder
+    ripgrep
     shutter
     signal-desktop
     sshpass
