@@ -83,6 +83,11 @@
         config = "require('nvim-tree').setup{}";
       }
       {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = "require('gitsigns').setup{}";
+      }
+      {
         plugin = markdown-preview-nvim;
         type = "viml";
         config = "let g:mkp_browser = '${pkgs.qutebrowser}/bin/qutebrowser'";
