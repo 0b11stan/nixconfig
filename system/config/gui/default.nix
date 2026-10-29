@@ -11,6 +11,8 @@
   netbirdStatus = pkgs.writeShellScript "netbird-status" (builtins.readFile ./netbird-status.sh);
   netbirdToggle = pkgs.writeShellScript "netbird-toggle" (builtins.readFile ./netbird-toggle.sh);
 in {
+  imports = [./link-router.nix];
+
   home.packages = with pkgs; [
     swaylock
     xhost

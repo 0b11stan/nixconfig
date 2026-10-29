@@ -73,7 +73,7 @@
       _JAVA_AWT_WM_NONREPARENTING = 1;
       EDITOR = "nvim";
       WLR_NO_HARDWARE_CURSORS = 1;
-      BROWSER = "qutebrowser";
+      BROWSER = "link-router";
     };
     shellAliases = import ./config/aliases.nix;
     packages = import ./config/packages.nix {inherit pkgs;};

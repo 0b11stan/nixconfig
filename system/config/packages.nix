@@ -50,6 +50,7 @@ in
     libsigrok
     man-pages
     mpv
+    mullvad-browser
     nfs-utils
     nixpkgs-fmt
     nmap
