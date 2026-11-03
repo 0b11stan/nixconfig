@@ -24,6 +24,7 @@
   debian = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt docker.io/debian bash";
   ubuntu = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt docker.io/ubuntu bash";
   kali = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt docker.io/kalilinux/kali-rolling";
+  streamrip = "podman run -it --network=host -v $PWD:/mnt --workdir=/mnt localhost/streamrip";
   nessus = ''
     sudo podman run --name nessus -p 8834:8834 --network host --privileged \
       --env "USERNAME=0b11stan" \
