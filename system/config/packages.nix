@@ -86,6 +86,7 @@ in
     wl-mirror
     xdg-utils
     xxd
+    yt-dlp
     zip
     zoxide
   ]
