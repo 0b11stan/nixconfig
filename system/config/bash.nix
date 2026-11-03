@@ -4,6 +4,14 @@
   bashrcExtra = ''
     eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
 
+    # git branch and status in prompt: * unstaged, + staged, % untracked, $ stash, <>= upstream
+    source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUPSTREAM=auto
+    PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w\[\033[1;33m\]$(__git_ps1 " (%s)")\[\033[1;32m\]]\$\[\033[0m\] '
+
     cdx() { z "$1"; ls -l; }; alias cd="cdx"
 
     icat() {
