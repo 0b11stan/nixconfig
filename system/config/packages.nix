@@ -16,7 +16,6 @@ in
     bemenu
     bindfs
     cifs-utils
-    claude-code
     claude-monitor
     detox
     discord

@@ -9,6 +9,7 @@
     ./config/secrets
     ./config/pandoc
     ./config/gui
+    ./config/claude-profiles.nix
     ./customers/home.nix
   ];
 
