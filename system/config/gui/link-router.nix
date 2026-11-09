@@ -16,7 +16,7 @@
 
     case "$host" in
       *energy-robotics.net|*energy-robotics.com|\
-      *aws.amazon.com|*amazonaws.com|*awsapps.com|\
+      *aws.amazon.com|*amazonaws.com|*awsapps.com|*.aws|\
       *microsoft.com|*microsoftonline.com|*office.com|\
       *azure.com|*azure.net|*azurewebsites.net|\
       *atlassian.net|*atlassian.com)

@@ -113,6 +113,7 @@
   };
 
   services.mpris-proxy.enable = true; # for bluetooth headset buttons features
+  services.ssh-agent.enable = true; # keys are added on first use (addKeysToAgent)
 
   home.stateVersion = "22.05"; # DO NOT MODIFY
 }
